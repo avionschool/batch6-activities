@@ -1,46 +1,64 @@
 * {
     box-sizing: border-box;
+    /* padding: 0;
+    margin: 0; */
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../Assignment1/codingImagel.jpg');
+    background-color: #D3D3D3;
 }
 
-.name {
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;
+nav {
     text-align: center;
-    border-bottom: 1px solid black;
-    background-color: cadetblue;
+    background-color: navy;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px;
+    font-size: 2rem;
 }
 
-.box {
-    width: 80%;
-    margin: auto;
-    border: black solid 1px;
-    margin-top: 10px;
-    padding: 20px;
-    line-height: 14px;
-    background-color: cadetblue;
+.container {
+    margin: 20px 100px;
+    background-color: white;
+}
+
+.main {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+    box-shadow: 10px 10px 15px #2a2a2a;
+}
+
+.container .main h2{
+    text-align: center;
+    padding-bottom: 20px;
+    letter-spacing: 0.5rem;
+}
+
+.container .main p{
+    text-align: center;
+    padding-bottom: 20px;
+    letter-spacing: 1.5px;
 }
 
 .lowerpart {
-    width: 50%;
-    margin: auto;
+    /* text-align: center; */
+    border: 1px black solid;
+    margin: 20px 100px;
+    background-color: white;
+    box-shadow: 10px 10px 15px #2a2a2a;
+    letter-spacing: 1.5px;
     padding: 10px;
-    margin-top: 10px;
-    border: black 3px double;
-    background-color: cadetblue;
 }
-
 
 a {
     text-decoration: none;
 }
 
 a:hover {
+    color: black;
+}
+
+a:visited{
     color: red;
 }
