@@ -51,6 +51,13 @@ nav {
     padding: 10px;
 }
 
+footer {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
+    font-style: italic;
+    text-align: center;
+}
+
 a {
     text-decoration: none;
 }
