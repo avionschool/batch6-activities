@@ -1,33 +1,28 @@
-## Welcome to GitHub Pages
+## Welcome to my Repository
 
-You can use the [editor on GitHub](https://github.com/AdrianIlaga/batch6-activities/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Here you will find all of the works which I have accomplished
+while studying here in avion!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
+<!-- # Header 1
 ## Header 2
-### Header 3
+### Header 3 -->
+# Assignments
 
-- Bulleted
-- List
+1. [Best Practice]("Assignments/Best Practice/Best Practice.html")
+2. Not yet availble
+3. Lorem dimsum
 
-1. Numbered
-2. List
-3. Best Practice.html
+<!-- **Bold** and _Italic_ and `Code` text
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+[Link](url) and ![Image](src) -->
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+*Note: This page was made in a time of panic and will be improved in the upcoming days. 
+** If symptoms persist, consult your doctor
+<!-- For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
@@ -35,4 +30,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out. -->
