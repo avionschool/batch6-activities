@@ -11,7 +11,7 @@ while studying here in avion!
 ### Header 3 -->
 # Assignments
 
-1. [Best Practice]("Assignments/Best Practice/Best Practice.html")
+1. [Best Practice]("Assignments/Best Practices/Best Practice.html")
 2. Not yet availble
 3. Lorem dimsum
 
