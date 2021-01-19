@@ -2,3 +2,7 @@
 
 Assignments:
 - [Best Practice](Best-Practice/index.html)
+
+
+Activity:
+- [First Activity](Activity-1/index.html)
