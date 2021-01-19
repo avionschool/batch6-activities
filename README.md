@@ -1,9 +1,9 @@
-## Welcome to my Repository
+# Welcome to Adrian Ilaga's Repository
 
 Here you will find all of the works which I have accomplished
 while studying here in [Avion](https://avionschool.com/)!
 
-# Assignments
+## Assignments
 
 1. [Best Practice](Assignments/Best\ Practices/Best\ Practice.html)
 2. Not yet availble
