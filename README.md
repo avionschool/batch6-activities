@@ -5,19 +5,12 @@ while studying here in avion!
 
 
 ```markdown
-
-<!-- # Header 1
-## Header 2
-### Header 3 -->
 # Assignments
 
-1. [Best Practice](Assignments/Best Practices/Best Practice.html)
+1. [Best Practice](Assignments/Best\ Practices/Best\ Practice.html)
 2. Not yet availble
 3. Lorem dimsum
 
-<!-- **Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src) -->
 ```
 
 *Note: This page was made in a time of panic and will be improved in the upcoming days. 
