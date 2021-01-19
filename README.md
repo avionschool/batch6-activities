@@ -1,17 +1,13 @@
 ## Welcome to my Repository
 
 Here you will find all of the works which I have accomplished
-while studying here in avion!
+while studying here in [Avion](https://avionschool.com/)!
 
-
-```markdown
 # Assignments
 
 1. [Best Practice](Assignments/Best\ Practices/Best\ Practice.html)
 2. Not yet availble
 3. Lorem dimsum
-
-```
 
 *Note: This page was made in a time of panic and will be improved in the upcoming days. 
 ** If symptoms persist, consult your doctor
