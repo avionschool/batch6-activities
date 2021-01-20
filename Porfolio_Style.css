@@ -1,0 +1,69 @@
+*{
+  padding: 0;
+}
+
+#logo {
+margin: 0;
+height: 100px;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #ADD8E6;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+li{
+  margin: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none;
+}
+
+a{
+  padding: 20px;
+  text-decoration: none;
+  font-family: fantasy;
+  color: black;
+  font-variant: small-caps;
+  font-size: 30px;
+
+}
+.Navigavtion:link{
+  text-decoration: none;
+  color: Black;
+}
+
+.Navigavtion:visited{
+  color: Black;
+}
+
+.Navigavtion:hover{
+  color: white;
+  font-weight: bolder;
+  background: black;
+}
+
+.imageFolder{
+  height: 70px;
+}
+
+.myPortfolios{
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  margin: 20px;
+}
