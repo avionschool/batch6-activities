@@ -34,12 +34,8 @@ li{
 }
 
 a{
-  padding: 20px;
   text-decoration: none;
-  font-family: fantasy;
-  color: black;
-  font-variant: small-caps;
-  font-size: 30px;
+}
 
 }
 .Navigavtion:link{
@@ -66,4 +62,13 @@ a{
   flex-direction: row;
   line-height: 20px;
   margin: 20px;
+}
+
+figcaption{
+  padding: 20px;
+  text-decoration: none;
+  font-family: fantasy;
+  color: black;
+  font-variant: small-caps;
+  font-size: 30px;
 }
