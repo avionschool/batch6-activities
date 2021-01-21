@@ -1,0 +1,158 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+#main{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: black;
+}
+
+
+.menu{
+  list-style: none;
+  display: flex;
+  margin-right:20px;
+}
+
+.menu li a{
+  padding: 10px 15px;
+  color: white;
+  font-size: 23px;
+  margin-right: 10px;
+}
+
+a{
+  text-decoration: none;
+}
+.Logos{
+  display: flex;
+  justify-content: space-around;
+}
+ .logo{
+   height: 50px;
+   padding: 0 12px;
+ }
+
+.top{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.top::before{
+    content:" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url(https://media.beam.usnews.com/d1/d8/8501ba714a21aed9a7327e02ade1/180515-10thingselonmusk-editorial.jpg) no-repeat fixed 100%;
+    background-size: 1300px;;
+    opacity: .18;
+    background-position: bottom right;
+  }
+
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-family: calibri;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing:border-box;
+  padding: 5px 10px;
+  box-shadow: 2px .1px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  background-color: black;
+
+}
+
+.menu li a:hover{
+  background-color : lightgrey;
+  color: black;
+  border-radius: 10px;
+  transition: all ease 0.4s;
+}
+
+.subject{
+  border: 10px double white;
+  position: absolute;
+  top: 60%;
+  left:10%;
+  font-family: Poppins;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  width: 500px;
+  }
+#title{
+  font-size: 60px;
+  color: white;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.subject h4{
+  font-size: 20px;
+  line-height: 0;
+  color: white;
+}
+
+#About{
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+#img-div{
+  box-sizing: border-box;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+
+}
+
+#image{
+  width: 80%;
+  margin: 0;
+}
+
+article{
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 50px;
+}
+h5{
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: cambria;
+  font-size: 25px;
+}
+
+p{
+  margin-top: 10px;
+  font-family: cambria;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 35px;
+
+}
