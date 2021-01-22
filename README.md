@@ -3,7 +3,7 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 
 
 ## Assignments
-1. [Assignment 1](https://buuloooy0318.github.io/Buuloooy0318/batch6-activities/blob/main/Assignment-1/index.html).
+1. [Assignment 1](https://buuloooy0318.github.io/batch6-activities/blob/main/Assignment-1/index.html).
 
 
 ## Activities
