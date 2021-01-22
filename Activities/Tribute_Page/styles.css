@@ -1,0 +1,182 @@
+body {
+    margin:0
+}
+
+a {
+    color: gold;
+}
+
+#main {
+    background-image: url("images/Stars_Background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: gold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pathway Gothic One', sans-serif;
+    
+}
+
+#masthead {
+    color: black;
+    background-image: url("images/George_Lucas_Header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1220px;
+    height: 800px;
+    margin-top: 0px;
+}
+
+#navbar {
+    height: 100px;
+    background-color: gold;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position:sticky;
+    top: 0px;
+    z-index: 9999;
+    
+}
+
+#navbar ul {
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+#navbar a{
+    color: black;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+#navbar a:hover{
+    color: white;
+}
+
+section {
+    width: 1200px;
+    border: solid gold 10px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section h1 {
+    text-align: center;
+    font-size: 100px;
+    color: black;
+    background-color: gold;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    width: 1220px;
+    height: 130px;
+}
+
+section h2 {
+    font-size: 50px;
+}
+
+section h3 {
+    font-size: 30px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+section dl {
+    font-size: 20px;
+}
+
+section img {
+    max-width: 800;
+    position: relative;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+}
+
+section a{
+    text-decoration: none;
+}
+
+section a:hover{
+    color: white;
+}
+
+.container p {
+    text-align: justify;
+}
+
+#impact-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#impact-img img {
+    height: 350px;
+}
+
+#title {
+    text-align: center;
+    position: relative;
+    left: -340px;
+    top: 300px
+}
+
+#title h1 {
+    font-size: 70px;
+    margin: 5px;
+}
+
+#title h2, h3 {
+    margin: 5px;
+}
+
+#img-div {
+    text-align: center;
+}
+
+#image {
+    height: 350px;
+}
+
+#img-caption {
+
+}
+
+#tribute-info {
+
+}
+
+#tribute-link {
+
+}
+
+.divider {
+    height: 100px;
+}
+
+.space {
+    height: 50px;
+}
