@@ -142,12 +142,11 @@ em a:active {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: black 10px 10px 15px;
-    
 }
 
 #albums ul li{
     width: 300px;
-    /* flex-shrink: 0; */
+    flex-shrink: 0;
     height: 100%;
     scroll-snap-align: start;
 }
@@ -165,10 +164,10 @@ em a:active {
 }
 
 button {
-    padding: 5px;
+    padding: 2px;
     margin-left: 10px;
     margin-top: 20px;
-    border-radius: 90%;
+    border-radius: 60%;
 }
 
 button:hover {
