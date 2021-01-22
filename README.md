@@ -16,6 +16,6 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 
 
 ## Author
-John Christian M. Ferrer
-Future Programmer
-jayceeeferrerr@gmail.com
+<p>John Christian M. Ferrer</p>
+<p>Future Programmer</p>
+<p>jayceeeferrerr@gmail.com</p>
