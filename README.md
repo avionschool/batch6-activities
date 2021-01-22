@@ -2,6 +2,7 @@
 
 Assignments:
 - [Best Practice](Best-Practice/index.html)
+- [Tribute Page](Tribute-page/index.html)
 
 
 Activity:
