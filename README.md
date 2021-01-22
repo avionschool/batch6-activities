@@ -3,9 +3,7 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 
 
 ## Assignments
-<ol>
-  <li><a href="https://buuloooy0318.github.io/batch6-activities/Assignment-1/index.html">Assignment 1</a></li>
-</ol>
+1. [Assignment - 1](https://buuloooy0318.github.io/batch6-activities/Assignment-1/index.html).
 
 
 ## Activities
@@ -15,7 +13,6 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 
 
 ## Projects
-
 
 
 ## Author
