@@ -1,6 +1,7 @@
-## Welcome to GitHub Pages
+# Avion School
+Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 
-You can use the [editor on GitHub](https://github.com/Buuloooy0318/batch6-activities/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/Buuloooy0318/batch6-activities/edit/main/README.md)
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
