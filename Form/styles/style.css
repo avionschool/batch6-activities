@@ -8,7 +8,7 @@
 }
 
 body {
-    background: url('/gow.jpg') no-repeat;
+    background: url('../gow.jpg') no-repeat;
     background-size: cover;
     padding: 0;
     margin: 0;
@@ -114,16 +114,16 @@ footer {
 }
 
 @font-face{
-    src: url(/fonts/ARCADECLASSIC.TTF);
+    src: url(../fonts/ARCADECLASSIC.TTF);
     font-family: arcadeClassic;
 }
 
 @font-face{
-    src: url(/fonts/PAC-FONT.TTF);
+    src: url(../fonts/PAC-FONT.TTF);
     font-family: PAC-FONT;
 }
 
 @font-face{
-    src: url(/fonts/INVASION2000.TTF);
+    src: url(../fonts/INVASION2000.TTF);
     font-family: INVASION2000;
 }
