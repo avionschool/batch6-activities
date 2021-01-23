@@ -74,6 +74,10 @@ button {
     font-family: arcadeClassic;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 footer {
     text-align: center;
     font-family: PAC-FONT;
