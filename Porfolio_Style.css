@@ -1,74 +1,104 @@
 *{
   padding: 0;
-}
-
-#logo {
-margin: 0;
-height: 100px;
+  margin: 0;
 }
 body{
   margin: 0;
   padding: 0;
+  background-image: url(https://cdn.pixabay.com/photo/2019/04/06/05/17/wallpaper-4106667_960_720.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+ 
 }
 
-div{
-  padding: 10px;
+main{
+position: relative;
+box-sizing: border-box;
+padding-top: 100px;
+margin: 0;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.884);
+display: flex;
+
+}
+
+nav{
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index:1;
+  height: 100px;
+  box-sizing:border-box;
+ 
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #ADD8E6;
-}
-ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.897);
+  
 }
 
-li{
-  margin: 20px;
-  font-size: 30px;
-  font-weight: bold;
+.navigation-bar #logo{
+  height: 70px;
+  
+  position: relative;
+}
+
+.navigation-bar ul li{
   list-style: none;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-a{
+.navigation-bar a{
   text-decoration: none;
-}
-
-}
-.Navigavtion:link{
-  text-decoration: none;
-  color: Black;
-}
-
-.Navigavtion:visited{
-  color: Black;
-}
-
-.Navigavtion:hover{
   color: white;
-  font-weight: bolder;
-  background: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+.navigation:hover{
+  background-color: rgba(185, 184, 184, 0.63);
+  transition: .45s;
+}
+
+/*List of Projects Section*/
+.myPortfolios{
+  box-sizing: border-box;
+  width: 800px;
+  background-color: rgba(12, 11, 11, 0.425);
+
+  align-self: center;
+  margin: 10px;
+  padding:10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.folders{
+  margin: 5px;
+  text-align: center;
+  width: 100px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
+.folders:hover{
+  background-color: rgba(185, 184, 184, 0.63);
+  transition: .45s;
 }
 
 .imageFolder{
-  height: 70px;
+  
+  height: 100px;
 }
 
-.myPortfolios{
-  display: flex;
-  flex-direction: row;
-  line-height: 20px;
-  margin: 20px;
-}
-
-figcaption{
-  padding: 20px;
+.myPortfolios a{
   text-decoration: none;
-  font-family: fantasy;
-  color: black;
-  font-variant: small-caps;
-  font-size: 30px;
+  color: white;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }
