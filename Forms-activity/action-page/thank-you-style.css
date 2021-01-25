@@ -31,15 +31,17 @@ header{
 h1{
     font-variant: small-caps;
     font-size: 150px;
-    font-family: 'Sigmar One', cursive;
+    font-family: 'Bungee Shade', cursive;
     font-weight: bold;
     text-align: center;
     color:  #fd4d4d;
+    line-height: 120px;
 }
 
 h2{
+    margin-top: 20px;
     font-variant: small-caps;
-    font-size: 80px;
+    font-size: 50px;
     font-family: cursive;
     font-weight: bold;
     text-align: center;
