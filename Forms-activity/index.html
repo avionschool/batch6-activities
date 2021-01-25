@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Survey Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sigmar+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -12,10 +14,12 @@
           <h1>GET READY TO BE A SOFTWARE ENGINEER!!</h1>
         </header>
         <div class="regis-form">
+          <!--TITLE FORM-->
           <section class="top">
             <h2 id="title"><span>Avion</span> School <br> Student Registration Form</h2>
             <p id="description">Thank you for applying to our platorm! <br> We just need you to fill-up the information needed and you're good to go!</p>
           </section>
+          <!--FORM-->
           <form action="action-page/thank-you.html" method="get" id="survey-form">
             <ul>
               <li id="name">
@@ -36,11 +40,12 @@
               </li>
               <li>
                 <label for="birthday">Birthdate</label>
-                <input type="date" name="birthdate" id="birthday" required>
+                <input type="date" name="birthdate" id="birthday" class="input" required>
               </li>
+              <!--DROPDOWN-->
               <li>
                 <label for="educ">Highest Educational Attainment</label>
-                <select name="language" id="educ" required>
+                <select name="language" id="educ" class="input" required>
                   <option value="primary">Primary Education</option>
                   <option value="secondary">Secondary Education</option>
                   <option value="vocational">Vocational Degree</option>
@@ -50,10 +55,11 @@
                   
                 </select>
               </li>
+              <!--RADIO BUTTON-->
               <li class="radio-button">
                 <h4>Please tell us your Gender</h4>
                 <input type= "radio" name="gender" id = "gender-male" value="male" required >
-                <label for ="male">Male</label>
+                <label for ="gender-male">Male</label>
       
                 <input type="radio" name = "gender" id = "gender-female" value="female" required>
                 <label for="gender-female">Female</label>
@@ -78,11 +84,11 @@
                       <input type="checkbox" name = "p-lang" value ="C" id="c-lang">
                       <label for="c-lang">C</label>
                     <br>
-                      <input type="checkbox" name="p-lang" value="c++" id="c++">
-                      <label for="c++">C++</label>
+                      <input type="checkbox" name="p-lang" value="c++" id="c-plus2">
+                      <label for="c-plus2">C++</label>
                    <br>
-                      <input type="checkbox" name="p-lang" value="c#" id="c#">
-                      <label for="c#">C#</label>
+                      <input type="checkbox" name="p-lang" value="c#" id="c-sharp">
+                      <label for="c-sharp">C#</label>
                     <br>
                       <input type="checkbox" name="p-lang" value="javascript" id="javascript">
                       <label for="javascript">JavaScript</label>
