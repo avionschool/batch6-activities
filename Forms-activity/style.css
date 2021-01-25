@@ -22,9 +22,13 @@ body{
 
 header{
     color: #fd4d4d;
-    font-family: 'Sigmar One', cursive;
+    font-family: 'Bungee Shade', cursive;
     font-size: 50px;
     width: 500px;
+    margin-right: 60px ;
+    line-height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .top{
