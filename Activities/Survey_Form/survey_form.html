@@ -22,7 +22,7 @@
                 Registration Form
             </h2>
 
-            <form action="" id="survey-form">
+            <form action="results.html" method="GET" id="survey-form">
             
                 <div class="form-item">
                     <label for="name" id="name-label"><h3>NAME</h3></label>
@@ -39,7 +39,7 @@
                 
                 <div class="form-item">
                     <label for="number"><h3>MOBILE NUMBER</h3></label>
-                    <input type="number" id="number" id="number-label" placeholder="09xx-xxx-xxxx" minlength="11" required>
+                    <input type="tel" id="number" id="number-label" placeholder="09xx-xxx-xxxx" pattern=".{11,}" title="Must contain 11 digits" required>
                     <!-- Delete when done: Add validation error if input is not a number -->
                 </div>
                
