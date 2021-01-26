@@ -15,7 +15,6 @@ body{
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
-    
 }
 
 
@@ -43,6 +42,7 @@ header{
     margin: 5px;
     font-size:30px ;
 }
+
 .top span{
     color: #fd4d4d ;
     font-family: 'Sigmar One', cursive;
