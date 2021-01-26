@@ -41,28 +41,31 @@ body {
 
 /* Survey Form Section */
 .container {
-    color: #fa4454;
-    background-color: transparent;
+    color:black;
+    background-color:white;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-clip: content-box;
     border: 5px solid  #fa4454;
+    
 }
 
 .container h2 {
     font-size: 50px;
     width: 101%;
-    height: auto;
+    height: 100px;
     text-align: center;
-    color: black;
+    color: white;
     background-color: #fa4454;
     margin-top: -1px;
     margin-bottom: 20px;
     margin-left: 0px;
     margin-right: 0px;
-    overflow:auto;
+    position: relative;
+    padding-top: 5%;
+
     
 }
 
@@ -73,10 +76,16 @@ body {
 
 .form-item {
     margin: 20px 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 
 .form-item label:hover{
-    color: fdf6e3;
+    color: #fa4454;
+}
+
+.form-item h3 {
+    color:#fa4454
 }
 
 .form-item h3:hover{
@@ -90,8 +99,10 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     background-color: transparent;
-    color: #fdf6e3;
-    border: solid #fdf6e3;
+    color:black;
+    /* border: solid black; */
+    border: none;
+    border-bottom: solid 1px;
 }
 
 .form-item select option {
@@ -101,8 +112,7 @@ body {
 
 .form-item textarea {
     max-width: 100%;
-    background-color: transparent;
-    color: white;
+    background-color:transparent;
     padding: 6px 10px;
     box-sizing: border-box;
     font-size: 20px;
@@ -134,11 +144,12 @@ body {
     font-size: 30px;
     font-family: 'VALORANT', sans-serif;
     background-color:  #fa4454;
+    color:  white;
     border-radius: 10px;
     border: 0;
 }
 
 .submit:hover {
-    background-color: #fdf6e3;
+    background-color: #fa0015;
 }
 /* End of Survey Form Section */
