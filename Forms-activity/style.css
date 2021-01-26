@@ -134,7 +134,7 @@ label{
 /*checkbox*/
 .checkbox h5{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 15px;
 }
 
@@ -150,8 +150,6 @@ label{
     height: 20px ;
     width: 20px;
 }
-
-
 
 #java:hover{
     height: 20px ;
