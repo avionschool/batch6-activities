@@ -23,11 +23,11 @@
           <form action="action-page/thank-you.html" method="get" id="survey-form">
             <ul>
               <li id="name">
-                <label for="name-label">Name:</label>
+                <label for="name-label">Name</label>
                 <input type="text" class="input" name="name" id="name-label" placeholder="Name here..." required>
               </li>
               <li id="email">
-                <label for="email-label">Email:</label>
+                <label for="email-label">Email</label>
                 <input type="email" class="input"  name="email" id="email-label" placeholder="Email here..." required>
               </li>
               <li>
@@ -35,7 +35,7 @@
                 <input type="tel" class="input" name="tel-num" id="contact"  minlength="11" maxlength="11" placeholder="Mobile No." required>
               </li>
               <li id="number">
-                <label for="number-label">Age:</label>
+                <label for="number-label">Age</label>
                 <input type="number" class="input" name="number" id="number-label" placeholder="Age..." required min="1" max = "100">
               </li>
               <li>
@@ -46,6 +46,7 @@
               <li>
                 <label for="educ">Highest Educational Attainment</label>
                 <select name="language" id="educ" class="input" required>
+                  <option value="">-Select Option-</option>
                   <option value="primary">Primary Education</option>
                   <option value="secondary">Secondary Education</option>
                   <option value="vocational">Vocational Degree</option>
@@ -58,10 +59,10 @@
               <!--RADIO BUTTON-->
               <li class="radio-button">
                 <h4>Please tell us your Gender</h4>
-                <input type= "radio" name="gender" id = "gender-male" value="male" required >
+                <input type= "radio" name="gender" id = "gender-male" value="male" required class="radio">
                 <label for ="gender-male">Male</label>
       
-                <input type="radio" name = "gender" id = "gender-female" value="female" required>
+                <input type="radio" name = "gender" id = "gender-female" value="female" required class="radio"> 
                 <label for="gender-female">Female</label>
       
               </li>
@@ -102,7 +103,7 @@
                 </div>
             <div class="comment">
               <label for="comment">Comments or suggestions:</label><br>
-              <textarea name="comments" id= "comment" rows="10"></textarea>
+              <textarea name="comments" id= "comment" ></textarea>
             </div>
             
             <input type="submit" name = "button" value="Submit" class="button">
