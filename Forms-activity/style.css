@@ -181,19 +181,23 @@ label{
     color: white;
 }
 
+/*Submit buttons*/
+
 .button{
-    background-color: teal;
+    background-color: #fd4d4d;
+    color: white;
     font-family: cursive;
     border: none;
     padding: 5px;
     font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
+    width: 100px;
 }
 
 .button:hover{
-    background-color: black;
-    color: teal;
+    background-color: white;
+    color: #fd4d4d;
 }
 
 ::-webkit-scrollbar{
