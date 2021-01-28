@@ -1,0 +1,95 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #778899; */
+    width: 100%;
+    height: 100vh; 
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #d0dff4;
+    text-align: center;
+    box-shadow: black 5px 5px 5px;
+}
+
+.blacks {
+    background-color: #4b648a;
+}
+
+.prefix {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    font-family: chessflexFont;
+}
+
+footer {
+    text-align: center;
+    font-family: myFont;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url('./Fonts/DancingScript-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: chessflexFont;
+    src: url('./Fonts/ArchitectsDaughter-Regular.ttf');
+}
+
+@media only screen and (min-width:320px){
+    .box {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (min-width:500px){
+    .box {
+        width: 3rem;
+        height: 3rem;
+        font-size: 2.1rem;
+    }
+}
+
+@media only screen and (min-width:720px){
+    .box {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 2.4rem;
+    }
+}
+
+@media only screen and (min-width:1080px){
+    .box {
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
+    }
+}
