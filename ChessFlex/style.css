@@ -5,16 +5,21 @@
 }
 
 body {
-    /* background-color: #778899; */
+    background-color: #F4F6F6;
     width: 100%;
     height: 100vh; 
 }
 
 .container {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.parent {
+    border: 12px solid #d0b38d;
+    box-shadow: black 7px 7px 7px;
 }
 
 .row {
@@ -25,9 +30,8 @@ body {
     font-size: 1.2rem;
     width: 2rem;
     height: 2rem;
-    background-color: #d0dff4;
+    background-color: #dbecf7;
     text-align: center;
-    box-shadow: black 5px 5px 5px;
 }
 
 .blacks {
@@ -49,7 +53,8 @@ header {
 footer {
     text-align: center;
     font-family: myFont;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
 }
 
 @font-face {
@@ -62,11 +67,31 @@ footer {
     src: url('./Fonts/ArchitectsDaughter-Regular.ttf');
 }
 
-@media only screen and (min-width:320px){
+@media only screen and (max-width:359px){
+    .box {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.7rem;
+    }
+    header {
+        font-size: 1.2rem;
+    }
+    footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width:360px){
     .box {
         width: 2.5rem;
         height: 2.5rem;
-        font-size: 1.7rem;
+        font-size: 2rem;
+    }
+    header {
+        font-size: 1.5rem;
+    }
+    footer {
+        font-size: 1.5rem;
     }
 }
 
@@ -74,7 +99,7 @@ footer {
     .box {
         width: 3rem;
         height: 3rem;
-        font-size: 2.1rem;
+        font-size: 2.3rem;
     }
 }
 
@@ -82,14 +107,20 @@ footer {
     .box {
         width: 3.2rem;
         height: 3.2rem;
-        font-size: 2.4rem;
+        font-size: 2.6rem;
+    }
+    header {
+        font-size: 2.2rem;
+    }
+    footer {
+        font-size: 1.8rem;
     }
 }
 
 @media only screen and (min-width:1080px){
     .box {
-        width: 4rem;
-        height: 4rem;
-        font-size: 3rem;
+        width: 3.8rem;
+        height: 3.8rem;
+        font-size: 3.1rem;
     }
 }
