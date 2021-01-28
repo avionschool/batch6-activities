@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(https://wallpaperaccess.com/full/153426.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*Container*/
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: rgba(57, 63, 63, 0.616);
+    padding-right: 4rem;
+    
+   
+    
+    
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 6rem;
+    box-sizing: border-box;
+    height: 100vh;
+    
+    background-color: rgba(255, 255, 255, 0.849);
+    padding: 3rem;
+    
+    
+}
+
+h1{
+    
+    text-align: center;
+    font-size: 4vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.chessboard{
+    
+   
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.671);
+    border: .5rem solid black;
+    
+}
+
+
+.row1{
+    display: flex;
+    flex-direction: row;
+    border-left: .5rem double black ;
+    border-right: .5rem double black;
+}
+
+.row{
+    display: flex;
+    flex-direction: row-reverse;
+    border-left: .5rem double black ;
+    border-right: .5rem double black;   
+}
+
+#top{
+    border-top: .5rem double black ;
+}
+
+#bot{
+    border-bottom: .5rem double black ;
+}
+
+.black {
+background-color: rgba(0, 0, 0, 0.747);
+
+width: 4.5vw;
+    height: 4.5vw;
+}
+
+.white{
+   
+    background: transparent;
+    width: 4.5vw;
+    height: 4.5vw;
+}
+
+img{
+    width: 100%;
+}
