@@ -87,13 +87,13 @@ h1{
 .black {
 background-color: rgba(0, 0, 0, 0.747);
 
-width: 4.5vw;
+    width: 4.5vw;
     height: 4.5vw;
 }
 
 .white{
    
-    background: transparent;
+    background: #fffaf0e1;
     width: 4.5vw;
     height: 4.5vw;
 }
