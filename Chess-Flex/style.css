@@ -18,7 +18,8 @@ body{
     box-sizing: border-box;
     height: 100vh;
     background-color: rgba(57, 63, 63, 0.616);
-    padding-right: 4rem;
+    padding-right: 5rem;
+   
       
     
 }
@@ -31,21 +32,22 @@ header{
     margin-right: 6rem;
     box-sizing: border-box;
     height: 100vh;
-    
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.849);
-    padding: 3rem;
+    padding: 1rem;
     
     
 }
 
 h1{
-    
-    
+  
+    margin: 0;
     text-align: center;
     font-size: 4vw;
     font-family: 'Yatra One', cursive;
     font-weight: bold;
     color: rgb(0, 69, 172);
+    
 }
 
 h1 span{
@@ -54,7 +56,7 @@ h1 span{
 
 .chessboard{
     
-   
+    margin-left: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -62,7 +64,7 @@ h1 span{
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.671);
     border: .5rem solid black;
-    box-shadow: 3rem .5rem .5rem gray;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.897);
     
 }
 
