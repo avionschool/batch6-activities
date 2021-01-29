@@ -127,7 +127,7 @@ img:hover{
 
 
 footer{
-    
+    height: 40px;
     background-color: rgba(0, 0, 0, 0.664);
     font-family:'Courier New', Courier, monospace;
     font-size: 12px;
