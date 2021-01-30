@@ -8,7 +8,7 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 2. [Assignment 2](https://buuloooy0318.github.io/batch6-activities/HTML/Assignment-2/index.html).
 
 ## Activities
-1. [Activity 1](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-1%20TributePage/index.html).
+1. [Activity 1](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-1%20TributePage/index.html) - Tribute Page.
 
 
 
