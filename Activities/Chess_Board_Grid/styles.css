@@ -121,7 +121,7 @@ h1 {
     font-size: 3vw;
 }
 
-.box:hover{
+.inner-box:hover{
     background-color: white;
     font-size: 3.5vw;
 }
