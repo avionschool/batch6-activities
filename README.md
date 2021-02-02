@@ -5,6 +5,7 @@ Assignments:
 - [Tribute Page](Tribute-page/index.html)
 - [Registration Form](Form/html/index.html)
 - [Chess Board Flex](ChessFlex/index.html)
+- [Chess Board Grid](ChessGrid/index.html)
 
 
 Activity:
