@@ -91,10 +91,18 @@ img{
     width: 100%;
 }
 
+.white-pawn, .black-pawn{
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .white:hover, .black:hover{
     background-color:lightblue;
 }
+
 
 footer{
     grid-column: 1/4;
@@ -107,5 +115,17 @@ footer{
     font-family: 'Sriracha', cursive;
     color: rgba(255, 230, 195, 0.959) ;
     background-color: rgba(0, 0, 0, 0.575);
-    
+   
+}
+
+.white-pawn{
+    background-image: url('chess-piece/pawn-white.svg');
+    background-size: cover;
+    z-index: 1;
+}
+
+.black-pawn{
+    background-image: url("chess-piece/pawn-black.svg");
+    background-size: cover;
+    z-index: 1;
 }
