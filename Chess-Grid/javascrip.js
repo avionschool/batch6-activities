@@ -27,8 +27,7 @@ function dragOver(event){
 }
 
 function dragEnter(){
-    this.style.opacity = '1';
-    console.log('enter');
+    
 }
 
 function dragLeave(){
@@ -37,7 +36,7 @@ function dragLeave(){
 }
 
 function dragDropblack(){
-
+    this.style.opacity = '1';
     this.appendChild(whitePawn[0]);
 }
 
@@ -68,7 +67,7 @@ whiteTile.forEach(function(tile){
     tile.addEventListener('dragenter', dragEnter);
     tile.addEventListener('dragleave', dragLeave);
     tile.addEventListener('drop', dragDropblack);
-    tile.addEventListener('drop', dragDropblack);
+    
     
 });
 
