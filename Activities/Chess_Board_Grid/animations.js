@@ -2,13 +2,54 @@
 // If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.
 // - James 1:5
 
+//GLOBAL CHESS VARIABLES
 let hasClicked = false;
 let selectedPiece;
 let selectedBox;
 let originalBG;
+// let selectedColor;
 
+// // CHESS PIECES
+// // WHITE
+// const whitePieces = [
+// // "Rook" 
+//     "&#9814;",
+// // "Knight"
+//     "&#9816;",
+// // "Bishop"
+//     "&#9815;",
+// //  "Queen"
+//     "&#9813;",
+// //  "King"
+//     "&#9812;",
+// //  "Pawn" 
+//     "&#9817;"
+// ]
+// // BLACK
+// const blackPieces = [
+// //  "Rook" 
+//     "&#9820;",
+// //  "Knight"
+//     "&#9822;",
+// //  "Bishop"
+//     "&#9821;",
+// //  "Queen"
+//     "&#9819;",
+// //  "King" 
+//     "&#9818;",
+// //  "Pawn" 
+//     "&#9823;"
+// ]
+
+//ADDING EVENT LISTNERS
 const innerBoxes = document.getElementsByClassName("inner-box");
 
+for(let box in innerBoxes) {
+    // console.log(innerBoxes[box]);
+    innerBoxes[box].addEventListener("click", animation);
+}
+
+//ANIMATION FUNCTION
 function animation() {
 
     //Selecting a piece
@@ -21,7 +62,16 @@ function animation() {
         selectedBox.style.backgroundColor = "white";
     }
 
-    //Selecting another piece or clicking same piece
+    //Deseleting a piece
+    else if(selectedBox === this) {
+        console.log("Deselected a Piece")
+        this.style.backgroundColor = originalBG;
+        hasClicked = false;
+        selectedPiece = "";
+        selectedBox = "";
+    }
+
+    //Selecting another piece
     else if(this.innerHTML && hasClicked === true) {
         console.log("Selected Another Piece");
         selectedBox.style.backgroundColor = originalBG;
@@ -52,7 +102,4 @@ function animation() {
 
 }
 
-for(let box in innerBoxes) {
-    // console.log(innerBoxes[box]);
-    innerBoxes[box].addEventListener("click", animation);
-}
+
