@@ -7,56 +7,64 @@ let hasClicked = false;
 let selectedPiece;
 let selectedBox;
 let originalBG;
-// let selectedColor;
+let pieceColor;
 
-// // CHESS PIECES
-// // WHITE
-// const whitePieces = [
-// // "Rook" 
-//     "&#9814;",
-// // "Knight"
-//     "&#9816;",
-// // "Bishop"
-//     "&#9815;",
-// //  "Queen"
-//     "&#9813;",
-// //  "King"
-//     "&#9812;",
-// //  "Pawn" 
-//     "&#9817;"
-// ]
-// // BLACK
-// const blackPieces = [
-// //  "Rook" 
-//     "&#9820;",
-// //  "Knight"
-//     "&#9822;",
-// //  "Bishop"
-//     "&#9821;",
-// //  "Queen"
-//     "&#9819;",
-// //  "King" 
-//     "&#9818;",
-// //  "Pawn" 
-//     "&#9823;"
-// ]
+// CHESS PIECES
+// WHITE
+const whitePieces = [
+// "Rook" 
+    "&#9814;",
+// "Knight"
+    "&#9816;",
+// "Bishop"
+    "&#9815;",
+//  "Queen"
+    "&#9813;",
+//  "King"
+    "&#9812;",
+//  "Pawn" 
+    "&#9817;"
+]
+// BLACK
+const blackPieces = [
+//  "Rook" 
+    "&#9820;",
+//  "Knight"
+    "&#9822;",
+//  "Bishop"
+    "&#9821;",
+//  "Queen"
+    "&#9819;",
+//  "King" 
+    "&#9818;",
+//  "Pawn" 
+    "&#9823;"
+]
 
 //ADDING EVENT LISTNERS
 const innerBoxes = document.getElementsByClassName("inner-box");
 
 for(let box in innerBoxes) {
     // console.log(innerBoxes[box]);
-    innerBoxes[box].addEventListener("click", animation);
+    innerBoxes[box].addEventListener("click", movement);
 }
 
-//ANIMATION FUNCTION
-function animation() {
+//MOVEMENT FUNCTION
+function movement() {
 
     //Selecting a piece
     if(this.innerHTML && hasClicked === false) {
-        console.log("Selected a Piece");
         hasClicked = true;
         selectedPiece = this.innerHTML;
+        if(whitePieces.includes(this.value)){
+            return pieceColor = "White"
+        }
+        else if(blackPieces.includes(this.value)){
+            return pieceColor = "Black"
+        }
+        
+        console.log("Selected a Piece");
+        console.log(selectedPiece + this.id + pieceColor);
         selectedBox = this;
         originalBG = selectedBox.style.backgroundColor
         selectedBox.style.backgroundColor = "white";
@@ -76,6 +84,7 @@ function animation() {
         console.log("Selected Another Piece");
         selectedBox.style.backgroundColor = originalBG;
         selectedPiece = this.innerHTML;
+        console.log(selectedPiece + this.id)
         selectedBox = this;
         originalBG = selectedBox.style.backgroundColor
         selectedBox.style.backgroundColor = "white";
@@ -87,6 +96,7 @@ function animation() {
         selectedBox.innerHTML = "";
         this.innerHTML = selectedPiece;
         selectedBox.style.backgroundColor = originalBG;
+        console.log(selectedPiece + this.id);
         selectedPiece = "";
         selectedBox = "";
         hasClicked = false;

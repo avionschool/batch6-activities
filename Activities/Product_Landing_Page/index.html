@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusader Kings III</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <!-- Navbar -->
+        <nav id="nav-bar">
+            <div class="nav-item">
+                <a href="#masthead" class="nav"><img src="images/CK3_logo.png" alt="" id="header-img"></a>
+            </div>
+            <div class=nav-item>
+                <ul>
+                    <li><a href="#features" class="nav nav-link">Features</a></li>
+                    <li><a href="#media" class="nav nav-link">Media</a></li>
+                    <li><a href="#subscribe" class="nav nav-link">Subscribe</a></li>
+                    <li><a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><button type="button" class="nav-button" >Purchase</button></a></li>
+                </ul>
+            </div>    
+        </nav>
+        <!-- Navbar End -->
+    </header>
+    <!-- Header End-->
+
+    <!-- Masthead -->
+    <section id="masthead">
+        <div class="opening">
+            <h1>
+                [Insert exciting text]
+            </h1>
+            <p>
+                [Clarify exciting text]
+            </p>
+        </div>
+       
+    </section>
+    <!-- Masthead End -->
+
+    <!-- Features -->
+    <section id="features">
+        <div class="filter-column">
+            <h1>
+                Features
+            </h1>
+            <div class="slideshow-container">
+                <button class="button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                <div class="slide-show">
+                    <div class="slide">
+                        <div class="slide-title"><h1>[Insert Title]</h1></div>
+                        <div class="slide-description"><p>[Insert Description]</p></div>
+                        <img src="images/Duel.jpg" alt="" class="slide-image">
+                    </div>
+    
+                    <div class="slide">
+                        <div class="slide-title"><h1>[Insert Title]</h1></div>
+                        <div class="slide-description"><p>[Insert Description]</p></div>
+                        <img src="images/Country.jpg" alt="" class="slide-image">
+                    </div>
+    
+                    <div class="slide">
+                        <div class="slide-title"><h1>[Insert Title]</h1></div>
+                        <div class="slide-description"><p>[Insert Description]</p></div>
+                        <img src="images/Diplomacy.jpg" alt="" class="slide-image">
+                    </div>
+                  
+                </div>
+                <button class="button button-right" onclick="plusDivs(+1)">&#10095;</button>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Features End-->
+
+    <!-- Media -->
+    <section id="media">
+        <div class="filter-column">
+            <h1>
+                Trailers and Tutorials
+            </h1>
+            <video src="videos/CK3_Announcement_Trailer.mp4" type="video/mp4" height="auto" width="65%" controls id="video"></video>
+            <div class="video-list">
+                <button class="button button-left" onclick="plusDivs2(-1)">&#10094;</button>
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Announcement_Trailer_thumbnail.jpg" alt="Announcement Trailer" class="thumbnail" id="videos/CK3_Announcement_Trailer.mp4">
+                        <p>Announcement Trailer</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Story_Trailer_thumbnail.jpg" alt="Story Trailer" class="thumbnail" id="videos/CK3_Story_Trailer.mp4">
+                        <p>Story Trailer</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Release_Trailer_thumbnail.jpg" alt="Release Trailer" class="thumbnail" id="videos/CK3_Release_Trailer.mp4">
+                        <p>Release Trailer</p>
+                    </div>  
+                    
+                </div>
+                <button class="button button-right" onclick="plusDivs2(+1)">&#10095;</button>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Videos End-->
+
+    <!-- Forms -->
+    <section id="subscribe">
+        <div class="filter-column">
+            <h1>
+                Subscribe
+            </h1>
+            <div class="subscribe-container">
+                <h3>[Insert text of why to subscribe here]</h3>
+                <form action="GET" id="form">
+                    <input type="email" id="email">
+                    <input type="submit" class="form-button">
+                </form>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/Crusaderkings"><img src="images/fb.png" alt=""></a>
+                <a href="https://twitter.com/CrusaderKings"><img src="images/twitter.webp" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCjzOFLm1ZqQBOf_MMb4UJ2Q"><img src="images/youtube.png" alt=""></a>
+                <a href="https://www.paradoxplaza.com/crusader-kings-iii/CKCK03GSK0000001-MASTER.html"><img src="images/paradox-white.png" alt=""></a>
+                <a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/"><img src="images/steam.png" alt=""></a>
+            </div>
+        </div>
+        
+        
+    </section>
+    <!-- Forms End -->
+
+    <script src="scripts.js"></script>
+</body>
+</html>
