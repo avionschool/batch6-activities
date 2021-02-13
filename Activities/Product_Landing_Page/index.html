@@ -29,7 +29,7 @@
     <!-- Header End-->
 
     <!-- Masthead -->
-    <section id="masthead">
+    <section class="fade" id="masthead">
         <div class="opening">
             <h1>
                 [Insert exciting text]
@@ -43,49 +43,54 @@
     <!-- Masthead End -->
 
     <!-- Features -->
-    <section id="features">
+    <section class="fade" id="features">
         <div class="filter-column">
             <h1>
-                Features
+                What's In Store
             </h1>
             <div class="slideshow-container">
-                <button class="button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="button button-left" onclick="plusDivs(-1, 'left');">&#10094;</button>
                 <div class="slide-show">
-                    <div class="slide">
+                    <div class="slide fade">
                         <div class="slide-title"><h1>[Insert Title]</h1></div>
                         <div class="slide-description"><p>[Insert Description]</p></div>
                         <img src="images/Duel.jpg" alt="" class="slide-image">
                     </div>
     
-                    <div class="slide">
+                    <div class="slide fade">
                         <div class="slide-title"><h1>[Insert Title]</h1></div>
                         <div class="slide-description"><p>[Insert Description]</p></div>
                         <img src="images/Country.jpg" alt="" class="slide-image">
                     </div>
     
-                    <div class="slide">
+                    <div class="slide fade">
                         <div class="slide-title"><h1>[Insert Title]</h1></div>
                         <div class="slide-description"><p>[Insert Description]</p></div>
                         <img src="images/Diplomacy.jpg" alt="" class="slide-image">
                     </div>
                   
                 </div>
-                <button class="button button-right" onclick="plusDivs(+1)">&#10095;</button>
+                <button class="button button-right" onclick="plusDivs(+1, 'right');">&#10095;</button>
             </div>
-            
+            <div class="slide-radio">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
     </section>
     <!-- Features End-->
 
     <!-- Media -->
-    <section id="media">
+    <section class="fade" id="media">
         <div class="filter-column">
             <h1>
                 Trailers and Tutorials
             </h1>
             <video src="videos/CK3_Announcement_Trailer.mp4" type="video/mp4" height="auto" width="65%" controls id="video"></video>
             <div class="video-list">
-                <button class="button button-left" onclick="plusDivs2(-1)">&#10094;</button>
+                <button class="button button-left" onclick="plusDivs2(-1, 'left')">&#10094;</button>
+                <!-- Video Group 1 -->
                 <div class="video-items">
                     <div class="thumbnail-container">
                         <img src="images/Announcement_Trailer_thumbnail.jpg" alt="Announcement Trailer" class="thumbnail" id="videos/CK3_Announcement_Trailer.mp4">
@@ -98,10 +103,87 @@
                     <div class="thumbnail-container">
                         <img src="images/Release_Trailer_thumbnail.jpg" alt="Release Trailer" class="thumbnail" id="videos/CK3_Release_Trailer.mp4">
                         <p>Release Trailer</p>
-                    </div>  
-                    
+                    </div>    
                 </div>
-                <button class="button button-right" onclick="plusDivs2(+1)">&#10095;</button>
+                <!-- End Group -->
+
+                <!-- Video Group 2 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-characters.jpg" alt="Characters" class="thumbnail" id="videos/Intro-characters.mp4">
+                        <p>Introduction - Characters</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-dynasty.jpg" alt="Dynasty" class="thumbnail" id="videos/Intro-dynasty.mp4">
+                        <p>Introduction - Dynasty</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-succession.jpg" alt="Succession" class="thumbnail" id="videos/Intro-succession.mp4">
+                        <p>Introduction - Succession</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 3 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-schemes.jpg" alt="Schemes" class="thumbnail" id="videos/Intro-schemes.mp4">
+                        <p>Introduction - Schemes</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-vassals.jpg" alt="Vassals" class="thumbnail" id="videos/Intro-vassals.mp4">
+                        <p>Introduction - Vassals</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-domains.jpg" alt="Domains" class="thumbnail" id="videos/Intro-domains.mp4">
+                        <p>Introduction - Domains</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 4 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-money.jpg" alt="Money" class="thumbnail" id="videos/Intro-money.mp4">
+                        <p>Introduction - Money</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-technology.jpg" alt="Technology" class="thumbnail" id="videos/Intro-technology.mp4">
+                        <p>Introduction - Technology</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-military.jpg" alt="Military" class="thumbnail" id="videos/Intro-military.mp4">
+                        <p>Introduction - Military</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 5 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-war.jpg" alt="War" class="thumbnail" id="videos/Intro-war.mp4">
+                        <p>Introduction - War</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-battles.jpg" alt="Battles" class="thumbnail" id="videos/Intro-battles.mp4">
+                        <p>Introduction - Battles</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-religion.jpg" alt="Religion" class="thumbnail" id="videos/Intro-religion.mp4">
+                        <p>Introduction - Religion</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+                
+                <button class="button button-right" onclick="plusDivs2(+1, 'right')">&#10095;</button>
+
+            </div>
+            <div class="slide-radio">
+                <span class="dot2" onclick="currentSlide2(1)"></span>
+                <span class="dot2" onclick="currentSlide2(2)"></span>
+                <span class="dot2" onclick="currentSlide2(3)"></span>
+                <span class="dot2" onclick="currentSlide2(4)"></span>
+                <span class="dot2" onclick="currentSlide2(5)"></span>
             </div>
         </div>
         
@@ -109,25 +191,26 @@
     <!-- Videos End-->
 
     <!-- Forms -->
-    <section id="subscribe">
+    <section class="fade" id="subscribe">
         <div class="filter-column">
             <h1>
-                Subscribe
+                Stay Updated
             </h1>
             <div class="subscribe-container">
                 <h3>[Insert text of why to subscribe here]</h3>
                 <form action="GET" id="form">
-                    <input type="email" id="email">
-                    <input type="submit" class="form-button">
+                    <div class="form-item"><input type="email" id="email" placeholder="Your email address"></div>
+                    <div class="form-item"><input type="submit" class="form-button" value="Subscribe"></div>
+                    
                 </form>
             </div>
 
             <div class="social-media">
-                <a href="https://www.facebook.com/Crusaderkings"><img src="images/fb.png" alt=""></a>
-                <a href="https://twitter.com/CrusaderKings"><img src="images/twitter.webp" alt=""></a>
-                <a href="https://www.youtube.com/channel/UCjzOFLm1ZqQBOf_MMb4UJ2Q"><img src="images/youtube.png" alt=""></a>
-                <a href="https://www.paradoxplaza.com/crusader-kings-iii/CKCK03GSK0000001-MASTER.html"><img src="images/paradox-white.png" alt=""></a>
-                <a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/"><img src="images/steam.png" alt=""></a>
+                <a href="https://www.facebook.com/Crusaderkings" target="_blank"><img src="images/fb.png" alt=""></a>
+                <a href="https://twitter.com/CrusaderKings"  target="_blank"><img src="images/twitter.webp" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCjzOFLm1ZqQBOf_MMb4UJ2Q" target="_blank"><img src="images/youtube.png" alt="" ></a>
+                <a href="https://www.paradoxplaza.com/crusader-kings-iii/CKCK03GSK0000001-MASTER.html" target="_blank"><img src="images/paradox-white.png" alt=""></a>
+                <a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><img src="images/steam.png" alt=""></a>
             </div>
         </div>
         

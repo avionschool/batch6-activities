@@ -24,6 +24,10 @@ h1 {
     margin-bottom: 1vw;
 }
 
+p {
+    font-size: 2vw;
+}
+
 .button {
     display: flex;
     align-items: center;
@@ -33,6 +37,8 @@ h1 {
     width: 2vw;
     height: 4vw;
     font-size: 3.5vw;
+    outline: none;
+    box-shadow: none;
 }
 
 .filter-column {
@@ -53,6 +59,11 @@ h1 {
     height: 100%;
     width: 100%;
     background-color: rgba(15, 9, 29, 0.8);
+}
+
+section {
+    scroll-margin-top: 5vw
+
 }
 
 /* Header */
@@ -90,6 +101,7 @@ h1 {
 }
 .nav-item img {
     height: 5vw;
+    /* filter:drop-shadow(.1vw .1vw 1vw #ccc); */
 }
 
 .nav-item img:hover {
@@ -116,7 +128,7 @@ h1 {
 .nav-button {
     background-color: rgb(130,25,19);
     color: white;
-    width: 3vw;
+    width: auto;
     height: 2vw;
     font-size: 2vw;
     border-radius: 1vw;
@@ -126,7 +138,7 @@ h1 {
 }
 
 .nav-button:hover {
-    text-shadow:.1vw .1vw 1vw #fff, .1vw .1vw 1vw #ccc;
+    box-shadow:.1vw .1vw 1vw rgb(248, 67, 67), .1vw .1vw 1vw #ccc;
     background-color:rgb(243, 73, 64);
 }
 
@@ -135,7 +147,7 @@ h1 {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-image: url("images/CK3_masthead.jpg");
+    background-image: url("images/CK3_masthead2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -170,6 +182,7 @@ h1 {
 #features p {
     margin-left: 1vw;
     margin-right: 1vw;
+    font-size: 1vw;
 }
 
 #features .slide-show h1 {
@@ -188,19 +201,44 @@ h1 {
 }
 
 #features .slide-show {
-    width: 60vw;
-    height: 40vw;
+    width: 50vw;
+    height: 35vw;
     margin: 5vw;
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-    background-color: black;     
+    /* background-color: black;      */
 }
+
+#features .dot {
+    cursor: pointer;
+    height: 1.2vw;
+    width: 1.2vw;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+ 
+}
+
+#features .slide-radio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1vw;
+    width: 10vw;
+    height: 3vw;
+}
+
+#features .active, .dot:hover {
+    background-color: peru;
+  }
 
 #features .slide{
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: black;
 }
 
 .slide .slide-title {
@@ -229,8 +267,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 140vh;
-    
+    height: 150vh;
 }
 
 #media .filter-column {
@@ -247,6 +284,31 @@ h1 {
     margin-top: 3vw;
     margin-bottom: 3vw;
 }
+
+#media .dot2 {
+    cursor: pointer;
+    height: 1.2vw;
+    width: 1.2vw;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+ 
+}
+
+#media .slide-radio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -3vw;
+    margin-bottom: 1vw;
+    width: 10vw;
+    height: 3vw;
+}
+
+#media .active, .dot2:hover {
+    background-color: peru;
+  }
 
 .video-list {
     display: flex;
@@ -282,6 +344,10 @@ h1 {
     display: flex;
     justify-content: center;
     font-size: 1.5vw;
+}
+
+.thumbnail-container img:hover {
+    filter:drop-shadow(.1vw .1vw 1vw #ccc);
 }
 
 /* Subscription */
@@ -329,12 +395,15 @@ h1 {
     justify-content: space-between;
     width: 40%;
     height: 5vw;
-    /* background-color: white; */
 }
 
 .social-media img{
     height: 100%;
     width: 5vw;
+}
+
+.social-media img:hover {
+    filter:drop-shadow(.1vw .1vw 1vw #ccc);
 }
 
 form {
@@ -346,15 +415,83 @@ form {
     justify-content: space-around;
 }
 
+.form-item {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .subscribe-container input[type=email] {
     width: 80%;
     height: 3vw;
+    font-size: 2vw;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.5vw 0.5vw;
 }
 
 .subscribe-container input[type=submit] {
-    width: 10vw;
-    height: 3vw;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    height: 4vw;
     font-size: 2vw;
     color: peru;
     background-color: rgb(85,60,35);
+    border:none;
 }
+
+/* Animations */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+    
+}
+
+@keyframes fade {
+    from {opacity:0.2}
+    to {opacity: 1.0}
+}
+
+.animate-right {
+    animation-name: animate-right;
+    animation-duration: 1s;
+}
+
+.animate-left {
+    animation-name: animate-left;
+    animation-duration: 1s;
+}
+
+/* .fade-left {
+    animation-name: fade-left;
+    animation-duration: 1.5s;
+}
+
+.fade-right {
+    animation-name: fade-right;
+    animation-duration: 1.5s;
+} */
+
+@keyframes animate-right {
+    from {position: relative; right: -100%; opacity: 0;}
+    to {position: relative; right: 0%; opacity: 1;}
+}
+
+@keyframes animate-left {
+    from {position: relative; left: -100%; opacity: 0;}
+    to {position: relative; left: 0%; opacity: 1;}
+}
+
+/* @keyframes fade-right {
+    from {position: relative; right: 0%; opacity: 1;}
+    to {position: relative; right: -25%; opacity: 0;}
+}
+
+@keyframes fade-left {
+    from {position: relative; right: 0%; opacity: 1;}
+    to {position: relative; right: 25%; opacity: 0;}
+} */
