@@ -1,5 +1,6 @@
 /* Landing Page CSS */
 @import url("https://fonts.googleapis.com/css?family=MedievalSharp");
+@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
 
 /* Dark Brown rgb(85,60,35) */
 /* Light Brown peru */
@@ -13,19 +14,22 @@ body {
     padding: 0;
     margin: 0;
     color: silver;
+    overflow-x: hidden;
+    font-family: 'Benne', serif;
     
 }
 
 h1 {
     color: peru;
-    font-family: MedievalSharp;
+    font-family: 'MedievalSharp';
     font-size: 5vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
 
-p {
+p, h3, a{
     font-size: 2vw;
+    
 }
 
 .button {
@@ -100,7 +104,10 @@ section {
     margin-right: 2vw;
 }
 .nav-item img {
+    display: flex;
     height: 5vw;
+    align-items: center;
+    justify-content: center;
     /* filter:drop-shadow(.1vw .1vw 1vw #ccc); */
 }
 
@@ -112,8 +119,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 2vw;
-    
+    font-size: 2.5vw;
 }
 
 .nav-item li:hover {
