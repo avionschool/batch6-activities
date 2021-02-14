@@ -486,6 +486,15 @@ nav{
         -webkit-clip-path:unset;
         transition: all .6s ease-in;
     }
+
+    nav .menu a{
+        transition: .35s ease-in-out;
+    }
+
+    nav .menu a:hover{
+        border-bottom: 2px solid red;
+        
+    }
     
     nav a{
         text-decoration: none;

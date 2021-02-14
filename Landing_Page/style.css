@@ -6,26 +6,37 @@
 
 
 #header{
-    background-color: rgba(0, 0, 0, 0.74);
+    background-color: rgba(0, 0, 0, 0.63);
     display: grid;
     grid-template-rows: 10rem auto auto;  
     height: 100vh;
 }
 /*-------------Navigation--------------*/
 nav{
-    position: fixed;
+    position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.699);
     color: white;
     z-index: 2;
     width: 100%;
-    height: 8vh;
+    height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding-left:10px ;
-    padding-right:10px ;
+    padding-left:20px ;
+    padding-right:20px ;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transition: .5s ease;
+
     
+}
+
+nav.scroll{
+    padding-left:8px ;
+    padding-right:8px ;
+    height: 8vh;
+    background-color: rgba(0, 0, 0, 0.699);
+    position: fixed;
 }
 
 /*NAVIGATION - MENU BUTTONS-----------------------*/
@@ -48,13 +59,12 @@ nav .menu{
     justify-content: space-around;
     align-items: center;
     width: 500px;
-    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #000000;
+    background-color: #000000e0;
     flex-direction: column;
     clip-path: circle(100px at 90% -18%);
     -webkit-clip-path: circle(100px at 90% -18%);
@@ -81,7 +91,6 @@ nav a{
 
 
 .logo{
-    padding: 5px;
     display: flex;
     justify-content: center;
     
@@ -153,6 +162,7 @@ nav a{
     font-size: 16px;
     font-family: 'Lora', serif;
     font-weight: 700;
+    transition: .4s ease-in;
 }
 
 
@@ -180,7 +190,7 @@ nav a{
 .section .outer{
     width: 100%;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.74);
+    background-color: rgba(0, 0, 0, 0.623);
 }
 
 .section .inner{
@@ -203,7 +213,7 @@ nav a{
 
 /*SECTION CONTAINER (FEATURES - PLATFORM)*/
 .transparent{
-    background-color: rgba(0, 0, 0, 0.74);
+    background-color: rgba(0, 0, 0, 0.623);
     padding: 10px;
 }
 
@@ -400,6 +410,11 @@ right: 45px;
     border-bottom: 2px solid turquoise;
     background-color: black;
     color: white;
+    transition: .4s ease-in;
+}
+
+.button button:hover{
+    background-color: turquoise;
 }
 
 /*-------------PLATFORM-----------------------------*/
@@ -466,6 +481,10 @@ right: 45px;
     border-left:2px solid red ;
     border-right: 2px solid turquoise;
     border-bottom: 2px solid turquoise;
+    transition: .4s ease-in;
+}
+#platform figcaption:hover{
+    background-color: turquoise;
 }
 
 figcaption a{
