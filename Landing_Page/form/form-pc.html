@@ -12,7 +12,7 @@
     <body>
         <main>
             <!---FORMS-------------------------->
-            <form action="../thank-you-page/thank-you-page.html" method="GET" class="payment-form">
+            <form action="../thank-you-page/thank-you-page.html" method="GET" class="payment-form" id="form">
                 <div class="platform-chosen">
                     <img src="../assets/dmc5-pc.png" alt="pc-platform">
                     <i class="fab fa-steam"></i>
@@ -21,11 +21,11 @@
             <ul class="basic-info">
                 <li>
                     <label for="name">*Name</label><br>  
-                    <input class="input" type="text" name="name" id="name" autocomplete="off" required>
+                    <input class="input" type="text" name="name" id="name" autocomplete="off" placeholder="Name" required>
                 </li>
                 <li>
                     <label for="email">*Email</label><br>
-                    <input class="input" type="email" name="email" id="email" autocomplete="off" required>    
+                    <input class="input" type="email" name="email" id="email" autocomplete="off" placeholder="Email" required>    
                 </li>
                 <li>
                     <label for="birthdate">*Birthday</label><br>
@@ -302,14 +302,14 @@
                 </li>
                 <li>
                     <label for="city">*City</label><br>
-                    <input class="input" type="text" name="city" id="city" required>
+                    <input class="input" type="text" name="city" id="city" placeholder="City" required>
                 </li>
                 <li>
                     <label for="postal">*Postal Code</label><br>
-                    <input class="input" type="number"min ="0" max="9999" required id="postal">
+                    <input class="input" type="number"min ="0" max="9999" required id="postal" placeholder="Postal Code">
                 </li>
             </ul>
-            <input class="button" type="submit" name="button" value="Buy">
+            <input class="button" type="submit" id="submit" name="button" value="Buy">
             </form>
             <div class="back-btn">
                 <a href="../index.html"><i class="fas fa-chevron-left"></i></a>

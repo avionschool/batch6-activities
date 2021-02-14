@@ -82,7 +82,7 @@ nav .transfer{
     -webkit-clip-path: circle(1200px at 90% 8%);
 }
 
-nav a{
+nav .nav-link{
     text-decoration: none;
     color: rgb(241, 241, 241);
     text-shadow:  turquoise  1px 0 8px;

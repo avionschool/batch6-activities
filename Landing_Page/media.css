@@ -496,10 +496,10 @@ nav{
         
     }
     
-    nav a{
+    nav .nav-link{
         text-decoration: none;
         color: rgb(241, 241, 241);
-        font-size: 28px;
+        font-size: 25px;
     }
 
     /*BACKGROUND VIDEO*/
