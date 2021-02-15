@@ -10,3 +10,6 @@ Assignments:
 
 Activity:
 - [First Activity](Activity-1/index.html)
+
+Projects:
+- [Landing Page](Landing-Page/html/index.html)

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tindahan landing page</title>
+</head>
+
+<body>
+    <section class="section-top">
+        <div class="circle"></div>
+        <header id="header">
+            <a href="">
+                <img id="header__img" src="../images/cart.png" alt="">
+            </a>
+            <div class="toggle" onclick="toggle();"></div>
+
+            <nav id="nav-bar">
+                <ul class="navigation">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#WN" class="nav-link">What's New?</a></li>
+                    <li><a href="#contacts" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>It's not just a Store <br>It's <span>Aling Nena's</span></h2>
+                <p>Shopping according to your imagination, Having the best quality products, A place where everything
+                    special, Your neighborhood grocers, For the food lovers.</p>
+                <a href="http://www.snrshopping.com/">Learn More</a>
+            </div>
+
+            <div class="imgBox">
+                <img class="frontImage" src="../images/img1.png">
+            </div>
+        </div>
+
+        <ul class="thumb">
+            <li><img src="../images/thumb1.png" onclick="imgSlider('../images/img1.png');changeCircleColor('#ec8c0e')">
+            </li>
+            <li><img src="../images/thumb3.png" onclick="imgSlider('../images/img3.png');changeCircleColor('#F5E579')">
+            </li>
+            <li><img src="../images/thumb2.png" onclick="imgSlider('../images/img2.png');changeCircleColor('#F55B57')">
+            </li>
+        </ul>
+    </section>
+
+    <section class="section-2 video">
+
+        <div class="video__taglines">
+            <h2>
+                <ul>
+                    <li>A better Choice</li>
+                    <li>Friendly Environment</li>
+                    <li>Fresh Foods - 24/7</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div id="video">
+            <iframe src="https://www.youtube.com/embed/ZVdn6qSFPe4" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+
+
+    <section class="section-3 testimonials" id="reviews">
+        <h1>Reviews</h1>
+
+        <div class="testiContainer">
+            <div class="testiBox">
+                <img src="../images/kris.webp" class="img__testi">
+                <div class="names">Kris Aquino</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>I like to make buy here at Aling Nena's. Because?
+                </p>
+            </div>
+
+            <div class="testiBox">
+                <img src="../images/pau.png" class="img__testi">
+                <div class="names">Sir Pau</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Okay dito mga men!
+                </p>
+            </div>
+
+            <div class="testiBox">
+                <img src="../images/ed-caluag2.jpg" class="img__testi">
+                <div class="names">Ed Caluag</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Hindi ako nandito para makipag-away. Pero solid si Aling Nena.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-4 section__whatsNew" id="WN">
+        <div class="leftandright">
+            <div class="left">
+                <h2>What's New?</h2><br>
+                <p>Shopping made easy and safer with cashless payment!</p><br>
+                <p>We accept credit card and Gcash payments</p>
+            </div>
+
+            <div class="right">
+                <h2>For other news and updates</h2>
+                <p>Leave us your email</p>
+
+                <input type="email" name="email" id="email" placeholder="enter your email" required>
+                <a class="rightSubmit">Submit</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-5 section__contacts" id="contacts">
+        <h1>Contact Us</h1>
+        <p>For inquiries and questions, you can talk to us here:</p>
+        <div class="contactsContainer">
+
+            <div class="contacts">
+                <img src="../images/telephone.png">
+                <p>09123456789</p>
+            </div>
+
+            <div class="contacts">
+                <img src="../images/email.png">
+                <p>alingnena@gmail.com</p>
+            </div>
+
+            <div class="contacts">
+                <img src="../images/location.png">
+                <p>Pasay City</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footerContainer">
+            <h1>Want to make Utang?</h1>
+            <h1>Be a member now!</h1>
+            <p><a class="signUp">Sign up</a></p>
+        </div>
+
+        <!-- social medias -->
+        <ul class="socialMedia">
+            <li><a href=""><img src="../images/facebook.png"></a></li>
+            <li><a href=""><img src="../images/instagram.png"></a></li>
+            <li><a href=""><img src="../images/twitter.png"></a></li>
+        </ul>
+        <div class="signature">
+            <h4>eliezer ambion</h4>
+        </div>
+    </footer>
+
+    <div class="modal-bg">
+        <div class="modal">
+            <form id="modal-form" action="../html/thankyou.html">
+                <h3>Membership Form</h3>
+                <label for="name">Name: </label>
+                <input type="text" name="name" placeholder="enter your name" required>
+                <label for="age">Age: </label>
+                <input type="number" name="age" placeholder="enter your age" min="18" max="100" required>
+                <label for="email">Email: </label>
+                <input type="email" name="email" placeholder="enter your email" required>
+                <button class="modal-btn">Done</button>
+                <span class="modal-closeBtn">&times;</span>
+            </form>
+        </div>
+    </div>
+
+    <div class="continueBrowsing">
+        <div class="CBcontainer">
+            <h2>Thank you for subscribing!</h2>
+            <p><a class="cbBtn">Continue Browsing</a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
