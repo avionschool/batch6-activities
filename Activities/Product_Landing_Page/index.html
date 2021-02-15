@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="#features" class="nav nav-link">Features</a></li>
                     <li><a href="#media" class="nav nav-link">Media</a></li>
-                    <li><a href="#subscribe" class="nav nav-link">Subscribe</a></li>
+                    <li><a href="#news" class="nav nav-link">Subscribe</a></li>
                     <li><a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><button type="button" class="nav-button" >Purchase</button></a></li>
                 </ul>
             </div>    
@@ -31,12 +31,15 @@
     <!-- Masthead -->
     <section class="fade" id="masthead">
         <div class="opening">
-            <h1>
-                [Insert exciting text]
-            </h1>
-            <p>
-                [Clarify exciting text]
-            </p>
+            <div class="container">
+                <h1>
+                    Let your reign begin in Crusader Kings III
+                </h1>
+                <p>
+                    A life of medieval drama and majesty awaits you! Build history’s greatest dynasty through war, diplomacy or intrigue.
+                </p>
+            </div>
+           
         </div>
        
     </section>
@@ -52,22 +55,36 @@
                 <button class="button button-left" onclick="plusDivs(-1, 'left');">&#10094;</button>
                 <div class="slide-show">
                     <div class="slide fade">
-                        <div class="slide-title"><h1>[Insert Title]</h1></div>
-                        <div class="slide-description"><p>[Insert Description]</p></div>
-                        <img src="images/Duel.jpg" alt="" class="slide-image">
+                        <div class="slide-title"><h1>Engage in Diplomacy</h1></div>
+                        <div class="slide-description"><p>Interact with fellow rulers, each with unique personalities and characteristics. Secure alliances through marriages and bind your dynasties together</p></div>
+                        <img src="images/Feature-diplomacy.jpg" alt="" class="slide-image">
                     </div>
     
                     <div class="slide fade">
-                        <div class="slide-title"><h1>[Insert Title]</h1></div>
-                        <div class="slide-description"><p>[Insert Description]</p></div>
-                        <img src="images/Country.jpg" alt="" class="slide-image">
+                        <div class="slide-title"><h1>Partake in Subterfuge</h1></div>
+                        <div class="slide-description"><p>Concoct devious schemes that benefit you and hinders your enemies. Bribe, blackmail, or assassinate your rivals in a game of cunning and intrigue</p></div>
+                        <img src="images/Feature-intrigue.jpg" alt="" class="slide-image">
                     </div>
     
                     <div class="slide fade">
-                        <div class="slide-title"><h1>[Insert Title]</h1></div>
-                        <div class="slide-description"><p>[Insert Description]</p></div>
-                        <img src="images/Diplomacy.jpg" alt="" class="slide-image">
+                        <div class="slide-title"><h1>Fight Your Foes</h1></div>
+                        <div class="slide-description"><p>Take what is rightfully yours through strength of arms. Call your levies, train Men-at-Arms, and hire mercenaries to fight your claims and glory</p></div>
+                        <img src="images/Feature-war.jpg" alt="" class="slide-image">
                     </div>
+
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Manage your Realm</h1></div>
+                        <div class="slide-description"><p>As ruler, you are responsible for governing your lands. Keep an eye on your finances and improve your holdings to usher the prosperity of your domains</p></div>
+                        <img src="images/Feature-management.jpg" alt="" class="slide-image">
+                    </div>
+
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Choose Your Faith</h1></div>
+                        <div class="slide-description"><p>Faith plays an important role in Medieval times. With countless creeds and beliefs, you can choose from a variety of religions or even form your own</p></div>
+                        <img src="images/Feature-religion.jpg" alt="" class="slide-image">
+                    </div>
+
+
                   
                 </div>
                 <button class="button button-right" onclick="plusDivs(+1, 'right');">&#10095;</button>
@@ -76,6 +93,8 @@
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
             </div>
         </div>
     </section>
@@ -191,16 +210,16 @@
     <!-- Videos End-->
 
     <!-- Forms -->
-    <section class="fade" id="subscribe">
+    <section class="fade" id="news">
         <div class="filter-column">
             <h1>
-                Stay Updated
+                News and Social Media
             </h1>
             <div class="subscribe-container">
-                <h3>[Insert text of why to subscribe here]</h3>
-                <form action="GET" id="form">
-                    <div class="form-item"><input type="email" id="email" placeholder="Your email address"></div>
-                    <div class="form-item"><input type="submit" class="form-button" value="Subscribe"></div>
+                <h3>Subscribe now to stay up to date with the lastest news!</h3>
+                <form action="subscribe.html" method="GET" id="form">
+                    <div class="form-item"><input type="email" name="email" id="email" placeholder="Your email address"></div>
+                    <div class="form-item"><input type="submit" class="form-button" id="submit" value="Subscribe"></div>
                     
                 </form>
             </div>
@@ -213,8 +232,6 @@
                 <a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><img src="images/steam.png" alt=""></a>
             </div>
         </div>
-        
-        
     </section>
     <!-- Forms End -->
 

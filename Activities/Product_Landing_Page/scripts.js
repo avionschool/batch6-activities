@@ -4,7 +4,6 @@
 const navLinks = document.getElementsByClassName("nav");
 const sections = document.getElementsByTagName("section");
 
-
 for(let i=0; i<navLinks.length; i++) {
   navLinks[i].addEventListener("click", sectioning)
 }
@@ -14,19 +13,18 @@ function sectioning() {
   
   selectedSection = selectedSection.split("#").pop();
   console.log(selectedSection);
-  for (let section in sections) {
-    let navStyle = navLinks[section].style
-    if (sections[section].id === selectedSection) {
-      sections[section].style.display = "flex"
-      navStyle.textShadow = ".1vw .1vw 1vw #fff, .1vw .1vw 1vw #ccc"
-      navStyle.filter = "drop-shadow(.1vw .1vw 1vw #ccc)"
-    }
-    else {
-      sections[section].style.display = "none"
-      navStyle.textShadow = "inherit"
-      navStyle.filter = "inherit"
-   
-    }
+    for (let i=0; i<sections.length; i++) {
+      let navStyle = navLinks[i].style
+      if (sections[i].id === selectedSection) {
+        sections[i].style.display = "flex"
+        navStyle.textShadow = ".1vw .1vw 1vw #fff, .1vw .1vw 1vw #ccc"
+        navStyle.filter = "drop-shadow(.1vw .1vw 1vw #ccc)"
+      }
+      else {
+        sections[i].style.display = "none"
+        navStyle.textShadow = "inherit"
+        navStyle.filter = "inherit"
+      }    
   }
 }
 
