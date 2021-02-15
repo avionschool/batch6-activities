@@ -12,6 +12,7 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 2. [Activity 2](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-2%20Survey%20Form/surveyform.html) - Survey Form ( FOR REVISED ).
 3. [Activity 3](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-3%20Chess%20Board%20Flex/index.html) - Chess Board Flex.
 4. [Activity 4](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-4%20Chess%20Board%20Grid/chess.html) - Chess Board Grid.
+5. [Activity 5](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-5%20Landing%20Pages/landingpage.html) - Landing Page.
 
 
 
