@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bank.css" type="text/css">
+    <title>Online Banking</title>
+</head>
+<body>
+    <div class="container-bank">
+        <form action="resultbank.html" method="GET">
+            <fieldset class="field-set">
+                <legend>Payment Information</legend><br>
+                <input class="input-css" type="text" name="nameOnCard" id="nameOnCard" required placeholder="Name on Card"><br><br>
+			    <input class="input-css" type="text" name="cardNumber" id="cardNumber" required placeholder="Card Number"><br><br>
+                <input class="input-css" type="date" name="ddmmyy" id="ddmmyy" required placeholder="DD / MM / YYYY"><br><br>
+			    <input class="input-css" type="text" name="securityCode" id="securityCode" maxlength="4" required placeholder="Security Code"><br><br>
+			    <input class="input-css" type="text" name="zip" id="zip" maxlength="4" required placeholder="Zip/Postal Code"><br><br>
+
+                <p>Menu: </p>
+			    <select name="menu">
+				<option value="Win">Chocolate Milk-Tea</option>
+				<option value="Tar">BlueBerry Milk-Tea</option>
+				<option value="Mat">Bubble Milk-Tea</option>
+				<option value="Choc">Bubble Tea</option>
+                <option value="Choc">Matcha Milk-Tea</option>
+                <option value="Choc">Pearl Milk-Tea</option>
+			    </select>
+                <br><br>
+
+                <textarea class="input-css" name="message" placeholder="Quantity" size="40"></textarea><br><br>
+			    <textarea class="input-css" name="message" placeholder="Additional Order" size="40"></textarea><br><br>
+                <textarea class="input-css" name="message" placeholder="Quantity for Additional Order" size="40"></textarea><br><br>
+			    <p>Specific the total of amount: </p>
+			    <input class="input-css" type="number" name="cardn ame" placeholder="Total of Payment"><br><br>
+
+                <input type="checkbox" name="radio-1" id="radio-1" required value="1"> <label for="checkbox-smytoms-1">Remember this Card</label>
+                <br><br><br>
+
+                <button class="btn" type="submit" id="submit">Submit</button><br><br>
+                
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

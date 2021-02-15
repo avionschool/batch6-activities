@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanalei&family=Josefin+Sans:wght@700&family=Libre+Baskerville&family=Stalinist+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+:root {
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  display: grid;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+  color: silver;
+}
+
+.navbar img {
+  padding: 10px 10px;
+  margin-left: 50px;
+}
+
+.homelogo {
+  height: 45px;
+  width: 45px;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+section#home {
+  background: url("../images/homepage.jpg") no-repeat center center / cover;
+}
+
+section#menu {
+  background: white;
+  /*animation: anim 5s linear infinite;*/
+}
+
+section#contact {
+  background: url("../images/contactpages.jpg") no-repeat center center / cover;
+}
+/*
+@keyframes anim {
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+*/
+
+.btn-home {
+  padding: 0.6rem 1.5rem;
+  text-decoration: none;
+  border: 0;
+  color: black;
+  background: blue;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#home a:hover {
+  background-color: #a9a9a9;
+}
+
+#home p {
+  color: #a9a9a9;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+}
+
+#home h1 {
+  color: #a9a9a9;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 5em;
+}
+
+#menu h1,
+h4 {
+  color: #a9a9a9;
+  font-family: "Lobster", cursive;
+}
+
+.menu-item img:hover {
+  transform: translateY(-25px);
+}
+
+.forms {
+  color: #a9a9a9;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.h2-faqs {
+  font-size: 50px;
+}
+
+.box-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid black 2px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 10px 10px;
+  margin: 20px 100px;
+  background-color: #8fbc8f;
+}
+
+.box-1 p {
+  font-size: 20px;
+  color: #2f4f4f;
+  font-family: "Raleway", sans-serif;
+}
+.box-1 h2 {
+  font-family: "Raleway", sans-serif;
+}
+
+.menu-item img {
+  width: 150px;
+  height: 150px;
+}
+
+.grid-menu {
+  padding: 10px 150px;
+  margin: 15px 15px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 100px;
+}
+
+.btn {
+  padding: 5px 5px;
+  margin: 15px 20px;
+  border-radius: 5px;
+  width: 15%;
+  color: black;
+  background: blue;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #a9a9a9;
+}
+
+.contact-us {
+  padding: 10px 10px;
+  border-radius: 2px;
+  width: 50%;
+}
+
+.payment {
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+}
+.pay-system-icon {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 64px;
+  width: 128px;
+}
+
+.visa-card p {
+  margin-left: 200px;
+}
+
+.electronic-card p,
+button {
+  margin-left: 200px;
+}
+
+.pay-system-icon-electronic {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 64px;
+  width: 128px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 1083px) {
+  .box-1 p {
+    font-size: 15px;
+    color: #2f4f4f;
+    font-family: "Raleway", sans-serif;
+  }
+  .box-1 h2 {
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 978px) {
+  #home p {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+  }
+
+  #home h1 {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: 954px) {
+  #home p {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  #home h1 {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 3.5em;
+  }
+}
+
+@media only screen and (max-width: 896px) {
+  #home p {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  #home h1 {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 841px) {
+  #home p {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 0.5rem;
+  }
+
+  #home h1 {
+    color: #a9a9a9;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 798px) {
+  .grid-menu {
+    padding: 10px 150px;
+    margin: 15px 15px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 726px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar ul li {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f4f4f4;
+  }
+
+  .navbar ul li a:hover {
+    color: silver;
+  }
+
+  .navbar img {
+    padding: 10px 10px;
+    margin-left: 50px;
+  }
+}
