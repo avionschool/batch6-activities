@@ -31,9 +31,13 @@ videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
 
 nextBtn.addEventListener('click', function(){
     if(videos[counter].id === 'last-vid'){
-        videos.style.transform = 'none';
+        this.style.visibility = 'hidden';
+        prevBtn.style.visibility = 'visible';
+        this.style.transition = 'visibility .05s linear'
     }
     else{
+        prevBtn.style.visibility = 'visible';
+        this.style.transition = 'color .1s linear';
         videoContainer.style.transition = 'transform 0.4s ease-in-out';
         counter++;
         //console.log(counter);
@@ -43,9 +47,13 @@ nextBtn.addEventListener('click', function(){
 
 prevBtn.addEventListener('click', function(){
     if(videos[counter].id === 'first-vid'){
-        videos.style.transform = 'none';
+        this.style.visibility = 'hidden';
+        this.style.transition = 'visibility .05s linear'
+        
     }
     else{
+        nextBtn.style.visibility = 'visible';
+        this.style.transition = 'color .1s linear';
         videoContainer.style.transition = 'transform 0.4s ease-in-out';
         counter--;
         console.log(counter);
@@ -54,20 +62,22 @@ prevBtn.addEventListener('click', function(){
     
 });
 
-
-
 //For Header Animation
 const navBar = document.querySelector('nav');
+const upBtn = document.querySelector('.up-button');
 console.log(navBar);
 
 function scrollDown(){
     const downScroll = window.pageYOffset;
     if(downScroll >5){
         navBar.classList.add('scroll');
+        upBtn.classList.add('show-button');
     }
     else{
         navBar.classList.remove('scroll');
+        upBtn.classList.remove('show-button');
     }
 }
+
 
 window.addEventListener('scroll', scrollDown);
