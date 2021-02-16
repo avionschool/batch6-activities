@@ -635,11 +635,13 @@ nav{
 }
 
 /*CHARACTERS*/
+
 .character-container img{
-    width: 65%;
+    width: 55%;
     display: block;
     margin: 15px;
 }
+
 
 .character-container h3{
     margin: 0;
@@ -650,7 +652,9 @@ nav{
     font-size: 25px;
     padding-left: 150px;
     padding-right: 150px;
+    width: 65%;
 }
+
 
 /*EMBEDDED VIDEO-------------*/
 .embed-video{
