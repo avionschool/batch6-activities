@@ -32,17 +32,22 @@
         font-size: 2vw;
     }
 
+    .button:hover {
+        filter:drop-shadow(.1vw .1vw 1vw #ccc);
+    }
+
     .button {
         display: flex;
         align-items: center;
         justify-content: center;
         color: peru;
-        background-color: rgb(85,60,35);
+        background-color: transparent;
         width: 2vw;
         height: 4vw;
         font-size: 3.5vw;
         outline: none;
         box-shadow: none;
+        border: none;
     }
 
     .filter-column {
@@ -505,12 +510,13 @@
         align-items: center;
         justify-content: center;
         color: peru;
-        background-color: rgb(85,60,35);
+        background-color: transparent;
         width: 3vw;
         height: 6vw;
         font-size: 5vw;
         outline: none;
         box-shadow: none;
+        border: none;
     }
     
     .filter-column {
