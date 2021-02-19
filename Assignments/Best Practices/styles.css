@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://c.pxhere.com/images/7d/21/ed588c6f9dd84ff1cf8f96100885-1450843.jpg!d);
+    
+}
+
+#title {
+    background-color: lightblue;
+    width:600px;
+    border: 10px solid ;
+    margin: 10px;
+}
+
+#title h3 {
+    text-align: right;
+    position: relative;
+    right: 45px;
+    
+}
+
+.description {
+    width: 900px;
+    text-align: justify;
+    line-height: 30px;
+    background-color:lightblue;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    border: 10px solid ;
+    margin: 10px;
+}
+
+.description h3 {
+    width: 800px;
+    position: relative;
+    left: 50px;
+    
+}
+
+#source{
+    text-align: left;
+    margin: 10px;
+    color: lightblue
+}
+
+#source a{
+    color: #b5a642;
+}

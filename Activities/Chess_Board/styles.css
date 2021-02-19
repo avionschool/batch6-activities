@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=MedievalSharp");
+
+@media screen and (min-width: 901px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("images/battle_bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 25%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1 {
+        font-size: 4vw;
+        margin: 0;
+        margin-top: 1vw;
+        margin-bottom: -2vw;
+        color:#335B96;
+        font-family: MedievalSharp;
+    }
+
+    #chess-board {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 8%;
+        width: 35vw;
+        height: 35vw;
+        justify-content: center;
+        background-color: burlywood;
+        border: solid #966F33 2vw;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 10%;
+    }
+
+    .dark-box {
+        background-color: #966F33;
+        width: 10%;
+        display: flex;
+        font-size: 3vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .light-box {
+        background-color: burlywood;
+        font-size: 3vw;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filler-box {
+        
+        width: 10%;
+    }
+
+    .character-box {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+        color: black;
+    }
+
+    .border-top {
+        border-top: #966F33 solid .25vw;
+    }
+
+    .border-left {
+        border-left: #966F33 solid .25vw;
+    }
+
+    .border-right {
+        border-right: #966F33 solid .25vw;
+    }
+
+    .border-bottom {
+        border-bottom: #966F33 solid .25vw;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("images/battle_bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 25%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1 {
+        font-size: 4vw;
+        margin: 0;
+        margin-top: 1vw;
+        margin-bottom: -2vw;
+        color:#335B96;
+        font-family: MedievalSharp;
+    }
+
+    #chess-board {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 8%;
+        width: 70vw;
+        height: 70vw;
+        justify-content: center;
+        background-color: burlywood;
+        border: solid #966F33 2vw;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 10%;
+    }
+
+    .dark-box {
+        background-color: #966F33;
+        width: 10%;
+        display: flex;
+        font-size: 6vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .light-box {
+        background-color: burlywood;
+        font-size: 6vw;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filler-box {   
+        width: 10%;
+    }
+
+    .character-box {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vw;
+        color: black;
+    }
+
+    .border-top {
+        border-top: #966F33 solid .25vw;
+    }
+
+    .border-left {
+        border-left: #966F33 solid .25vw;
+    }
+
+    .border-right {
+        border-right: #966F33 solid .25vw;
+    }
+
+    .border-bottom {
+        border-bottom: #966F33 solid .25vw;
+    }
+
+}

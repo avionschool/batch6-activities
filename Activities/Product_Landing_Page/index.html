@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusader Kings III</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <!-- Navbar -->
+        <nav id="nav-bar">
+            <div class="nav-item">
+                <a href="#masthead" class="nav"><img src="images/CK3_logo.png" alt="" id="header-img"></a>
+            </div>
+            <div class=nav-item>
+                <ul>
+                    <li><a href="#features" class="nav nav-link">Features</a></li>
+                    <li><a href="#media" class="nav nav-link">Media</a></li>
+                    <li><a href="#news" class="nav nav-link">Subscribe</a></li>
+                    <li><a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><button type="button" class="nav-button" >Purchase</button></a></li>
+                </ul>
+            </div>    
+        </nav>
+        <!-- Navbar End -->
+    </header>
+    <!-- Header End-->
+
+    <!-- Masthead -->
+    <section class="fade" id="masthead">
+        <div class="opening">
+            <div class="container">
+                <h1>
+                    Let your reign begin in Crusader Kings III
+                </h1>
+                <p>
+                    A life of medieval drama and majesty awaits you! Build history’s greatest dynasty through war, diplomacy or intrigue.
+                </p>
+            </div>
+           
+        </div>
+       
+    </section>
+    <!-- Masthead End -->
+
+    <!-- Features -->
+    <section class="fade" id="features">
+        <div class="filter-column">
+            <h1>
+                What's In Store
+            </h1>
+            <div class="slideshow-container">
+                <button class="button button-left" onclick="plusDivs(-1, 'left');">&#10094;</button>
+                <div class="slide-show">
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Engage in Diplomacy</h1></div>
+                        <div class="slide-description"><p>Interact with fellow rulers, each with unique personalities and characteristics. Secure alliances through marriages and bind your dynasties together</p></div>
+                        <img src="images/Feature-diplomacy.jpg" alt="" class="slide-image">
+                    </div>
+    
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Partake in Subterfuge</h1></div>
+                        <div class="slide-description"><p>Concoct devious schemes that benefit you and hinders your enemies. Bribe, blackmail, or assassinate your rivals in a game of cunning and intrigue</p></div>
+                        <img src="images/Feature-intrigue.jpg" alt="" class="slide-image">
+                    </div>
+    
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Fight Your Foes</h1></div>
+                        <div class="slide-description"><p>Take what is rightfully yours through strength of arms. Call your levies, train Men-at-Arms, and hire mercenaries to fight your claims and glory</p></div>
+                        <img src="images/Feature-war.jpg" alt="" class="slide-image">
+                    </div>
+
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Manage your Realm</h1></div>
+                        <div class="slide-description"><p>As ruler, you are responsible for governing your lands. Keep an eye on your finances and improve your holdings to usher the prosperity of your domains</p></div>
+                        <img src="images/Feature-management.jpg" alt="" class="slide-image">
+                    </div>
+
+                    <div class="slide fade">
+                        <div class="slide-title"><h1>Choose Your Faith</h1></div>
+                        <div class="slide-description"><p>Faith plays an important role in Medieval times. With countless creeds and beliefs, you can choose from a variety of religions or even form your own</p></div>
+                        <img src="images/Feature-religion.jpg" alt="" class="slide-image">
+                    </div>
+
+
+                  
+                </div>
+                <button class="button button-right" onclick="plusDivs(+1, 'right');">&#10095;</button>
+            </div>
+            <div class="slide-radio">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Features End-->
+
+    <!-- Media -->
+    <section class="fade" id="media">
+        <div class="filter-column">
+            <h1>
+                Trailers and Tutorials
+            </h1>
+            <video src="videos/CK3_Announcement_Trailer.mp4" type="video/mp4" height="auto" width="65%" controls id="video"></video>
+            <div class="video-list">
+                <button class="button button-left" onclick="plusDivs2(-1, 'left')">&#10094;</button>
+                <!-- Video Group 1 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Announcement_Trailer_thumbnail.jpg" alt="Announcement Trailer" class="thumbnail" id="videos/CK3_Announcement_Trailer.mp4">
+                        <p>Announcement Trailer</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Story_Trailer_thumbnail.jpg" alt="Story Trailer" class="thumbnail" id="videos/CK3_Story_Trailer.mp4">
+                        <p>Story Trailer</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Release_Trailer_thumbnail.jpg" alt="Release Trailer" class="thumbnail" id="videos/CK3_Release_Trailer.mp4">
+                        <p>Release Trailer</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 2 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-characters.jpg" alt="Characters" class="thumbnail" id="videos/Intro-characters.mp4">
+                        <p>Introduction - Characters</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-dynasty.jpg" alt="Dynasty" class="thumbnail" id="videos/Intro-dynasty.mp4">
+                        <p>Introduction - Dynasty</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-succession.jpg" alt="Succession" class="thumbnail" id="videos/Intro-succession.mp4">
+                        <p>Introduction - Succession</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 3 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-schemes.jpg" alt="Schemes" class="thumbnail" id="videos/Intro-schemes.mp4">
+                        <p>Introduction - Schemes</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-vassals.jpg" alt="Vassals" class="thumbnail" id="videos/Intro-vassals.mp4">
+                        <p>Introduction - Vassals</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-domains.jpg" alt="Domains" class="thumbnail" id="videos/Intro-domains.mp4">
+                        <p>Introduction - Domains</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 4 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-money.jpg" alt="Money" class="thumbnail" id="videos/Intro-money.mp4">
+                        <p>Introduction - Money</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-technology.jpg" alt="Technology" class="thumbnail" id="videos/Intro-technology.mp4">
+                        <p>Introduction - Technology</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-military.jpg" alt="Military" class="thumbnail" id="videos/Intro-military.mp4">
+                        <p>Introduction - Military</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+
+                <!-- Video Group 5 -->
+                <div class="video-items">
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-war.jpg" alt="War" class="thumbnail" id="videos/Intro-war.mp4">
+                        <p>Introduction - War</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-battles.jpg" alt="Battles" class="thumbnail" id="videos/Intro-battles.mp4">
+                        <p>Introduction - Battles</p>
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="images/Intro-religion.jpg" alt="Religion" class="thumbnail" id="videos/Intro-religion.mp4">
+                        <p>Introduction - Religion</p>
+                    </div>    
+                </div>
+                <!-- End Group -->
+                
+                <button class="button button-right" onclick="plusDivs2(+1, 'right')">&#10095;</button>
+
+            </div>
+            <div class="slide-radio">
+                <span class="dot2" onclick="currentSlide2(1)"></span>
+                <span class="dot2" onclick="currentSlide2(2)"></span>
+                <span class="dot2" onclick="currentSlide2(3)"></span>
+                <span class="dot2" onclick="currentSlide2(4)"></span>
+                <span class="dot2" onclick="currentSlide2(5)"></span>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Videos End-->
+
+    <!-- Forms -->
+    <section class="fade" id="news">
+        <div class="filter-column">
+            <h1>
+                News and Social Media
+            </h1>
+            <div class="subscribe-container">
+                <h3>Subscribe now to stay up to date with the latest news!</h3>
+                <form action="subscribe.html" method="GET" id="form">
+                    <div class="form-item"><input type="email" name="email" id="email" placeholder="Your email address" required></div>
+                    <div class="form-item"><input type="submit" class="form-button" id="submit" value="Subscribe"></div> 
+                </form>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/Crusaderkings" target="_blank"><img src="images/facebook-wooden.png" alt=""></a>
+                <a href="https://twitter.com/CrusaderKings"  target="_blank"><img src="images/twitter-wooden.png" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCjzOFLm1ZqQBOf_MMb4UJ2Q" target="_blank"><img src="images/youtube-wooden.png" alt="" ></a>
+                <a href="https://www.paradoxplaza.com/crusader-kings-iii/CKCK03GSK0000001-MASTER.html" target="_blank"><img src="images/paradox-wooden.png" alt=""></a>
+                <a href="https://store.steampowered.com/app/1158310/Crusader_Kings_III/" target="_blank"><img src="images/steam-wooden.png" alt=""></a>
+            </div>
+
+            
+            <!-- <footer>
+                Adrian Immanuel Ilaga &copy; 2021<br>
+                All rights reserved. 
+            </footer> -->
+        </div>
+
+    </section>
+    <!-- Forms End -->
+
+    <script src="scripts.js"></script>
+</body>
+</html>

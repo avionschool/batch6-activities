@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Title Section -->
+        <div class="title-block">
+            <h1 id="title">
+                ULAP9 Registration Form
+            </h1>
+            <p id="description">
+                Apply now for the ULAP9 Valorant gaming team by filling up the form below
+            </p>
+        </div>
+        <!-- Title Section -->
+       
+        <!-- Form Section -->
+        <div class="container">
+
+            <h2>
+                Registration Form
+            </h2>
+
+            <form action="results.html" method="GET" id="survey-form">
+            
+                <div class="form-item">
+                    <label for="name" id="name-label"><h3>NAME</h3></label>
+                    <input type="text" id="name" placeholder="Lastname, Firstname, Middlename" required>
+                </div>
+              
+                
+                <div class="form-item">
+                    <label for="email" id="email-label"><h3>EMAIL</h3></label>
+                    <input type="email" id="email" placeholder="Input email here" required>
+                    <!-- Delete when done: Add validation error if formatted wrong -->
+                </div>
+            
+                
+                <div class="form-item">
+                    <label for="number"><h3>MOBILE NUMBER</h3></label>
+                    <input type="tel" id="number" id="number-label" placeholder="09xx-xxx-xxxx" pattern=".{11,}" title="Must contain 11 digits" maxlength="11" required>
+                    <!-- Delete when done: Add validation error if input is not a number -->
+                </div>
+               
+                <div class="form-item">
+                    <label for=""><h3>PREFFERED VALORANT ROLE</h3></label>
+
+
+                        <input type="radio" id="controller" name="options" value="contorller" checked>
+                        <label for="controller">Controller</label><br>
+
+                        <input type="radio" id="duelist" name="options" value="duelist">
+                        <label for="duelist">Duelist</label><br>
+
+                        <input type="radio" id="initiator" name="options" value="initiator">
+                        <label for="initiator">Initiator</label><br>
+
+                        <input type="radio" id="sentinel" name="options" value="sentinel">
+                        <label for="sentinel">Sentinel</label><br>
+               
+                </div>
+
+                <div class="form-item">
+                    <label for="dropdown"><h3>CURRENT ACT RANK</h3></label>
+                    <select name="act-rank" id="dropdown" required>
+                        <option value="iron" >Iron</option>
+                        <option value="bronze">Bronze</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                        <option value="platinum">Platinum</option>
+                        <option value="diamond">Diamond</option>
+                        <option value="immortal">Immortal</option>
+                        <option value="radiant">Radiant</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for=""><h3>PREFERRED AGENTS</h3></label>
+                    
+                    <div class="columned-area">
+
+                        <!-- Column 1 -->
+                        <div class="form-column">
+                            <input type="checkbox" id="checkbox1" name="agents" value="breach">
+                            <label for="checkbox1">Breach</label><br>
+        
+                            <input type="checkbox" id="checkbox2" name="agents" value="brimstone">
+                            <label for="checkbox2">Brimstone</label><br>
+        
+                            <input type="checkbox" id="checkbox3" name="agents" value="cypher">
+                            <label for="checkbox3">Cypher</label><br>
+    
+                            <input type="checkbox" id="checkbox4" name="agents" value="jett">
+                            <label for="checkbox4">Jett</label><br>
+    
+                            <input type="checkbox" id="checkbox5" name="agents" value="killjoy">
+                            <label for="checkbox5">Killjoy</label><br>
+                        </div>
+    
+                        <!-- Column 2 -->
+                        <div class="form-column">
+                            <input type="checkbox" id="checkbox6" name="agents" value="omen">
+                            <label for="checkbox6">Omen</label><br>
+        
+                            <input type="checkbox" id="checkbox7" name="agents" value="phoenix">
+                            <label for="checkbox7">Phoenix</label><br>
+        
+                            <input type="checkbox" id="checkbox8" name="agents" value="raze">
+                            <label for="checkbox8">Raze</label><br>
+    
+                            <input type="checkbox" id="checkbox9" name="agents" value="reyna">
+                            <label for="checkbox9">Reyna</label><br>
+    
+                            <input type="checkbox" id="checkbox10" name="agents" value="sage">
+                            <label for="checkbox10">Sage</label><br>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="form-column">
+                            <input type="checkbox" id="checkbox11" name="checkbox" value="skye">
+                            <label for="checkbox11">Skye</label><br>
+        
+                            <input type="checkbox" id="checkbox12" name="checkbox" value="sova">
+                            <label for="checkbox12">Sova</label><br>
+        
+                            <input type="checkbox" id="checkbox13" name="checkbox" value="viper">
+                            <label for="checkbox13">Viper</label><br>
+    
+                            <input type="checkbox" id="checkbox14" name="checkbox" value="yoru">
+                            <label for="checkbox14">Yoru</label><br>
+    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="form-item">
+
+                    <label for="comments"><h3>ADDITIONAL COMMENTS</h3></label>
+                    <textarea id="comments" rows="4" cols="100"></textarea>
+                    
+                </div>
+
+                <div class="submit-area">
+                    <input type="submit" class="submit">
+                </div> 
+
+            </form>
+
+        </div>
+        <!-- Form Section -->
+
+    </body>
+</html>
