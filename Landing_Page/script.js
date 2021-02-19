@@ -118,18 +118,48 @@ window.addEventListener('scroll', scrollDown);
 
 //Character Modal
 
+//Nero
 const neroImg = document.querySelector('#nero img');
 const neroModal = document.querySelector('#nero-modal')
 const charContain = document.querySelector('#characters')
 
-
 neroImg.addEventListener('click', function(){
-        neroModal.style.opacity = '1';
-        neroModal.style.pointerEvents = 'all';
-        neroModal.style.transition = 'opacity .48s ease-in';
+    neroModal.style.opacity = '1';
+    neroModal.style.pointerEvents = 'all';
+    neroModal.style.transition = 'opacity .48s ease-in';
 });
 
 neroModal.addEventListener('click', function(){
-    this.style.opacity = '0';
-    this.style.pointerEvents = 'none';
+this.style.opacity = '0';
+this.style.pointerEvents = 'none';
+});
+
+//Dante
+const danteImg = document.querySelector('#dante img');
+const danteModal = document.querySelector('#dante-modal');
+
+danteImg.addEventListener('click', function(){
+    danteModal.style.opacity = '1';
+    danteModal.style.pointerEvents = 'all';
+    danteModal.style.transition = 'opacity .48s ease-in';
+});
+
+danteModal.addEventListener('click', function(){
+this.style.opacity = '0';
+this.style.pointerEvents = 'none';
+});
+
+//V
+const vImg = document.querySelector('#V img');
+const vModal = document.querySelector('#v-modal');
+
+vImg.addEventListener('click', function(){
+    vModal.style.opacity = '1';
+    vModal.style.pointerEvents = 'all';
+    vModal.style.transition = 'opacity .48s ease-in';
+});
+
+vModal.addEventListener('click', function(){
+this.style.opacity = '0';
+this.style.pointerEvents = 'none';
 });

@@ -675,6 +675,7 @@ nav{
 
 .character-container .main-char img:hover{
     transform: scale(1.3);
+    cursor: pointer;
 }   
 
 .main-char img{
