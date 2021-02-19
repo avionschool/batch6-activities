@@ -14,6 +14,8 @@ Go to [My Github Pages](https://buuloooy0318.github.io/batch6-activities/).
 4. [Activity 4](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-4%20Chess%20Board%20Grid/chess.html) - Chess Board Grid.
 5. [Activity 5](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-5%20Landing%20Pages/landingpage.html) - Landing Page.
 
+## Coding Challenges
+1. [Coding Challenge 1](https://buuloooy0318.github.io/batch6-activities/HTML_CSS/Activity-1%20TributePage/index.html) - BMI Formula.
 
 
 ## Author
