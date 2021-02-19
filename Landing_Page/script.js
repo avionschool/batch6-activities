@@ -16,7 +16,7 @@ burgerMenu.addEventListener("click",openMenu);
 menu.addEventListener("click",openMenu);
 
 
-//Slider Embedden Video
+//Slider Embedded Video
 
 const videoContainer = document.querySelector('#video');
 const videos = document.querySelectorAll('#video iframe');
@@ -33,12 +33,12 @@ nextBtn.addEventListener('click', function(){
     if(videos[counter].id === 'last-vid'){
         this.style.visibility = 'hidden';
         prevBtn.style.visibility = 'visible';
-        this.style.transition = 'visibility .05s linear'
+        this.style.transition = 'visibility .06s linear'
     }
     else{
         prevBtn.style.visibility = 'visible';
         this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.4s ease-in-out';
+        videoContainer.style.transition = 'transform 0.6s ease-in-out';
         counter++;
         //console.log(counter);
         videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
@@ -48,13 +48,13 @@ nextBtn.addEventListener('click', function(){
 prevBtn.addEventListener('click', function(){
     if(videos[counter].id === 'first-vid'){
         this.style.visibility = 'hidden';
-        this.style.transition = 'visibility .05s linear'
+        this.style.transition = 'visibility .06s linear'
         
     }
     else{
         nextBtn.style.visibility = 'visible';
         this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.4s ease-in-out';
+        videoContainer.style.transition = 'transform 0.6s ease-in-out';
         counter--;
         console.log(counter);
         videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
@@ -81,3 +81,55 @@ function scrollDown(){
 
 
 window.addEventListener('scroll', scrollDown);
+
+//Characters Slide
+
+// const nextChar = document.querySelector('#next-char');
+// const prevChar = document.querySelector('#prev-char');
+// const charPic = document.querySelectorAll('.main-char');
+// const picContainer = document.querySelector('.slider');
+
+// const picSize = charPic[0].clientWidth;
+
+// picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
+
+// nextChar.addEventListener('click', function(){
+//    if(charPic[counter].id == 'V'){
+//        null;
+//    }
+//    else{
+//     counter++;
+//     picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
+//     picContainer.style.transition = 'transform 0.95s ease-out';
+//    }
+//  });
+
+//  prevChar.addEventListener('click', function(){
+//      if(charPic[counter].id == 'nero'){
+//          null;
+//      }
+//      else{
+//          counter--;
+//          picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
+//          picContainer.style.transition = 'transform 0.95s ease-out'
+         
+//      }
+//  });
+
+//Character Modal
+
+const neroImg = document.querySelector('#nero img');
+const neroModal = document.querySelector('#nero-modal')
+const charContain = document.querySelector('#characters')
+
+
+neroImg.addEventListener('click', function(){
+        neroModal.style.opacity = '1';
+        neroModal.style.pointerEvents = 'all';
+        neroModal.style.transition = 'opacity .48s ease-in';
+});
+
+neroModal.addEventListener('click', function(){
+    this.style.opacity = '0';
+    this.style.pointerEvents = 'none';
+});
