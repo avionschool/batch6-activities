@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: palevioletred;
+}
+
+.name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+#grid-container {
+  display: grid;
+  align-content: center;
+  grid-template-rows: repeat(8, 4.4vw);
+  grid-template-columns: repeat(8, 4.4vw);
+  gap: 0;
+  width: 40vw;
+  height: 40vw;
+}
+
+.white {
+  /* background-color:white; */
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+  filter: brightness(1.1);
+}
+
+.black {
+  /* background-color:black; */
+  background-position: center;
+  background-size: cover;
+  background-color: tomato;
+  filter: brightness(1.8);
+}
+
+.white:hover,
+.black:hover {
+  background-color: brown;
+  cursor: grabbing;
+}
+
+.chess-box {
+  font-size: 3vw;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Chess pieces */

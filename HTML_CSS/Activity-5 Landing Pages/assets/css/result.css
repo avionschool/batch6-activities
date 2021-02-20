@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.container-message {
+  padding: 100px 100px;
+  background-color: cadetblue;
+  margin: 150px 250px;
+  text-align: center;
+}
+
+.container-message p,
+h2 {
+  font-size: 2rem;
+}
+
+.container-message h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container-message p {
+  font-family: "Big Shoulders Display", cursive;
+  margin-top: 20px;
+}
