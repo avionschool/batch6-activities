@@ -7,29 +7,30 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div>
-        <h1>TIC TAC TOE</h1>
-        <h2>Player: <span id="current-player"></span></h2>
-    </div>
-    <div class="board" id="board">
-        <div class="box row1"><div class="pato pato1"></div></div>
-        <div class="box row1"><div class="pato pato1"></div></div>
-        <div class="box row1"><div class="pato pato1"></div></div>
-        <div class="box row2"><div class="pato pato2"></div></div>
-        <div class="box row2"><div class="pato pato2"></div></div>
-        <div class="box row2"><div class="pato pato2"></div></div>
-        <div class="box row3"><div class="pato pato3"></div></div>
-        <div class="box row3"><div class="pato pato3"></div></div>
-        <div class="box row3"><div class="pato pato3"></div></div>
-    </div>
+    <main>
+        <div class="title">
+            <h1>TIC TAC TOE</h1>
+            <h2>Player: <span id="current-player"></span></h2>
+        </div>
+        <div class="board" id="board">
+            <div class="box row1"><div class="pato pato1"></div></div>
+            <div class="box row1"><div class="pato pato1"></div></div>
+            <div class="box row1"><div class="pato pato1"></div></div>
+            <div class="box row2"><div class="pato pato2"></div></div>
+            <div class="box row2"><div class="pato pato2"></div></div>
+            <div class="box row2"><div class="pato pato2"></div></div>
+            <div class="box row3"><div class="pato pato3"></div></div>
+            <div class="box row3"><div class="pato pato3"></div></div>
+            <div class="box row3"><div class="pato pato3"></div></div>
+        </div>
+        <div class="game-result" id="game-result">
+            <h1></h1>
+            <div class="real-time-result" id="real-time-result"></div>
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+    </main>
    
-    <div class="game-result" id="game-result">
-        <h1></h1>
-        <div class="real-time-result" id="real-time-result"></div>
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
-    </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
