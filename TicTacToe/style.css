@@ -62,16 +62,16 @@ main{
     justify-content: center;
 }
 
-.pato{
+.cell{
     width:  calc(var(--mark-size));
     height:  calc(var(--mark-size));
 }
-.pato.x{
+.cell.x{
     background-image:url(https://freepngimg.com/download/red_cross_mark/1-2-red-cross-mark-free-png-image.png) ;
     background-size: cover;
 }
 
-.pato.o{
+.cell.o{
     background-image:url(https://image.flaticon.com/icons/png/512/26/26544.png);
     background-size: cover;
 }

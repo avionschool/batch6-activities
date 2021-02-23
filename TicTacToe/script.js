@@ -1,8 +1,9 @@
-var pato1 = document.querySelectorAll('.pato1');
-var pato2 = document.querySelectorAll('.pato2');
-var pato3 = document.querySelectorAll('.pato3');
+// HTML ELEMENTS
+var cellRow1 = document.querySelectorAll('.cell.row1');
+var cellRow2 = document.querySelectorAll('.cell.row2');
+var cellRow3 = document.querySelectorAll('.cell.row3');
 var result = document.querySelector('.game-result');
-var announcer = document.querySelector('.game-result h1');
+var announcer = document.querySelector('.game-result h1 span');
 var currentPlayer = document.getElementById('current-player');
 var realTime = document.getElementById('real-time-result');
 const prevBtn = document.getElementById('prev');
@@ -10,84 +11,68 @@ const nextBtn = document.getElementById('next');
 
 
 
+//BOARD MOVEMENTS CHECKER
 var row1 = [1,1,1];
 var row2 = [1,1,1];
 var row3 = [1,1,1];
-var boardj = [row1, row2, row3];
+
 
 const winningCombRowX = ['X', 'X', 'X'];
 const winningCombRowO = ['O', 'O', 'O',]
-var boardR1 = [];
-var boardR2 = [];
-var boardR3 = [];
-var boardHistory = [boardR1, boardR2, boardR3];
-const boardMoves = [];
 
+var boardHistory = [];
 
-    let x = false;
-    var playerX = 'X';
-    var playerO = 'O';
-    currentPlayer.innerHTML = "Player 1's turn";
-    var count = 0;
+var playerX = 'X';
+var playerO = 'O';
+currentPlayer.innerHTML = "Player 1's turn";
+var count = 0;
+let x = false;
 
-    resultEvent();
-    pato1.forEach(function(item, index){
-        item.addEventListener('click', function(){
-            if(x === false){
-                currentPlayer.innerHTML = "Player 2's turn";
-                this.classList.add('x');
-                row1[index] = playerX;
-                boardR1[index] = this;
-                console.log(boardj);
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
-                x = true;
-                
-            } 
-            else{
-                currentPlayer.innerHTML = "Player 1's turn";
-                this.classList.add('o');
-                row1[index] = playerO;
-                boardR1[index] = this;
-                console.log(boardj);
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
-                x= false;
-            }
-             endgame();
+resultEvent();
+cellRow1.forEach(function(item, index){
+    item.addEventListener('click', function(){
+        if(x === false){
+            currentPlayer.innerHTML = "Player 2's turn";
+            this.classList.add('x');
+            row1[index] = playerX;
+            boardHistory.push(this) ;
+            console.log(boardHistory);
+            x = true;
+            
+        } 
+        else{
+            currentPlayer.innerHTML = "Player 1's turn";
+            this.classList.add('o');
+            row1[index] = playerO;
+            boardHistory.push(this) ;
+            console.log(boardHistory);
+            
+            x= false;
+        }
+            endgame();
             winningrow();
             winningColumn();
-            winningDiagonal();
-            
-                        
-       }, {once :true});
-    })
-
-
-    pato2.forEach(function(item, index){
+            winningDiagonal();   
+    }, {once :true});
+})
+    
+    
+    cellRow2.forEach(function(item, index){
         item.addEventListener('click', function(){
             if(x === false){
                 currentPlayer.innerHTML = "Player 2's turn";
                 this.classList.add('x');
                 row2[index] = playerX;
-                boardR2[index] = this;
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
-                
-                
+                boardHistory.push(this) ;
+                console.log(boardHistory);
                 x = true;
             } 
             else{
                 currentPlayer.innerHTML = "Player 1's turn";
                 this.classList.add('o');
                 row2[index] = playerO;
-                boardR2[index] = this;
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
+                boardHistory.push(this) ;
+                console.log(boardHistory);
                 x = false;
             }
             
@@ -95,219 +80,204 @@ const boardMoves = [];
             winningrow();
             winningColumn();
             winningDiagonal();
-            
-            
-       }, {once :true});
+        }, {once :true});
     })
-   
-    pato3.forEach(function(item, index){
+    
+    cellRow3.forEach(function(item, index){
         item.addEventListener('click', function(){
             if(x === false){
                 currentPlayer.innerHTML = "Player 2's turn";
                 this.classList.add('x');
                 row3[index] = playerX;
-                boardR3[index] = this;
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
-                x = true;
-                
+                boardHistory.push(this) ;
+                console.log(boardHistory);
+                x = true; 
             } 
+
             else{
                 currentPlayer.innerHTML = "Player 1's turn";
-                this.classList.add('o');
-
-                boardMoves.push(boardHistory);
-                console.log( boardMoves);
+                this.classList.add('o');                
                 row3[index] = playerO;
-                boardR3[index] = this;
+                boardHistory.push(this) ;
+                console.log(boardHistory);
                 x = false;
             }
+
             endgame();
             winningrow();
             winningColumn();
             winningDiagonal();
-            
-            
-       }, {once :true});
+        }, {once :true});
     })
+    
 
-
+//FUNCTIONS
+//RESULT OF GAME
     function resultEvent(){
-        var i = 1;
+        console.log(i);
+        var i = 0;
         prevBtn.addEventListener('click', function(){
-            i++;
-
-          console.log(boardMoves[boardMoves.length - i]);
+            if(boardHistory[0].style.visibility == "hidden"){
+                this.style.visibility = 'hidden';
+            }
+            else{
+                i++;
+                nextBtn.style.visibility = 'visible';
+                boardHistory[boardHistory.length - i].style.visibility = "hidden";
+                console.log(boardHistory.length - i);
+            }
+           });
+           
+        
+        nextBtn.addEventListener('click', function(){
+            if(boardHistory[boardHistory.length -1].style.visibility == "visible"){
+                this.style.visibility = 'hidden';
+            }
+            else{
+                prevBtn.style.visibility = 'visible';
+                this.style.visibility = 'visible';
+                boardHistory[boardHistory.length - i].style.visibility = "visible";
+                console.log(boardHistory.length - i);
+                i --;
+            }
+            
         });
     }
-        
-
-      function endgame(){
-           const draw1 = row1.some(Num1);
-           const draw2 = row2.some(Num1);
-           const draw3 = row3.some(Num1);
-           function Num1(item){
-               return item === 1;
-           }
+    
+//DRAW!!
+    function endgame(){
+        const draw1 = row1.some(Num1);
+        const draw2 = row2.some(Num1);
+        const draw3 = row3.some(Num1);
+        function Num1(item){
+            return item === 1;
+        }
            if(draw1 ===false && draw2 === false && draw3 === false){
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Draw!";
-           
-           }
+               result.style.visibility = 'visible';
+               result.style.pointerEvents = 'all';
+            //    announcer.innerHTML = "Draw!";
+            document.querySelector('#game-result h1').innerHTML = 'Draw!!';
+            }
         }         
-    
-    
-    function winningrow(){
-        var playerWinnerRow = false;
-        if(row1[0] === winningCombRowX[0] && row1[1] === winningCombRowX[1] && row1[2] === winningCombRowX[2]){
-           playerWinnerRow = true;
-           result.style.visibility = 'visible';
-           result.style.pointerEvents = 'all';
-           announcer.innerHTML = "<h1>Winner Player 1!</h1>";
-           console.log(playerWinnerRow);
-            
-            
-        }
-        else if(row2[0] === winningCombRowX[0] && row2[1] === winningCombRowX[1] && row2[2] === winningCombRowX[2]){
-            playerWinnerRow = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
-            
-           
-        }
-        else if(row3[0] === winningCombRowX[0] && row3[1] === winningCombRowX[1] && row3[2] === winningCombRowX[2]){
-            playerWinnerRow = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
+        
+        var playerWinnerX = false;
+        var playerWinnerO = false;
+        function winningrow(){
+            //Row X
+            if(row1[0] === winningCombRowX[0] && row1[1] === winningCombRowX[1] && row1[2] === winningCombRowX[2]){
+                playerWinnerX  = true;
+                rowWinner();
+            }
 
-        }
-        //PLAYER O
-        else if(row1[0] === winningCombRowO[0] && row1[1] === winningCombRowO[1] && row1[2] === winningCombRowO[2]){
-            playerWinnerRow = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-        }
-        else if(row2[0] === winningCombRowO[0] && row2[1] === winningCombRowO[1] && row2[2] === winningCombRowO[2]){
-            playerWinnerRow = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-           
-        }
-        else if(row3[0] === winningCombRowO[0] && row3[1] === winningCombRowO[1] && row3[2] === winningCombRowO[2]){
-            playerWinnerRow = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-           
-        }
+            else if(row2[0] === winningCombRowX[0] && row2[1] === winningCombRowX[1] && row2[2] === winningCombRowX[2]){
+                layerWinnerX  = true;
+                rowWinner();
+            }
+
+            else if(row3[0] === winningCombRowX[0] && row3[1] === winningCombRowX[1] && row3[2] === winningCombRowX[2]){
+                layerWinnerX  = true;
+                rowWinner();
+            }
+
+            //PLAYER O
+            else if(row1[0] === winningCombRowO[0] && row1[1] === winningCombRowO[1] && row1[2] === winningCombRowO[2]){
+                playerWinnerO = true;
+                rowWinner();
+            }
+
+            else if(row2[0] === winningCombRowO[0] && row2[1] === winningCombRowO[1] && row2[2] === winningCombRowO[2]){
+                playerWinnerO = true;
+                rowWinner();
+            }
+
+            else if(row3[0] === winningCombRowO[0] && row3[1] === winningCombRowO[1] && row3[2] === winningCombRowO[2]){
+                playerWinnerO = true;
+                rowWinner();
+            }
     }
-    
+        function rowWinner(){
+            if(playerWinnerX == true && playerWinnerO == false){
+                result.style.visibility = 'visible';
+                result.style.pointerEvents = 'all';
+                announcer.innerHTML = "Player 1!";
+            }
+            else if(playerWinnerX == false && playerWinnerO == true){
+                result.style.visibility = 'visible';
+                result.style.pointerEvents = 'all';
+                announcer.innerHTML = "Player 2!";
+            }
+    }
+
+    //COLUMNS WINNING CONDITIONS
     function winningColumn(){
-        var playerWinnerColumn = false;
         if(row1[0] === winningCombRowX[0] && row2[0] === winningCombRowX[0] && row3[0] === winningCombRowX[0]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
-            
-            
+            playerWinnerX = true;
+            rowWinner();
         }
         else if(row1[1] === winningCombRowX[1] && row2[1] === winningCombRowX[1] && row3[1] === winningCombRowX[1]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
-            
-            
+            playerWinnerX  = true;
+            rowWinner();
         }
         else if(row1[2] === winningCombRowX[2] && row2[2] === winningCombRowX[2] && row3[2] === winningCombRowX[2]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
-            
-            
+            playerWinnerX  = true;
+            rowWinner();
         }
         //PLAYER O
         else if(row1[0] === winningCombRowO[0] && row2[0] === winningCombRowO[0] && row3[0] === winningCombRowO[0]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-            
-            
+            playerWinnerO = true;
+            rowWinner();
         }
         else if(row1[1] === winningCombRowO[1] && row2[1] === winningCombRowO[1] && row3[1] === winningCombRowO[1]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-            
-            
+            playerWinnerO = true;
+            rowWinner();
         }
         else if(row1[2] === winningCombRowO[2] && row2[2] === winningCombRowO[2] && row3[2] === winningCombRowO[2]){
-            playerColumn = true;
-            result.style.visibility = 'visible';
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-            
-            
+            playerWinnerO = true;
+            rowWinner();
         }
     }
 
+    //WINNING DIAGONALS
     function winningDiagonal(){
         var playerDiagonal = false;
         if(row1[0] == winningCombRowX[0] && row2[1] == winningCombRowX[1] && row3[2] == winningCombRowX[2]){
-            result.style.visibility = 'visible';
-            playerDiagonal = true;
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
+            playerWinnerX = true;
+            rowWinner();
             
         }
         else if(row3[0] == winningCombRowX[0] && row2[1] == winningCombRowX[1] && row1[2] == winningCombRowX[2]){
-            result.style.visibility = 'visible';
-            playerDiagonal = true;
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 1!";
+            playerWinnerX = true;
+            rowWinner();
             
         }
         //PLAYER O
         if(row1[0] == winningCombRowO[0] && row2[1] == winningCombRowO[1] && row3[2] == winningCombRowO[2]){
-            result.style.visibility = 'visible';
-            playerDiagonal = true;
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
+            playerWinnerO = true;
+            rowWinner();
             
         }
         else if(row3[0] == winningCombRowO[0] && row2[1] == winningCombRowO[1] && row1[2] ==winningCombRowO[2]){
-            result.style.visibility = 'visible';
-            playerDiagonal = true;
-            result.style.pointerEvents = 'all';
-            announcer.innerHTML = "Winner Player 2!";
-           
+            playerWinnerO = true;
+            rowWinner();
+            
         }
     }
     
     
-
-
-
+    
+    
+    
     // }
-
+    
     // function Event1stRow(){
-    //     if(x === false){
+        //     if(x === false){
     //         currentPlayer.innerHTML = "Player 2's turn";
     //         this.classList.add('x');
     //         console.log(boardj);
     //         row1[index] ='x';
     //         return x = true;
     //     } 
+ 
     //     else{
     //         currentPlayer.innerHTML = "Player 1's turn";
     //         this.classList.add('o');

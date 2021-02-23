@@ -82,40 +82,6 @@ function scrollDown(){
 
 window.addEventListener('scroll', scrollDown);
 
-//Characters Slide
-
-// const nextChar = document.querySelector('#next-char');
-// const prevChar = document.querySelector('#prev-char');
-// const charPic = document.querySelectorAll('.main-char');
-// const picContainer = document.querySelector('.slider');
-
-// const picSize = charPic[0].clientWidth;
-
-// picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
-
-// nextChar.addEventListener('click', function(){
-//    if(charPic[counter].id == 'V'){
-//        null;
-//    }
-//    else{
-//     counter++;
-//     picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
-//     picContainer.style.transition = 'transform 0.95s ease-out';
-//    }
-//  });
-
-//  prevChar.addEventListener('click', function(){
-//      if(charPic[counter].id == 'nero'){
-//          null;
-//      }
-//      else{
-//          counter--;
-//          picContainer.style.transform = 'translateX(' + (-picSize * counter) + 'px)';
-//          picContainer.style.transition = 'transform 0.95s ease-out'
-         
-//      }
-//  });
-
 //Character Modal
 
 //Nero
