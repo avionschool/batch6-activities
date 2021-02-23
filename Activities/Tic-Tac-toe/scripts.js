@@ -162,7 +162,9 @@ function clickHandler() {
         function hasWinner() {
             gameFinished = true;
             announcer.innerHTML = winner + winMessage;
-
+            previousButton.style.display = "flex"
+            nextButton.style.display = "flex"
+            nextButton.style.visibility = "hidden"
         }
 
         // Draw
@@ -176,6 +178,9 @@ function clickHandler() {
         if (occupiedCells === 9 && gameFinished === false) {
             gameFinished = true;
             announcer.innerHTML = drawMessage;
+            previousButton.style.display = "flex"
+            nextButton.style.display = "flex"
+            nextButton.style.visibility = "hidden"
             console.log("It's a draw")
         }
         else {
@@ -184,7 +189,6 @@ function clickHandler() {
     }
 
 // FUNCTIONS FOR BUTTONS
-
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const resetButton = document.getElementById("reset");
@@ -204,12 +208,13 @@ const resetButton = document.getElementById("reset");
             cell.classList.remove(xClass, oClass);
             cell.addEventListener('click', clickHandler, {once:true});
         })
+        previousButton.style.display = "none"
+            nextButton.style.display = "none"
         startGame();
     }
 
     function previousMove() {
         //Sets limits on moves
-        console.log(movesCounter)
         if (movesCounter === moves.length) {
             movesCounter -= 1;
         }
@@ -218,28 +223,25 @@ const resetButton = document.getElementById("reset");
         }
 
         if (movesCounter >= 0) {
+            nextButton.style.visibility="visible"
             let moveData = moves[movesCounter];
-            console.log(moveData, movesCounter);
             const turn = moveData[1];
             const row = moveData[2];
             const column = moveData[3];
             const cell = document.querySelector(`[data-row='${row}'][data-column='${column}']`);
             cell.classList.remove(turn);
-            console.log(cell);
             if (movesCounter === 0) {
+                previousButton.style.visibility = "hidden"
                 console.log("Reached first move");
             }
             else {
                 movesCounter --;
             }
-            
         }
-        
     }
 
     function nextMove() {
         //Sets limits on moves
-        console.log(movesCounter)
         if (movesCounter === moves.length) {
             movesCounter -= 1;
         }
@@ -248,15 +250,15 @@ const resetButton = document.getElementById("reset");
         }
 
         if (movesCounter < moves.length) {
+            previousButton.style.visibility="visible"
             let moveData = moves[movesCounter];
-            console.log(moveData, movesCounter);
             const turn = moveData[1];
             const row = moveData[2];
             const column = moveData[3];
             const cell = document.querySelector(`[data-row='${row}'][data-column='${column}']`);
             cell.classList.add(turn);
-            console.log(cell);
             if (movesCounter === moves.length - 1) {
+                nextButton.style.visibility = "hidden"
                 console.log("Reached final move")
             }
             else {
