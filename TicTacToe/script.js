@@ -10,16 +10,20 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
 
+//BOARD
+let board =[
+    cellRow1,
+    cellRow2,
+    cellRow3
+]
 
 //BOARD MOVEMENTS CHECKER
 var row1 = [1,1,1];
 var row2 = [1,1,1];
 var row3 = [1,1,1];
 
-
 const winningCombRowX = ['X', 'X', 'X'];
 const winningCombRowO = ['O', 'O', 'O',]
-
 var boardHistory = [];
 
 var playerX = 'X';
@@ -37,6 +41,7 @@ cellRow1.forEach(function(item, index){
             row1[index] = playerX;
             boardHistory.push(this) ;
             console.log(boardHistory);
+            console.log(board);
             x = true;
             
         } 
@@ -46,7 +51,7 @@ cellRow1.forEach(function(item, index){
             row1[index] = playerO;
             boardHistory.push(this) ;
             console.log(boardHistory);
-            
+            console.log(board);
             x= false;
         }
             endgame();
@@ -65,6 +70,7 @@ cellRow1.forEach(function(item, index){
                 row2[index] = playerX;
                 boardHistory.push(this) ;
                 console.log(boardHistory);
+                console.log(board);
                 x = true;
             } 
             else{
@@ -73,6 +79,7 @@ cellRow1.forEach(function(item, index){
                 row2[index] = playerO;
                 boardHistory.push(this) ;
                 console.log(boardHistory);
+                console.log(board);
                 x = false;
             }
             
@@ -91,6 +98,7 @@ cellRow1.forEach(function(item, index){
                 row3[index] = playerX;
                 boardHistory.push(this) ;
                 console.log(boardHistory);
+                console.log(board);
                 x = true; 
             } 
 
@@ -100,6 +108,7 @@ cellRow1.forEach(function(item, index){
                 row3[index] = playerO;
                 boardHistory.push(this) ;
                 console.log(boardHistory);
+                console.log(board);
                 x = false;
             }
 
@@ -175,7 +184,7 @@ cellRow1.forEach(function(item, index){
             }
 
             else if(row3[0] === winningCombRowX[0] && row3[1] === winningCombRowX[1] && row3[2] === winningCombRowX[2]){
-                layerWinnerX  = true;
+                playerWinnerX  = true;
                 rowWinner();
             }
 
