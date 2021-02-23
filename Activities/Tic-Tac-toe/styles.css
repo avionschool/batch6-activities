@@ -4,11 +4,13 @@
 
 body {
     margin: 0;
-    /* width: 100vw;
-    height: 100vh; */
-    display: grid;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
+    align-items: center;
 }
 
 :root {
@@ -19,8 +21,8 @@ body {
 
 /*--- Tic-Tac-Toe Board ---*/
 #board {
-    width: 100vw;
-    height: 100vh;
+    width: 60vw;
+    height: 60vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -130,7 +132,28 @@ body {
 }
 
 /*--- Buttons ---*/
+#button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-button {
-    display: none;
+    bottom: 0;
+    width: 60vw;
+    height: 20vh;
+    background-color: pink;
+}
+.move-button {
+    display: flex;
+}
+
+/*--- Message Board ---*/
+#message-board {
+    width: 60vw;
+    height: 20vh;
+
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightpink;
 }
