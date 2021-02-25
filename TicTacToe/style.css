@@ -11,7 +11,7 @@ main{
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 15vh auto;
+    grid-template-rows: 15vh auto auto;
     
 }
 
@@ -36,7 +36,7 @@ main{
 }
 
 :root{
-    --box-size: 100px;
+    --box-size: 12vw;
     --mark-size: calc(var(--box-size)*.9);
 }
 .board{
@@ -73,16 +73,35 @@ main{
     width:  calc(var(--mark-size));
     height:  calc(var(--mark-size));
 }
-.cell.x{
+.cell.X{
     background-image:url(https://freepngimg.com/download/red_cross_mark/1-2-red-cross-mark-free-png-image.png) ;
     background-size: cover;
 }
 
-.cell.o{
+.cell.O{
     background-image:url(https://image.flaticon.com/icons/png/512/26/26544.png);
     background-size: cover;
 }
 
+.reset{
+    background-color: rgb(248, 175, 66);
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+#reset-button{
+    width: 10vw;
+    height: 5vh;
+    font-size: 3vw;
+    border: none;
+    background-color: white;
+    margin: 5px;
+    margin-bottom: 47px;
+}
+#reset-button:hover{
+    background-color: black;
+    color: white;
+}
 .game-result{
     position: fixed;
     top:0;
@@ -94,6 +113,7 @@ main{
     justify-content:center;
     visibility: hidden;
     pointer-events: none;
+    
 }
 .game-result h1{
     color: white;
