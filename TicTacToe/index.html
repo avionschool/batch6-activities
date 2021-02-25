@@ -11,26 +11,26 @@
         <div class="title">
             <h1>TIC TAC TOE</h1>
             <h2>Player: <span id="current-player"></span></h2>
+            <button class="reset" id="reset-button">Reset</button>
         </div>
         <div class="board" id="board">
-            <div class="box row1"><div class="cell row1"></div></div>
-            <div class="box row1"><div class="cell row1"></div></div>
-            <div class="box row1"><div class="cell row1"></div></div>
-            <div class="box row2"><div class="cell row2"></div></div>
-            <div class="box row2"><div class="cell row2"></div></div>
-            <div class="box row2"><div class="cell row2"></div></div>
-            <div class="box row3"><div class="cell row3"></div></div>
-            <div class="box row3"><div class="cell row3"></div></div>
-            <div class="box row3"><div class="cell row3"></div></div>
+            <div class="box row1"><div class="cell row1" id="0-0"></div></div>
+            <div class="box row1"><div class="cell row1" id="0-1"></div></div>
+            <div class="box row1"><div class="cell row1" id="0-2"></div></div>
+            <div class="box row2"><div class="cell row2" id="1-0"></div></div>
+            <div class="box row2"><div class="cell row2" id="1-1"></div></div>
+            <div class="box row2"><div class="cell row2" id="1-2"></div></div>
+            <div class="box row3"><div class="cell row3" id="2-0"></div></div>
+            <div class="box row3"><div class="cell row3" id="2-1"></div></div>
+            <div class="box row3"><div class="cell row3" id="2-2"></div></div>
         </div>
-        <div class="reset" id="reset">
-            <button id="reset-button">Reset</button>
-        </div>
+        
         <div class="game-result" id="game-result">
             <h1>Winner:<span></span></h1>
             <div class="real-time-result" id="real-time-result"></div>
             <button id="prev">Prev</button>
             <button id="next">Next</button>
+           
         </div>
     </main>
    

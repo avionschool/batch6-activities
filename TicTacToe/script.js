@@ -12,229 +12,275 @@ const resetBtn = document.getElementById('reset-button');
 
 
 //BOARD
-var board =[
+const board =[
     [1,1,1],
     [1,1,1],
     [1,1,1]
 ];
 
-
-var boardHistory = [];
-
+const boardHistory = [];
+var moveHistory = [];
 var playerX = 'X';
 var playerO = 'O';
 currentPlayer.innerHTML = "Player 1's turn";
-var count = 0;
 let x = false;
 
-resultEvent();
-resetEvent();
-cellRow1.forEach(function (item, index){
-    item.addEventListener('click', function clickHandlderR1(){
-        if(x === false){
-            currentPlayer.innerHTML = "Player 2's turn";
-            this.classList.add(playerX);
-            board[0][index] = playerX;
-            boardHistory.push(this) ;
-            console.log(boardHistory);
-            console.log(board);
-            x = true;
-            
-        } 
-        else{
-            currentPlayer.innerHTML = "Player 1's turn";
-            this.classList.add(playerO);
-            board[0][index] = playerO;
-            boardHistory.push(this) ;
-            console.log(boardHistory);
-            console.log(board);
-            x= false;
-        }
-            drawGame();
-            winningrow();
-            winningColumn();
-            winningDiagonal();   
-    }, {once :true});
-})
-    
-    
-    cellRow2.forEach(function(item, index){
-        item.addEventListener('click', function clickHandlderR2(){
-            if(x === false){
-                currentPlayer.innerHTML = "Player 2's turn";
-                this.classList.add(playerX);
-                board[1][index] = playerX;
-                boardHistory.push(this) ;
-                console.log(boardHistory);
-                console.log(board);
-                x = true;
-            } 
-            else{
-                currentPlayer.innerHTML = "Player 1's turn";
-                this.classList.add(playerO);
-                board[1][index] = playerO;
-                boardHistory.push(this) ;
-                console.log(boardHistory);
-                console.log(board);
-                x = false;
-            }
-            
-            drawGame();
-            winningrow();
-            winningColumn();
-            winningDiagonal();
-        }, {once :true});
+
+startGame();
+
+
+function startGame(){
+    result.style.visibility = 'hidden';
+    result.style.pointerEvents = 'none';
+    cellRow1.forEach(function (item){
+        item.removeEventListener('click', clickHandlderR1);
+        item.classList.remove(playerX);
+        item.classList.remove(playerO);
+        item.removeEventListener('click', clickHandlderR1);
+        item.addEventListener('click', clickHandlderR1, {once :true});
     })
     
-    cellRow3.forEach(function(item, index){
-        item.addEventListener('click', function clickHandlderR3(){
-            if(x === false){
-                currentPlayer.innerHTML = "Player 2's turn";
-                this.classList.add(playerX);
-                board[2][index] = playerX;
-                boardHistory.push(this) ;
-                console.log(boardHistory);
-                console.log(board);
-                x = true; 
-            } 
-
-            else{
-                currentPlayer.innerHTML = "Player 1's turn";
-                this.classList.add(playerO);                
-                board[2][index] = playerO;
-                boardHistory.push(this) ;
-                console.log(boardHistory);
-                console.log(board);
-                x = false;
-            }
-
-            drawGame();
-            winningrow();
-            winningColumn();
-            winningDiagonal();
-        }, {once :true});
+    cellRow2.forEach(function(item){
+        item.removeEventListener('click', clickHandlderR2);
+        item.classList.remove(playerX);
+        item.classList.remove(playerO);
+        item.addEventListener('click', clickHandlderR2 , {once :true});
     })
     
+    cellRow3.forEach(function(item){
+        item.removeEventListener('click', clickHandlderR3);
+        item.classList.remove(playerX);
+        item.classList.remove(playerO);
+        item.addEventListener('click', clickHandlderR3, {once :true});
+    })
+    resultEvent();
+}
 
-//FUNCTIONS
-//PREVIOUS AND NEXT BUTTON
-    function resultEvent(){
-        console.log(i);
-        var i = 0;
-        prevBtn.addEventListener('click', function(){
-            if(boardHistory[0].style.visibility == "hidden"){
-                this.style.visibility = 'hidden';
-            }
-            else{
-                i++;
-                nextBtn.style.visibility = 'visible';
-                boardHistory[boardHistory.length - i].style.visibility = "hidden";
-                console.log(boardHistory.length - i);
-            }
-           });
-           
+
+//ROW CLICK EVENTS
+
+function clickHandlderR1(e){
+    let box = e.target;
+    let i = box.id;
+    let index = i.split('-');
+    if(x === false){
+        currentPlayer.innerHTML = "Player 2's turn";
+        box.classList.add(playerX);
+        board[0][index[1]] = playerX;
+        moveHistory.push(box);
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x = true;
         
-        nextBtn.addEventListener('click', function(){
-            if(boardHistory[boardHistory.length -1].style.visibility == "visible"){
-                this.style.visibility = 'hidden';
-            }
-            else{
-                prevBtn.style.visibility = 'visible';
-                this.style.visibility = 'visible';
-                boardHistory[boardHistory.length - i].style.visibility = "visible";
-                console.log(boardHistory.length - i);
-                i --;
-            }
-            
-        });
+    } 
+    else{
+        currentPlayer.innerHTML = "Player 1's turn";
+        box.classList.add(playerO);
+        board[0][index[1]] = playerO;
+        moveHistory.push(box) ;
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x= false;
     }
-    function resetEvent(){
-        resetBtn.addEventListener('click', function(){
-            for(i =0; i < 3; i ++){
+    drawGame();
+    winningrow();
+    winningColumn();
+    winningDiagonal();   
+}
 
-                 cellRow1[i].classList.remove(playerX);
-                 cellRow2[i].classList.remove(playerX);
-                 cellRow3[i].classList.remove(playerX);
-                 cellRow1[i].classList.remove(playerO);
-                 cellRow2[i].classList.remove(playerO);
-                 cellRow3[i].classList.remove(playerO);
-            } 
-        });
+function clickHandlderR2(e){
+    let box = e.target;
+    let i = box.id;
+    let index = i.split('-');
+    if(x === false){
+        currentPlayer.innerHTML = "Player 2's turn";
+        box.classList.add(playerX);
+        board[1][index[1]] = playerX;
+        moveHistory.push(box) ;
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+       
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x = true;
+    } 
+    else{
+        currentPlayer.innerHTML = "Player 1's turn";
+        this.classList.add(playerO);
+        board[1][index[1]] = playerO;
+        moveHistory.push(box) ;
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+       
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x = false;
     }
+    drawGame();
+    winningrow();
+    winningColumn();
+    winningDiagonal();
 
-    
-    //RESET BUTTON 
-    //DRAW!!
-    function drawGame(){
-        const draw1 = board[0].some(Num1);
-        const draw2 = board[1].some(Num1);
-        const draw3 = board[2].some(Num1);
-        function Num1(item){
-            return item === 1;
-        }
-           if(draw1 ===false && draw2 === false && draw3 === false){
-               result.style.visibility = 'visible';
-               result.style.pointerEvents = 'all';
-            document.querySelector('#game-result h1').innerHTML = 'Draw!!';
-            }
-        }         
-      
-    //WINNING CONDITIONS ------------------------------------------------------------- 
-    var playerWinnerX = false;
-    var playerWinnerO = false;
-   
-    function rowWinner(){
-            if(playerWinnerX == true && playerWinnerO == false){
-                result.style.visibility = 'visible';
-               result.style.pointerEvents = 'all';
-                announcer.innerHTML = "Player 1!";
-            }
-            else if(playerWinnerX == false && playerWinnerO == true){
-                result.style.visibility = 'visible';
-                result.style.pointerEvents = 'all';
-                announcer.innerHTML = "Player 2!";
-            }
+}
+
+function clickHandlderR3(e){
+    let box = e.target;
+    let i = box.id;
+    let index = i.split('-');
+    if(x === false){
+        currentPlayer.innerHTML = "Player 2's turn";
+        box.classList.add(playerX);
+        board[2][index[1]] = playerX;
+        moveHistory.push(box) ;
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x = true; 
     } 
 
+    else{
+        currentPlayer.innerHTML = "Player 1's turn";
+        box.classList.add(playerO);                
+        board[2][index[1]] = playerO;
+        moveHistory.push(box) ;
+        boardHistory.push(JSON.parse(JSON.stringify(board)));
+       
+        console.log(moveHistory);
+        console.log(boardHistory);
+        x = false;
+    }
+    drawGame();
+    winningrow();
+    winningColumn();
+    winningDiagonal();
+}
     
+ 
 
-    function winningrow(){
-         //Row X
-        if(board[0][0] === playerX && board[0][1] === playerX && board[0][2] === playerX){
-             playerWinnerX  = true;
-             rowWinner();
+//FUNCTIONS
+//BUTTONS
+function resultEvent(){
+    var i = 1;
+    prevBtn.addEventListener('click', function(){
+        if(moveHistory[0].style.visibility == "hidden"){
+            this.style.visibility = 'hidden';
+        }
+        else{
+            i++;
+            nextBtn.style.visibility = 'visible';
+            moveHistory[moveHistory.length - i].style.visibility = "hidden";
+             console.log(moveHistory.length - i);
+             console.log(boardHistory[boardHistory.length-1-i]);
+            console.log(i);
+        }
+    });
+           
+    nextBtn.addEventListener('click', function(){
+        if(moveHistory[moveHistory.length -1].style.visibility == "visible"){
+            this.style.visibility = 'hidden';
         }
 
-        else if(board[1][0] == playerX && board[1][1] == playerX && board[1][2] == playerX){
-             playerWinnerX  = true;
-             rowWinner();
+        else{
+            prevBtn.style.visibility = 'visible';
+            this.style.visibility = 'visible';
+            moveHistory[moveHistory.length - i].style.visibility = "visible";
+            console.log(moveHistory.length - i);
+            console.log(boardHistory[boardHistory.length-i]);
+            i --;
+            console.log(i);
         }
+    });
 
-        else if(board[2][0] == playerX && board[2][1] == playerX && board[2][2] == playerX){
-             playerWinnerX  = true;
-             rowWinner();
-        }
+    resetBtn.addEventListener('click',function(){
+      
+        location.reload();
+    });      
+}
 
-        //PLAYER O
-        else if(board[0][0] ===playerO && board[0][1] === playerO && board[0][2] === playerO){
-             playerWinnerO = true;
-             rowWinner();
-        }
+//DRAW!!
 
-        else if(board[1][0] === playerO && board[1][1] === playerO && board[1][2] === playerO){
-             playerWinnerO = true;
-             rowWinner();
-        }
 
-        else if(board[2][0] === playerO && board[2][1] === playerO && board[2][2] ===playerO){
-             playerWinnerO = true;
-             rowWinner();
+
+function drawGame(){
+    // let boardCopy = boardHistory[boardHistory.length-1];
+    function Num1(item){
+        return item === 1;
+    }
+
+    var draw1 = board[0].some(Num1);
+    var draw2 = board[1].some(Num1);
+    var draw3 = board[2].some(Num1);
+        
+    if(draw1 == false && draw2 == false && draw3 == false){
+    result.style.visibility = 'visible';
+    result.style.pointerEvents = 'all';
+    resetBtn.style.zIndex = '5';
+    document.querySelector('#game-result h1').innerHTML = 'Draw!!';
+    }
+}
+
+
+
+      
+//WINNING CONDITIONS ------------------------------------------------------------- 
+var playerWinnerX = false;
+var playerWinnerO = false;
+   
+function rowWinner(){
+        if(playerWinnerX == true && playerWinnerO == false){
+            result.style.visibility = 'visible';
+            result.style.pointerEvents = 'all';
+            announcer.innerHTML = "Player 1!";
+            resetBtn.style.zIndex = '5';
+            }
+        else if(playerWinnerX == false && playerWinnerO == true){
+            result.style.visibility = 'visible';
+            result.style.pointerEvents = 'all';
+            announcer.innerHTML = "Player 2!";
+            resetBtn.style.zIndex = '5';
         }
+            
+} 
+// ROWS WINNING CONDITIONS
+
+function winningrow(){
+    //Row X
+   if(board[0][0] === playerX && board[0][1] === playerX && board[0][2] === playerX){
+       playerWinnerX  = true;
+       rowWinner();
+   }
+
+   else if(board[1][0] == playerX && board[1][1] == playerX && board[1][2] == playerX){
+       playerWinnerX  = true;
+       rowWinner();
+   }
+
+   else if(board[2][0] == playerX && board[2][1] == playerX && board[2][2] == playerX){
+       playerWinnerX  = true;
+       rowWinner();
+   }
+
+   //PLAYER O
+   else if(board[0][0] ===playerO && board[0][1] === playerO && board[0][2] === playerO){
+       playerWinnerO = true;
+       rowWinner();
+   }
+
+   else if(board[1][0] === playerO && board[1][1] === playerO && board[1][2] === playerO){
+       playerWinnerO = true;
+       rowWinner();
+   }
+
+   else if(board[2][0] === playerO && board[2][1] === playerO && board[2][2] ===playerO){
+       playerWinnerO = true;
+       rowWinner();
+   }
 }
   
 
     //COLUMNS WINNING CONDITIONS
     function winningColumn(){
+        
         //PLAYER X
         if(board[0][0] === playerX && board[1][0] === playerX && board[2][0] === playerX){
             playerWinnerX = true;
@@ -265,6 +311,7 @@ cellRow1.forEach(function (item, index){
 
     //WINNING DIAGONALS
     function winningDiagonal(){
+       
         if(board[0][0] === playerX && board[1][1] === playerX && board[2][2] === playerX){
             playerWinnerX = true;
             rowWinner();
@@ -283,16 +330,11 @@ cellRow1.forEach(function (item, index){
         }
         else if(board[2][0] === playerO && board[1][1] === playerO && board[0][2] === playerO){
             playerWinnerO = true;
-            rowWinner();
-            
+            rowWinner(); 
         }
     }
     
     
-   
-    
-
-
     
     // }
     
@@ -381,3 +423,37 @@ cellRow1.forEach(function (item, index){
     //              rowWinner();
     //          }
     //  }
+
+    //     function winningrow(){
+//          //Row X
+//         if(board[0][0] === playerX && board[0][1] === playerX && board[0][2] === playerX){
+//             playerWinnerX  = true;
+//             rowWinner();
+//         }
+
+//         else if(board[1][0] == playerX && board[1][1] == playerX && board[1][2] == playerX){
+//             playerWinnerX  = true;
+//             rowWinner();
+//         }
+
+//         else if(board[2][0] == playerX && board[2][1] == playerX && board[2][2] == playerX){
+//             playerWinnerX  = true;
+//             rowWinner();
+//         }
+
+//         //PLAYER O
+//         else if(board[0][0] ===playerO && board[0][1] === playerO && board[0][2] === playerO){
+//             playerWinnerO = true;
+//             rowWinner();
+//         }
+
+//         else if(board[1][0] === playerO && board[1][1] === playerO && board[1][2] === playerO){
+//             playerWinnerO = true;
+//             rowWinner();
+//         }
+
+//         else if(board[2][0] === playerO && board[2][1] === playerO && board[2][2] ===playerO){
+//             playerWinnerO = true;
+//             rowWinner();
+//         }
+// }
