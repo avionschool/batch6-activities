@@ -13,3 +13,4 @@ Activity:
 
 Projects:
 - [Landing Page](Landing-Page/html/index.html)
+- [Tic Tac Toe](tic-tac-toe/index.html)

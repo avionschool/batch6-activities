@@ -27,6 +27,7 @@
 }
 #header img{
   width: 4em;
+  margin-left: 2rem;
 }
 #nav-bar ul{
   display: none;
@@ -176,8 +177,7 @@
   height: 100vh;
 }
 .testiContainer{
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
   text-align: center;
   margin: 15px auto;
   gap: 10px;
@@ -695,17 +695,17 @@ font-size: 1.4rem;
   }
   #header {
     justify-content: space-between;
-    background: linear-gradient(transparent, white);
     width: 100%;
     transition: all 1s;
   }
   #header.active{
-    background-color:rgb(153, 134, 134);
+    background-color: white;
     transition: all 1s;
   }
   #nav-bar{
     display: flex;
-    width: 50%;
+    justify-content: flex-end;
+    margin-right: 2rem;
   }
   #nav-bar ul{
     display: flex;
@@ -747,20 +747,20 @@ font-size: 1.4rem;
     font-size: 0.9rem;
   }
 
-.testimonials img{
-  width: 70%;
-  border-radius: 50%;
-}
-.testiBox{
-  padding: 2rem 1rem 2rem;
-}
-.names{
-  font-size: 1.8rem;
-}
-.testiBox p{
-  font-size: 1rem;
-  margin-top: 10px;
-}
+  .testimonials img{
+    width: 70%;
+    border-radius: 50%;
+  }
+  .testiBox{
+    padding: 2rem 1rem 2rem;
+  }
+  .names{
+    font-size: 1.8rem;
+  }
+  .testiBox p{
+    font-size: 1rem;
+    margin-top: 10px;
+  }
 
  
      /* section 4 */
