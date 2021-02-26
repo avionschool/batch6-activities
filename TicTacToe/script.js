@@ -10,7 +10,7 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const resetBtn = document.getElementById('reset-button');
 
-
+console.log('hello world');
 //BOARD
 const board =[
     [1,1,1],
@@ -25,9 +25,8 @@ var playerO = 'O';
 currentPlayer.innerHTML = "Player 1's turn";
 let x = false;
 
-
+//GAME!
 startGame();
-
 
 function startGame(){
     result.style.visibility = 'hidden';
@@ -84,10 +83,11 @@ function clickHandlderR1(e){
         console.log(boardHistory);
         x= false;
     }
-    drawGame();
+   
     winningrow();
     winningColumn();
     winningDiagonal();   
+    drawGame();
 }
 
 function clickHandlderR2(e){
@@ -116,11 +116,11 @@ function clickHandlderR2(e){
         console.log(boardHistory);
         x = false;
     }
-    drawGame();
+    
     winningrow();
     winningColumn();
     winningDiagonal();
-
+    drawGame();
 }
 
 function clickHandlderR3(e){
@@ -149,10 +149,11 @@ function clickHandlderR3(e){
         console.log(boardHistory);
         x = false;
     }
-    drawGame();
+    
     winningrow();
     winningColumn();
     winningDiagonal();
+    drawGame();
 }
     
  
@@ -161,38 +162,37 @@ function clickHandlderR3(e){
 //BUTTONS
 function resultEvent(){
     var i = 1;
+    nextBtn.style.visibility = 'hidden';
     prevBtn.addEventListener('click', function(){
+        nextBtn.style.visibility = 'visible';
+        moveHistory[moveHistory.length - i].style.visibility = "hidden";
+        //console.log(moveHistory.length - i);
+        console.log(boardHistory[boardHistory.length-1-i]);
+        // console.log(i);
+        i++;
+        
         if(moveHistory[0].style.visibility == "hidden"){
             this.style.visibility = 'hidden';
-        }
-        else{
-            i++;
-            nextBtn.style.visibility = 'visible';
-            moveHistory[moveHistory.length - i].style.visibility = "hidden";
-             console.log(moveHistory.length - i);
-             console.log(boardHistory[boardHistory.length-1-i]);
-            console.log(i);
         }
     });
            
     nextBtn.addEventListener('click', function(){
+        i --;
+        moveHistory[moveHistory.length - i].style.visibility = "visible";
+        prevBtn.style.visibility = 'visible';
+        this.style.visibility = 'visible';
+        moveHistory[moveHistory.length - i].style.visibility = "visible";
+        //console.log(moveHistory.length - i);
+        console.log(boardHistory[boardHistory.length-i]);
+        // console.log(i);
+        
         if(moveHistory[moveHistory.length -1].style.visibility == "visible"){
             this.style.visibility = 'hidden';
-        }
-
-        else{
-            prevBtn.style.visibility = 'visible';
-            this.style.visibility = 'visible';
-            moveHistory[moveHistory.length - i].style.visibility = "visible";
-            console.log(moveHistory.length - i);
-            console.log(boardHistory[boardHistory.length-i]);
-            i --;
-            console.log(i);
+            
         }
     });
 
     resetBtn.addEventListener('click',function(){
-      
         location.reload();
     });      
 }
@@ -211,7 +211,7 @@ function drawGame(){
     var draw2 = board[1].some(Num1);
     var draw3 = board[2].some(Num1);
         
-    if(draw1 == false && draw2 == false && draw3 == false){
+    if(draw1 == false && draw2 == false && draw3 == false && playerWinnerO == false && playerWinnerX == false){
     result.style.visibility = 'visible';
     result.style.pointerEvents = 'all';
     resetBtn.style.zIndex = '5';
