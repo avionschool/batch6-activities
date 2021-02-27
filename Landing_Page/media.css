@@ -641,17 +641,17 @@ nav{
     grid-template-rows: 50px auto;
     overflow: hidden; */
 /* } */
-
+#characters{
+    height: 100vh;
+}
 .character-container .slide-container{
     /* grid-column: 2/3;
     grid-row: 2/3;
     width: wrap;
     margin: 20px;
     z-index: 0; */
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
     overflow: hidden;
 }
 
