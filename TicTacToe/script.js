@@ -68,7 +68,6 @@ function clickHandlderR1(e){
         board[0][index[1]] = playerX;
         moveHistory.push(box);
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-        console.log(moveHistory);
         console.log(boardHistory);
         x = true;
         
@@ -79,7 +78,6 @@ function clickHandlderR1(e){
         board[0][index[1]] = playerO;
         moveHistory.push(box) ;
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-        console.log(moveHistory);
         console.log(boardHistory);
         x= false;
     }
@@ -100,8 +98,6 @@ function clickHandlderR2(e){
         board[1][index[1]] = playerX;
         moveHistory.push(box) ;
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-       
-        console.log(moveHistory);
         console.log(boardHistory);
         x = true;
     } 
@@ -111,8 +107,6 @@ function clickHandlderR2(e){
         board[1][index[1]] = playerO;
         moveHistory.push(box) ;
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-       
-        console.log(moveHistory);
         console.log(boardHistory);
         x = false;
     }
@@ -133,7 +127,6 @@ function clickHandlderR3(e){
         board[2][index[1]] = playerX;
         moveHistory.push(box) ;
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-        console.log(moveHistory);
         console.log(boardHistory);
         x = true; 
     } 
@@ -144,8 +137,6 @@ function clickHandlderR3(e){
         board[2][index[1]] = playerO;
         moveHistory.push(box) ;
         boardHistory.push(JSON.parse(JSON.stringify(board)));
-       
-        console.log(moveHistory);
         console.log(boardHistory);
         x = false;
     }
