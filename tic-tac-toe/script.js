@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
       classNames.status.innerHTML = `${letter}`;
     }
     classNames.previous.style.visibility = 'visible';
-    classNames.next.style.visibility = 'visible';
+    classNames.next.style.visibility = 'hidden';
     historyIndex = history.length;
     for (const gameCell of cells) {
       gameCell.style.pointerEvents = 'none';
@@ -136,11 +136,11 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       e.target.classList.add('O');
       board[index[0]][index[1]] = 'O';
-
       checkGameStatus();
     }
     let entry = JSON.parse(JSON.stringify(board));
     history.push(entry);
+    console.log(history);
   };
 
   const displayHistory = (index) => {
@@ -163,18 +163,18 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const resetHandler = () => {
-    currentPlayerX = true;
-    gameIsLive = true;
-    classNames.status.textContent = `X 's turn`;
-    classNames.previous.style.visibility = 'hidden';
-    classNames.next.style.visibility = 'hidden';
-
-    for (const cell of cells) {
-      cell.classList.remove('X');
-      cell.classList.remove('O');
-      cell.style.pointerEvents = 'all';
-    }
-    history.length = 1;
+    // currentPlayerX = true;
+    // gameIsLive = true;
+    // classNames.status.textContent = `X 's turn`;
+    // classNames.previous.style.visibility = 'hidden';
+    // classNames.next.style.visibility = 'hidden';
+    // for (const cell of cells) {
+    //   cell.classList.remove('X');
+    //   cell.classList.remove('O');
+    //   cell.style.pointerEvents = 'all';
+    // }
+    // history.length = 1;
+    location.reload();
   };
 
   // previous and next buttons
