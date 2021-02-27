@@ -30,8 +30,8 @@ function startGame(){
     result.style.visibility = 'hidden';
     result.style.pointerEvents = 'none';
     cellBoard.forEach(function (item){
-        item.classList.remove(playerX);
-        item.classList.remove(playerO);
+        // item.classList.remove(playerX);
+        // item.classList.remove(playerO);
         item.removeEventListener('click', clickHandlder);
         item.addEventListener('click', clickHandlder, {once :true});
     })
