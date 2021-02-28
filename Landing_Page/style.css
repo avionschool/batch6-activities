@@ -357,22 +357,8 @@ right: 45px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* .character-container .char-desc{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 17px;
-    padding: 15px;
-    width: 90%;
-    display: none;
-    display: absolute;
-    bottom: 5px;
-    left: 5px;
-    display: none;
-} */
 .character-container .main-char{
-    /* font-size: 25px;
-    padding-left: 150px;
-    padding-right: 150px;
-    width: 65%;*/
+
     width: 100%;
     height: 100%;
     align-self: center;
@@ -516,19 +502,19 @@ right: 45px;
     align-self: center;
 }
 
-#prev{
+#vid-prev{
     grid-column: 1/2;
     grid-row: 2/3;
     justify-self:self-end;
 }
 
-#next{
+#vid-next{
     grid-column: 3/4;
     grid-row: 2/3;
     justify-self:self-start;
     
 }
-.button:hover{
+#trailer .button:hover{
     color: turquoise;
     text-shadow: 1px 1px 10px red;
 }
@@ -725,7 +711,7 @@ figcaption a{
 /*--------------------FOOTER--------------------------------*/
 footer{
     display: grid;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
     background-color: black;
 }
 
@@ -733,7 +719,6 @@ footer{
 .platform-logos{
     grid-row: 1/2;
     padding: 10px;
-    
    display: flex;
    justify-content:space-around;
    align-items: center;
@@ -743,6 +728,15 @@ footer{
     font-size: 35px;
     color: rgb(61, 61, 61);
 
+}
+
+/*FORM SUBMIT*/
+.subscriber-form{
+    background-color: white;
+    height: 20vh;
+    align-self: center;
+    display: flex;
+    align-items: center;
 }
 /*CONTENT*/
 .game-genre{
