@@ -785,6 +785,10 @@ footer{
 #submit-button:hover{
     background-color: black;
     color: white;
+    border-top: 2px solid red;
+    border-left: 2px solid red;
+    border-right: 2px solid turquoise;
+    border-bottom: 2px solid turquoise;
 }
 /*CONTENT*/
 .game-genre{
