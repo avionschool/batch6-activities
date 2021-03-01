@@ -782,6 +782,10 @@ footer{
     border: none
 
 }
+#submit-button:hover{
+    background-color: black;
+    color: white;
+}
 /*CONTENT*/
 .game-genre{
     
