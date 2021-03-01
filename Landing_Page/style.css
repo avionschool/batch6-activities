@@ -750,6 +750,8 @@ footer{
     border-bottom: 2px solid turquoise;
     border-radius: 10px;
     margin: 25px;
+    color: rgb(255, 24, 24);
+    text-shadow:  rgb(255, 24, 24)  1px 0 8px;
 }
 .subscriber-form input{
     height: 35px;
@@ -763,6 +765,8 @@ footer{
 .subscriber-form label{
     margin-top: 25px;
     font-size: 18px;
+    color: turquoise;
+    text-shadow:  turquoise 1px 0 8px;
 }
 .subscriber-form #submit-button{
     background-color: white;
