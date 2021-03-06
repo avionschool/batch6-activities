@@ -1,20 +1,28 @@
 var suits = ['♣','♠','♦','♥'];
-var values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-// document.getElementById('sample').innerHTML = deck;
+var values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 var deck =[];
 
+console.log(`List of functions:
+To create a new deck of Cards: Type 'createDeck()'
+To shuffle cards: Type 'shuffle(deck)'
+To sort cards by suit: Type 'sortSuit(deck)'
+To sort cards by Values in Ascending Order: Type 'sortValuesAscending(deck)'
+To sort cards by Values in Decending Order: Type 'sortValuesDescending(deck)'
+To deal cards: Type 'dealCard(deck)'
+To deal Five cards: Type dealFive(deck)'
+`);
 
 //Creating a New Deck
-function createDeck(card){
+function createDeck(){
     
-    card.length =0;
+    deck.length =0;
     for(i = 0; i < suits.length; i++){
         for(j = 0; j< values.length; j++){
-            card.push(suits[i] + values[values.length-1-j]);
+            deck.push(suits[i] + values[values.length-1-j]);
         }
     }
     //shuffle(card);
-    return card;
+    return deck;
 }
 
 //Shuffle Cards
@@ -31,9 +39,13 @@ function shuffle(newDeck){
 
 //Sorting Suits
 function sortSuit(card){
-    //let sortedSuit = card.map(x=> x);
-    let sortedSuit = card;
-    return sortedSuit.sort();
+    let sortedSuit = card.map(x=> x);
+    //let sortedSuit = card;
+    return sortedSuit.sort((a,b)=> {
+        let i = suits.indexOf(a.slice(0,1));
+        let j = suits.indexOf(b.slice(0,1));
+        return i - j;
+    });
 }
 
 //SORTING VALUES
@@ -80,7 +92,7 @@ function CardSuits(card){
 }
 
 function CardValue (card){
-    switch(card[0][1]){
+    switch(card[0].slice(1)){
         case 'A':
             return 'Ace';
         case '2':
@@ -112,51 +124,56 @@ function CardValue (card){
 
 //DEAL 5 CARDS
 function dealFive(card){
-    let fiveCards = [];
-    pushFiveCards();
-    shiftDeck()
-    sortValuesAscending(fiveCards);
-    console.log(fiveCards);
-     
-    function pushFiveCards(){
-        for(let i =0; i<5; i++){
-            fiveCards.push(card[i]);
-        }
-        return fiveCards;
+    if(card.length < 5){
+        return dealCard(card);
     }
-    function shiftDeck(){
-        for(let i =0; i<5; i++){
-           card.shift();
-        }
-        return card;
-    }
-
-if(card.length >= 5){
-    switch(true){
-        case fourOfaKind(fiveCards):
-            return 'Four of a Kind';
-         case straight(fiveCards) && flush(fiveCards):
-            return 'Straight Flush';
-        case straight(fiveCards):
-            return 'Straight';
-        case flush(fiveCards):
-            return 'Flush';
-        case fullHouse(fiveCards):
-            return 'FullHouse';
-        default:
+    else{
+        let fiveCards = [];
+        pushFiveCards();
+        shiftDeck()
+        sortValuesAscending(fiveCards);
+        console.log(fiveCards);
+         
+        function pushFiveCards(){
+            for(let i =0; i<5; i++){
+                fiveCards.push(card[i]);
+            }
             return fiveCards;
-    }
-}
-else{
-    dealCard(card);
-}
-   
-
+        }
+        function shiftDeck(){
+            for(let i =0; i<5; i++){
+               card.shift();
+            }
+            return card;
+        }
     
+        switch(true){
+            case fourOfaKind(fiveCards):
+                return 'Four of a Kind';
+            case RoyalFlush(fiveCards):
+                return 'Royal Flush';
+             case straight(fiveCards) && flush(fiveCards):
+                return 'Straight Flush';
+            case straight(fiveCards):
+                return 'Straight';
+            case flush(fiveCards):
+                return 'Flush';
+            case fullHouse(fiveCards):
+                return 'FullHouse';
+            case threeKind(fiveCards):
+                return 'Three of a Kind';
+            case twoKind(fiveCards):
+                return 'Two Pair';
+            default:
+                return 'One Pair';
+        }
+        
+    }
+   
 }
+
 
 //Functions for Combinations
-
 function straight(card){
     let arr = [];
     let cardRank = [];
@@ -164,7 +181,7 @@ function straight(card){
        arr.push(values.indexOf(card[i].slice(1)) === values.indexOf(card[0].slice(1)) +i) ;
        cardRank.push(card[i].slice(1))
     }
-    if(cardRank[0] == 'A' && cardRank[1] == '10' && cardRank[cardRank.length-1] == 'K' ){
+    if(cardRank.includes('A') && cardRank.includes('10') && cardRank.includes('J')  && cardRank.includes('Q') && cardRank.includes('K')){
         return true;
     }
     else{
@@ -196,13 +213,6 @@ return card[0].slice(1) == card[3].slice(1) || card[1].slice(1) == card[4].slice
 }
 
 function fullHouse(card){
-    // let arr = [];
-    // for(i = 0; i<card.length; i++){
-    //    arr.push(values.indexOf(card[i].slice(1)) === values.indexOf(card[0].slice(1))) ;
-    // }
-    // if(arr.includes( true,2 || false, 3 ) && (card[0].slice(1) == card[1].slice(1) || card[3].slice(1) == card[4].slice(1))){
-    //     return true;
-    // }
     if(card[0].slice(1) === card[1].slice(1) && card[2].slice(1) === card[3].slice(1)){
         return true;
     }
@@ -210,3 +220,29 @@ function fullHouse(card){
         return true;
     }
 }
+
+ function RoyalFlush(card){
+     let cardRank = [];
+     let cardSuit = [];
+     for( i=0; i<card.length; i++){
+         cardSuit.push(card[i].slice(0,1));
+         cardRank.push(card[i].slice(1));
+     }
+     return(cardRank.includes('A') && cardRank.includes('10') && cardRank.includes('J')  && cardRank.includes('Q') && cardRank.includes('K') && cardSuit.every((item,_index,arr) => item == arr[0]));
+ }
+
+  function threeKind(card){
+     return card[0].slice(1) == card[2].slice(1) || card[1].slice(1) == card[3].slice(1) || card[2].slice(1) == card[4].slice(1) ;
+    }
+
+    function twoKind(card){
+        let arr = [];
+        for(i = 0; i<card.length; i++){
+           for(j =1; j < card.length; j++){           
+                arr.push(card[i].slice(1) === card[j].slice(1) && card.indexOf(card[i]) !== card.indexOf(card[j]) );
+            }
+           
+        }
+    //console.log(arr);
+       return arr.includes(true);
+    }
