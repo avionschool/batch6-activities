@@ -172,7 +172,6 @@ function dealFive(card){
    
 }
 
-
 //Functions for Combinations
 function straight(card){
     let arr = [];
@@ -241,7 +240,6 @@ function fullHouse(card){
            for(j =1; j < card.length; j++){           
                 arr.push(card[i].slice(1) === card[j].slice(1) && card.indexOf(card[i]) !== card.indexOf(card[j]) );
             }
-           
         }
     //console.log(arr);
        return arr.includes(true);
