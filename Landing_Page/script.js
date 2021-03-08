@@ -3,7 +3,6 @@ const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu li a");
 
 // console.log(menuLinks);
-
 function openMenu(){
     menu.classList.toggle("menu-screen");
 }
@@ -14,55 +13,8 @@ function transition(){
 
 burgerMenu.addEventListener("click",openMenu);
 menu.addEventListener("click",openMenu);
-
-
-//Slider Embedded Video
-
-const videoContainer = document.querySelector('#video');
-const videos = document.querySelectorAll('#video iframe');
-const prevBtn = document.querySelector('#prev');
-const nextBtn = document.querySelector('#next');
-
-let counter = 1;
-
-const vidSize = videos[0].clientWidth;
-
-videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-
-nextBtn.addEventListener('click', function(){
-    if(videos[counter].id === 'last-vid'){
-        this.style.visibility = 'hidden';
-        prevBtn.style.visibility = 'visible';
-        this.style.transition = 'visibility .06s linear'
-    }
-    else{
-        prevBtn.style.visibility = 'visible';
-        this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.6s ease-in-out';
-        counter++;
-        //console.log(counter);
-        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-    }
-});
-
-prevBtn.addEventListener('click', function(){
-    if(videos[counter].id === 'first-vid'){
-        this.style.visibility = 'hidden';
-        this.style.transition = 'visibility .06s linear'
-        
-    }
-    else{
-        nextBtn.style.visibility = 'visible';
-        this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.6s ease-in-out';
-        counter--;
-        console.log(counter);
-        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-    }
-    
-});
-
 //For Header Animation
+
 const navBar = document.querySelector('nav');
 const upBtn = document.querySelector('.up-button');
 console.log(navBar);
@@ -129,3 +81,51 @@ vModal.addEventListener('click', function(){
 this.style.opacity = '0';
 this.style.pointerEvents = 'none';
 });
+
+
+//Slider Embedded Video
+
+const videoContainer = document.querySelector('#video');
+const videos = document.querySelectorAll('#video iframe');
+const prevBtn = document.querySelector('#vid-prev');
+const nextBtn = document.querySelector('#vid-next');
+
+let counter = 1;
+
+const vidSize = videos[0].clientWidth;
+
+videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
+
+nextBtn.addEventListener('click', function(){
+    if(videos[counter].id === 'last-vid'){
+        this.style.visibility = 'hidden';
+        prevBtn.style.visibility = 'visible';
+        this.style.transition = 'visibility .06s linear'
+    }
+    else{
+        prevBtn.style.visibility = 'visible';
+        this.style.transition = 'color .1s linear';
+        videoContainer.style.transition = 'transform 0.6s ease-in-out';
+        counter++;
+        //console.log(counter);
+        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
+    }
+});
+
+prevBtn.addEventListener('click', function(){
+    if(videos[counter].id === 'first-vid'){
+        this.style.visibility = 'hidden';
+        this.style.transition = 'visibility .06s linear'
+        
+    }
+    else{
+        nextBtn.style.visibility = 'visible';
+        this.style.transition = 'color .1s linear';
+        videoContainer.style.transition = 'transform 0.6s ease-in-out';
+        counter--;
+        console.log(counter);
+        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
+    }
+    
+});
+
