@@ -421,7 +421,8 @@ right: 45px;
     justify-self: center;
     grid-row: 2/3;
     grid-column: 2/3;
-    font-size: 33px;
+    font-size: 15px;
+    padding: 5px;
 }
 
 #prev-char{
