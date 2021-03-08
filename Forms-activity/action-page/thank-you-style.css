@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url(https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_960_720.jpg) no-repeat fixed 100%;
+    background-size: cover;
+    box-sizing: border-box;
+  
+}
+main{
+    background-color:rgba(0, 0, 0, 0.76);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    height: 80%;
+    width: 80% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+h1{
+    font-variant: small-caps;
+    font-size: 150px;
+    font-family: 'Bungee Shade', cursive;
+    font-weight: bold;
+    text-align: center;
+    color:  #fd4d4d;
+    line-height: 120px;
+}
+
+h2{
+    margin-top: 20px;
+    font-variant: small-caps;
+    font-size: 50px;
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;
+    color: whitesmoke;
+}
+
+span{
+    color:  #fd4d4d; 
+    font-family: 'Sigmar One', cursive;
+    font-variant: normal;
+}
