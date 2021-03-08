@@ -12,6 +12,7 @@ To deal cards: Type 'dealCard(deck)'
 To deal Five cards: Type dealFive(deck)'
 `);
 
+
 //Creating a New Deck
 function createDeck(){
     
@@ -73,6 +74,9 @@ function sortValuesDescending(card){
 
 //DEAL CARD
 function dealCard(card){
+    if(card.length <= 0){
+        return 'Empty deck. Create a new One';
+    }
     console.log(`${CardValue(card)} of ${CardSuits(card)}`);
     card.shift();
     return card;
@@ -124,8 +128,12 @@ function CardValue (card){
 
 //DEAL 5 CARDS
 function dealFive(card){
-    if(card.length < 5){
+    if(card.length < 5 && card.length > 0){
         return dealCard(card);
+    }
+    else if(card.length <= 0){
+        //console.log('Empty Card');
+        return 'Empty deck. Create a new One';
     }
     else{
         let fiveCards = [];
@@ -145,6 +153,15 @@ function dealFive(card){
                card.shift();
             }
             return card;
+        }
+        function emptyDeck(){
+            if(card.length = 0){
+                console.log('Your deck is empty. Create a new one.');
+                return card;
+            }
+            else{
+                return card;
+            }
         }
     
         switch(true){
@@ -221,17 +238,17 @@ function fullHouse(card){
 }
 
  function RoyalFlush(card){
-     let cardRank = [];
-     let cardSuit = [];
-     for( i=0; i<card.length; i++){
-         cardSuit.push(card[i].slice(0,1));
-         cardRank.push(card[i].slice(1));
-     }
-     return(cardRank.includes('A') && cardRank.includes('10') && cardRank.includes('J')  && cardRank.includes('Q') && cardRank.includes('K') && cardSuit.every((item,_index,arr) => item == arr[0]));
+    let cardRank = [];
+    let cardSuit = [];
+    for( i=0; i<card.length; i++){
+        cardSuit.push(card[i].slice(0,1));
+        cardRank.push(card[i].slice(1));
+    }
+    return(cardRank.includes('A') && cardRank.includes('10') && cardRank.includes('J')  && cardRank.includes('Q') && cardRank.includes('K') && cardSuit.every((item,_index,arr) => item == arr[0]));
  }
 
   function threeKind(card){
-     return card[0].slice(1) == card[2].slice(1) || card[1].slice(1) == card[3].slice(1) || card[2].slice(1) == card[4].slice(1) ;
+    return card[0].slice(1) == card[2].slice(1) || card[1].slice(1) == card[3].slice(1) || card[2].slice(1) == card[4].slice(1) ;
     }
 
     function twoKind(card){
@@ -243,4 +260,9 @@ function fullHouse(card){
         }
     //console.log(arr);
        return arr.includes(true);
+    }
+
+    function emptyDeck(){
+        console.log('Empty Deck');
+        // return card;
     }
