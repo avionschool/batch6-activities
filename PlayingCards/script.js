@@ -117,32 +117,31 @@ const dealRandomCard = function (arrayInput) {
     Math.floor(Math.random() * arrayInput.length),
     1
   )[0];
-  const test =
+  const cardConvertToWord =
     numberToWords(randomCard.value) + symbolsToWords(randomCard.suit);
-  return test;
+
+  if (arrayInput.length <= 0) {
+    return 'No more cards left';
+  } else {
+    return cardConvertToWord;
+  }
 };
 
 // 5) dealing five cards until the deck is exhausted
 const dealFiveCards = function (arrayInput) {
+  // you used your shuffled function here so that it will deal five cards randomly
   shuffle(arrayInput);
 
-  const randomCard = arrayInput.splice(
-    Math.floor(Math.random() * arrayInput.length),
-    5
-  );
-  return randomCard;
+  // splice has a bug, it will return 1, 2, 3, or 4 elements instead of 5
+  // the reason for that bug is Math.random()
+  // that's why you used for loop and with each loop, it will push a card infront of the deck on fiveCards array
+  const fiveCards = new Array();
+  for (let i = 0; i < 5; i++) {
+    fiveCards.push(arrayInput.shift());
+  }
+  if (arrayInput.length <= 0) {
+    return 'No more cards left';
+  } else {
+    return fiveCards;
+  }
 };
-// console.log('Initial Deck:', deck1);
-// console.log(deck1);
-
-// console.log('Arranged by Suit:', arrangeBySuit(deck1));
-// console.log(deck1);
-
-// console.log('Arranged by Value:', arrangeByValue(deck1));
-// console.log(deck1);
-
-// console.log(dealRandomCard(deck1));
-// console.log(deck1);
-
-// console.log(dealFiveCards(deck1));
-// console.log(deck1);
