@@ -9,7 +9,6 @@ GAME RULES:
 
 */
 
-// document.getElementsByTagName('img')[0].setAttribute('src', 'dice-1.png');
 //=======Form=======//
 const form = document.querySelector('.form');
 const submit = form.querySelector('#submit-button');
@@ -29,7 +28,6 @@ const newgameBtn = document.getElementsByClassName("btn-new")[0];
 const playerOneTotal = document.getElementById('score-0');
 const playerTwoTotal = document.getElementById('score-1');
 
-
 //=====CURRENT=====///
 let playerScoreOne = document.getElementById('current-0');
 let playerScoreTwo = document.getElementById('current-1');
@@ -44,7 +42,6 @@ let playerTwoTurn = false;;
 //=================DICE======================//
 let dice = document.getElementsByTagName('img')[0];
 const dice_values = [1,2,3,4,5,6];
-var dice_imgs = dice_values[Math.floor(dice_values.length*Math.random())];
 //============SOUNDS=======================//
 const diceSound = new Audio('roll.wav');
 const winnerSound = new Audio('triumph.mp3');
@@ -58,14 +55,14 @@ function startGame(){
     shuffleBtn.addEventListener('click', clickHandler);
     holdBtn.addEventListener('click', hold);
     newgameBtn.addEventListener('click', (()=>location.reload()));
-    
-    
+        
 }
+
 let targetScore;
 function formData(e){
     let data = new FormData(form);
     let newPlayers = new playerName(data.get('player-one'), data.get('player-two'), data.get('target-score'));
-    if(newPlayers.One.length > 1 && newPlayers.Two.length > 1 && newPlayers.targetScore > 1){
+    if(newPlayers.One.length > 1 && newPlayers.Two.length > 1 && parseInt(newPlayers.targetScore) > 4){
         e.preventDefault();
         document.querySelector('#name-0').innerHTML = newPlayers.One;
         document.querySelector('#name-1').innerHTML = newPlayers.Two;
@@ -76,9 +73,11 @@ function formData(e){
        
     
 }
+
 function clickHandler(){
     diceSound.play();
     let dice_imgs = dice_values[Math.floor(dice_values.length*Math.random())];
+
     if(playerOneTurn === true){
         playerOne();
         
@@ -87,7 +86,6 @@ function clickHandler(){
         playerTwo();
     }
     
-   
     function playerOne(){
         playerScoreOne.innerHTML = `${currentScoreOne+=dice_imgs}`;
         dice.setAttribute('src', `dice-${dice_imgs}.png`);
@@ -129,14 +127,14 @@ function clickHandler(){
 }
 
 function hold(){
-    let dice_imgs = dice_values[Math.floor(dice_values.length*Math.random())];
+    dice_imgs = dice_values[Math.floor(dice_values.length*Math.random())];
     dice.setAttribute('src', `dice-${dice_imgs}.png`);
     let i;
     let newScore;
     if(playerOneTurn === true){
         i = 0;
-        let initialVal = playerOneTotal.innerHTML;
-        newScore = parseInt(initialVal) + currentScoreOne;
+        // let initialVal = playerOneTotal.innerHTML;
+        newScore = parseInt( document.getElementById(`score-${i}`).innerHTML) + currentScoreOne;
         playerOneTurn = false;
         playerTwoTurn = true;
         currentScoreOne = 0;
@@ -144,8 +142,8 @@ function hold(){
     }
     else if(playerTwoTurn === true){
         i = 1;
-        let initialVal = playerTwoTotal.innerHTML;
-        newScore = parseInt(initialVal) + currentScoreTwo;
+        // let initialVal = playerTwoTotal.innerHTML;
+        newScore = parseInt( document.getElementById(`score-${i}`).innerHTML) + currentScoreTwo;
         playerTwoTurn = false;
         playerOneTurn = true;
         currentScoreTwo = 0;
@@ -154,9 +152,9 @@ function hold(){
     document.querySelector(`#name-${i}`).classList.remove('active');
     document.getElementById(`score-${i}`).innerHTML = `${newScore}`;
     winner();
- }
-
- function winner(){
+}
+    
+function winner(){
     let j;
     if(parseInt(playerOneTotal.innerHTML) >= targetScore){
         j = 0;
@@ -169,8 +167,8 @@ function hold(){
         winnerSound.play();
         holdBtn.style.pointerEvents = 'none';
         shuffleBtn.style.pointerEvents = 'none';
-}
-document.getElementById(`name-${j}`).classList.add('winner')
-document.querySelector(`.player-${j}-panel`).classList.add('winner-wrapper');
+    }
+    document.getElementById(`name-${j}`).classList.add('winner')
+    document.querySelector(`.player-${j}-panel`).classList.add('winner-wrapper');
 
 }

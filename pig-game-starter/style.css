@@ -214,8 +214,10 @@ i {
 }
 .form input{
     width: 90%;
-    height: 30px;
+    height: 35px;
     padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
 }
 .form #submit-button{
     margin-top: 20px;
