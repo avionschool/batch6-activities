@@ -68,7 +68,8 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7a6; }
+.active-wrapper{background-color: #f7f7f7a6;}
+/* .active { background-color: #f7f7f7a6; } */
 .active{ font-weight: 650; }
 
 .active::after {

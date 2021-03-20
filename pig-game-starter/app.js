@@ -95,8 +95,8 @@ function clickHandler(){
         dice.classList.toggle('dice-roll')
         document.querySelector('#name-0').classList.add('active');
         document.querySelector('#name-1').classList.remove('active');
-        document.querySelector('.player-0-panel').classList.add('active');
-        document.querySelector('.player-1-panel').classList.remove('active');
+        document.querySelector('.player-0-panel').classList.add('active-wrapper');
+        document.querySelector('.player-1-panel').classList.remove('active-wrapper');
         if(dice_imgs === 1){
             currentScoreOne = 0;
             playerScoreOne.innerHTML = `${currentScoreOne}`;
@@ -115,8 +115,8 @@ function clickHandler(){
         dice.setAttribute('src', `dice-${dice_imgs}.png`);
         document.querySelector('#name-1').classList.add('active');
         document.querySelector('#name-0').classList.remove('active');
-        document.querySelector('.player-1-panel').classList.add('active');
-        document.querySelector('.player-0-panel').classList.remove('active');
+        document.querySelector('.player-1-panel').classList.add('active-wrapper');
+        document.querySelector('.player-0-panel').classList.remove('active-wrapper');
         
         if(dice_imgs === 1){
             currentScoreTwo = 0;
