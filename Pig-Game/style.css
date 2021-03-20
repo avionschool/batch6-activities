@@ -31,7 +31,10 @@ body {
 } */
 
 body {
-  background-color: teal;
+  background: linear-gradient(rgba(15, 32, 39, 0.2), rgba(15, 32, 39, 0.5)),
+    url(./img/background.jpg);
+  background-position: center;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -77,7 +80,7 @@ body {
   text-align: center;
   font-size: 80px;
   font-weight: 100;
-  color: teal;
+  color: rgb(248, 120, 141);
   margin-bottom: 130px;
 }
 
@@ -92,7 +95,7 @@ body {
 }
 
 .player-current-box {
-  background-color: teal;
+  background-color: rgb(248, 120, 141);
   color: #fff;
   width: 40%;
   margin: 0 auto;
@@ -150,7 +153,7 @@ body {
 }
 
 i {
-  color: teal;
+  color: rgb(248, 120, 141);
   display: inline-block;
   margin-right: 15px;
   font-size: 32px;
@@ -179,6 +182,8 @@ i {
   transform: translateX(-50%);
   height: 100px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  animation-name: spin;
+  animation-duration: 0.3s;
 }
 
 .win-image {
@@ -194,6 +199,7 @@ i {
 
 .winner {
   background-color: rgb(0, 0, 0);
+  /* background-color: pink; */
   position: absolute;
   width: 100%;
   display: flex;
@@ -205,7 +211,7 @@ i {
 .winner .player-score {
   font-size: 8rem;
   font-weight: 900;
-  color: white;
+  color: rgb(248, 120, 141);
 }
 .hidden {
   /* display: none; */
@@ -220,6 +226,33 @@ i {
 @font-face {
   src: url(./fonts/Montserrat-SemiBold.ttf);
   font-family: semiBold;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(0);
+    transform: translateX(-50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(0);
+    transform: translateX(-50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+.rotate-center {
+  -webkit-animation: rotate-center 250ms cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    both;
+  animation: rotate-center 250ms cubic-bezier(0.785, 0.135, 0.15, 0.86) both;
 }
 
 .aboutTheGame-btn,
@@ -315,7 +348,7 @@ i {
 }
 .save-btn {
   margin-top: 20px;
-  background-color: teal;
+  background-color: rgb(248, 120, 141);
   padding: 0.7em 0;
   cursor: pointer;
 }
@@ -333,5 +366,5 @@ i {
 .winning-score-container span {
   font-size: 1.9rem;
   font-family: semiBold;
-  color: teal;
+  color: rgb(248, 120, 141);
 }

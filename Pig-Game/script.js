@@ -1,5 +1,5 @@
 'use strict';
-
+window.addEventListener('DOMContentLoaded', () =>{
 //buttons
 const btnNew = document.querySelector('.btn-new'),
       btnRoll = document.querySelector('.btn-roll'),
@@ -89,6 +89,8 @@ const rollDice = () =>{
   rollDiceSound.play()
   winningNumber.style.display = 'none'
   btnHold.classList.remove('hidden');
+  diceDisplay.classList.add('rotate-center')
+  setTimeout(() => diceDisplay.classList.remove('rotate-center'), 250)
 
   if (gameIsActive) {
     //if rolled dice is not 1, add random number to the current score
@@ -175,3 +177,4 @@ btnAboutGame.addEventListener('click', showHandler)
 modalCloseBtn.addEventListener('click', hideHandler)
 playerInputsBtn.addEventListener('click', showHandler)
 formSaveBtn.addEventListener('click', saveState)
+})
