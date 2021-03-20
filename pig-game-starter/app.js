@@ -182,6 +182,10 @@ function playAgain(){
     playerTwoTurn = false;
     playerOneTotal.innerHTML = '0';
     playerTwoTotal.innerHTML = '0';
+    playerScoreOne.innerHTML = '0';
+    playerScoreTwo.innerHTML = '0';
+    currentScoreOne = 0;
+    currentScoreTwo = 0;
     for(i = 0; i<2;i++){
         document.getElementById(`name-${i}`).classList.remove('winner')
         document.querySelector(`.player-${i}-panel`).classList.remove('winner-wrapper');
