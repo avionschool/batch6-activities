@@ -102,6 +102,7 @@ body {
     font-size: 30px;
 }
 
+/*=====BUTTONS========*/
 button {
     position: absolute;
     width: 200px;
@@ -114,11 +115,11 @@ button {
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 600; }
+button:hover {color: rgb(0, 0, 0);}
 button:hover i { margin-right: 20px; }
 
 button:focus {
@@ -149,10 +150,11 @@ i {
     height: 100px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.429);
     animation: diceRoll .3s linear 2;
+
 }
 
 .dice-roll{
-    animation: dice_roll .3s linear 0s 2;
+    animation: dice_roll .3s linear 2;
 }
 
 @keyframes dice_roll{
@@ -242,4 +244,44 @@ i {
     top: 55%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+/*===========Img================*/
+
+.hold-imgP1{
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    z-index: 5;
+    visibility: hidden;
+    animation: show_img1 1.5s ease-in backwards ;
+}
+
+.hold-imgP2{
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+    z-index: 5;
+    visibility: hidden;
+    animation: show_img1 1.5s ease-in backwards ;
+}
+.img-show{
+    animation: show_img 1.5s ease-in backwards ;
+}
+
+@keyframes show_img1{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+@keyframes show_img{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
 }

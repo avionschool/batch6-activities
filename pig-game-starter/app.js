@@ -46,6 +46,7 @@ const dice_values = [1,2,3,4,5,6];
 //============SOUNDS=======================//
 const diceSound = new Audio('roll.wav');
 const winnerSound = new Audio('triumph.mp3');
+const holdSound = new Audio('correct.mp3');
 
 
 //===========FUNCTIONS (EVENTS)=============//
@@ -132,25 +133,29 @@ function clickHandler(){
 function hold(){
     dice_imgs = dice_values[Math.floor(dice_values.length*Math.random())];
     dice.setAttribute('src', `dice-${dice_imgs}.png`);
+    holdSound.play();
     let i;
     let newScore;
     if(playerOneTurn === true){
         i = 0;
         // let initialVal = playerOneTotal.innerHTML;
-        newScore = parseInt( document.getElementById(`score-${i}`).innerHTML) + currentScoreOne;
+        newScore = parseInt(document.getElementById(`score-${i}`).innerHTML) + currentScoreOne;
+        document.querySelector('.hold-imgP1').classList.toggle('img-show')
         playerOneTurn = false;
         playerTwoTurn = true;
         currentScoreOne = 0;
         playerScoreOne.innerHTML = `${currentScoreOne}`;
+       
     }
     else if(playerTwoTurn === true){
-        i = 1;
-        // let initialVal = playerTwoTotal.innerHTML;
-        newScore = parseInt( document.getElementById(`score-${i}`).innerHTML) + currentScoreTwo;
+        i = 1
+        newScore = parseInt(document.getElementById(`score-${i}`).innerHTML) + currentScoreTwo;
+        document.querySelector('.hold-imgP2').classList.toggle('img-show')
         playerTwoTurn = false;
         playerOneTurn = true;
         currentScoreTwo = 0;
         playerScoreTwo.innerHTML = `${currentScoreTwo}`;
+       
     }
     document.querySelector(`#name-${i}`).classList.remove('active');
     document.getElementById(`score-${i}`).innerHTML = `${newScore}`;
