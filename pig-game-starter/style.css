@@ -68,7 +68,7 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
+.active { background-color: #f7f7f7a6; }
 .active{ font-weight: 650; }
 
 .active::after {
@@ -138,6 +138,7 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-play {top:100px;}
 
 .dice {
     position: absolute;
@@ -191,13 +192,13 @@ i {
     background-attachment: local;
     background-size: cover;
 }
-
+/*======Form Before Game==================*/
 .form-wrapper{
     position: fixed;
     z-index: 2;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(34, 34, 34, 0.445);
+    background-color: rgba(34, 34, 34, 0.664);
     display: flex;
     align-items: center;
     justify-content: center;

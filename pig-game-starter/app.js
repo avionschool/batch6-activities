@@ -22,7 +22,8 @@ function playerName(nameOne, nameTwo, target){
 //==================Buttons===================================//
 const shuffleBtn = document.getElementsByClassName("btn-roll")[0];
 const holdBtn = document.getElementsByClassName("btn-hold")[0];
-const newgameBtn = document.getElementsByClassName("btn-new")[0];
+const playagainBtn = document.getElementsByClassName("btn-play")[0];
+const newgameBtn = document.querySelector('.btn-new');
 
 //========PLAYER Total SCORE=================//
 const playerOneTotal = document.getElementById('score-0');
@@ -37,7 +38,7 @@ let currentScoreTwo = 0;
 
 //========WHO'S TURN IS IT================//
 let playerOneTurn = true;
-let playerTwoTurn = false;;
+let playerTwoTurn = false;
 
 //=================DICE======================//
 let dice = document.getElementsByTagName('img')[0];
@@ -50,10 +51,12 @@ const winnerSound = new Audio('triumph.mp3');
 //===========FUNCTIONS (EVENTS)=============//
 startGame();
 function startGame(){
+    playAgain();
 
     submit.addEventListener('click', formData);
     shuffleBtn.addEventListener('click', clickHandler);
     holdBtn.addEventListener('click', hold);
+    playagainBtn.addEventListener('click', startGame);
     newgameBtn.addEventListener('click', (()=>location.reload()));
         
 }
@@ -171,4 +174,16 @@ function winner(){
     document.getElementById(`name-${j}`).classList.add('winner')
     document.querySelector(`.player-${j}-panel`).classList.add('winner-wrapper');
 
+}
+function playAgain(){
+    holdBtn.style.pointerEvents = 'all';
+    shuffleBtn.style.pointerEvents = 'all';
+    playerOneTurn = true;
+    playerTwoTurn = false;
+    playerOneTotal.innerHTML = '0';
+    playerTwoTotal.innerHTML = '0';
+    for(i = 0; i<2;i++){
+        document.getElementById(`name-${i}`).classList.remove('winner')
+        document.querySelector(`.player-${i}-panel`).classList.remove('winner-wrapper');
+    }
 }
