@@ -693,6 +693,7 @@ nav{
     position: fixed;
     top: 50px;
     right: 100px;
+    cursor: pointer;
 }
 .close-modal li{
     width: 40px;
@@ -719,6 +720,7 @@ nav{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.87);
     opacity: 0;
+    transition: .55s ease;
     pointer-events:none;
 }
 
@@ -746,10 +748,16 @@ nav{
 .character-container .modal .inside-caption{
     grid-column: 2/3;
     display: grid;
+    box-sizing: border-box;
     width: 100%;
+    height: 400px;
+    place-items:center;
     border:1px solid red;
     grid-template-columns: 100% 100%;
     overflow-x: hidden;
+}
+.modal .inside-caption div{
+    padding: 10px;
 }
 
 .character-container .button{

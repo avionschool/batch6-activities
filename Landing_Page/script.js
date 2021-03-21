@@ -2,7 +2,7 @@ const burgerMenu = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu li a");
 
-//==========MENU==============================//
+// console.log(menuLinks);
 function openMenu(){
     menu.classList.toggle("menu-screen");
 }
@@ -31,90 +31,82 @@ function scrollDown(){
     }
 }
 
+
 window.addEventListener('scroll', scrollDown);
 
+//Character Modal
 
-//======================================= Character Modal =======================================//
+//Nero
 
-//========================  Nero   ========================================//
+const char = {
+    nero:{
+        img: document.querySelector('#nero img'),
+        modal: document.querySelector('#nero-modal'),
+        close_modal: document.querySelector('#nero-modal .close-modal'),
+    },
+    dante:{
+        img: document.querySelector('#dante img'),
+        modal:  document.querySelector('#dante-modal'),
+        close_modal: document.querySelector('#dante-modal .close-modal'),
+    },
+    V:{
+        img: document.querySelector('#V img'),
+        modal: document.querySelector('#v-modal'),
+        close_modal: document.querySelector('#v-modal .close-modal'),
+    },
+}
 
-const neroImg = document.querySelector('#nero img');
-const neroModal = document.querySelector('#nero-modal')
-const charContain = document.querySelector('#characters')
+const charContain = document.querySelector('#characters');
+charImg();
+function charImg(){
+    for(key in char){
+     let item = char[key].img;
+     let modalItem = char[key].modal;
+     let closeModal = char[key].close_modal;
+        console.log(item)
+        console.log(modalItem)
+        console.log(closeModal);
+        item.addEventListener('click', function() {
+            modalItem.style.opacity = '1'; 
+            modalItem.style.pointerEvents = 'all';
+        })
+        closeModal.addEventListener('click', function() {
+            modalItem.style.opacity = '0'; 
+            modalItem.style.pointerEvents = 'none';
+        })
+    }
+}
+// neroModal.addEventListener('click', function(){
+// this.style.opacity = '0';
+// this.style.pointerEvents = 'none';
+// });
 
-neroImg.addEventListener('click', function(){
-    neroModal.style.opacity = '1';
-    neroModal.style.pointerEvents = 'all';
-    neroModal.style.transition = 'opacity .48s ease-in';
-});
+//Dante
 
-neroModal.addEventListener('click', function(){
-this.style.opacity = '0';
-this.style.pointerEvents = 'none';
-});
 
-//==================  Dante  ======================//
 
-const danteImg = document.querySelector('#dante img');
-const danteModal = document.querySelector('#dante-modal');
+// danteModal.addEventListener('click', function(){
+// this.style.opacity = '0';
+// this.style.pointerEvents = 'none';
+// });
 
-danteImg.addEventListener('click', function(){
-    danteModal.style.opacity = '1';
-    danteModal.style.pointerEvents = 'all';
-    danteModal.style.transition = 'opacity .48s ease-in';
-});
+//V
 
-danteModal.addEventListener('click', function(e){
-this.style.opacity = '0';
-this.style.pointerEvents = 'none';
-    
 
-});
+// vModal.addEventListener('click', function(){
+// this.style.opacity = '0';
+// this.style.pointerEvents = 'none';
+// });
 
-//======================  V  =======================//
 
-const vImg = document.querySelector('#V img');
-const vModal = document.querySelector('#v-modal');
-
-vImg.addEventListener('click', function(){
-    vModal.style.opacity = '1';
-    vModal.style.pointerEvents = 'all';
-    vModal.style.transition = 'opacity .48s ease-in';
-});
-
-vModal.addEventListener('click', function(){
-this.style.opacity = '0';
-this.style.pointerEvents = 'none';
-});
-
-//===== SLIDER CAPTION ====//
-const charPrev = document.querySelectorAll('.prev-char');
-const charNxt = document.querySelectorAll('.next-char');
-const captionContainer = document.querySelectorAll('.caption');
-let caption = document.querySelectorAll('.inside-caption');
-let charCaption = document.querySelectorAll('.inside-caption div');
-let counter = 1;
-// console.log(charPrev);
-// console.log(charNxt);
-captionContainer.forEach(function(item){
-    item.addEventListener('click', function(){
-        console.log(item);
-    })
-})
-
-charPrev.forEach(function(item){
-    item.addEventListener('click', function(){
-        console.log(caption[1]);
-        caption.style.transform = `translateX(${caption})`
-    })
-})
-
-//==================Slider Embedded Video======================//
+//Slider Embedded Video
 
 const videoContainer = document.querySelector('#video');
 const videos = document.querySelectorAll('#video iframe');
 const prevBtn = document.querySelector('#vid-prev');
 const nextBtn = document.querySelector('#vid-next');
+
+let counter = 1;
 
 const vidSize = videos[0].clientWidth;
 
