@@ -2,7 +2,7 @@ const burgerMenu = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu li a");
 
-// console.log(menuLinks);
+//==========MENU==============================//
 function openMenu(){
     menu.classList.toggle("menu-screen");
 }
@@ -31,12 +31,13 @@ function scrollDown(){
     }
 }
 
-
 window.addEventListener('scroll', scrollDown);
 
-//Character Modal
 
-//Nero
+//======================================= Character Modal =======================================//
+
+//========================  Nero   ========================================//
+
 const neroImg = document.querySelector('#nero img');
 const neroModal = document.querySelector('#nero-modal')
 const charContain = document.querySelector('#characters')
@@ -52,7 +53,8 @@ this.style.opacity = '0';
 this.style.pointerEvents = 'none';
 });
 
-//Dante
+//==================  Dante  ======================//
+
 const danteImg = document.querySelector('#dante img');
 const danteModal = document.querySelector('#dante-modal');
 
@@ -62,12 +64,15 @@ danteImg.addEventListener('click', function(){
     danteModal.style.transition = 'opacity .48s ease-in';
 });
 
-danteModal.addEventListener('click', function(){
+danteModal.addEventListener('click', function(e){
 this.style.opacity = '0';
 this.style.pointerEvents = 'none';
+    
+
 });
 
-//V
+//======================  V  =======================//
+
 const vImg = document.querySelector('#V img');
 const vModal = document.querySelector('#v-modal');
 
@@ -82,15 +87,34 @@ this.style.opacity = '0';
 this.style.pointerEvents = 'none';
 });
 
+//===== SLIDER CAPTION ====//
+const charPrev = document.querySelectorAll('.prev-char');
+const charNxt = document.querySelectorAll('.next-char');
+const captionContainer = document.querySelectorAll('.caption');
+let caption = document.querySelectorAll('.inside-caption');
+let charCaption = document.querySelectorAll('.inside-caption div');
+let counter = 1;
+// console.log(charPrev);
+// console.log(charNxt);
+captionContainer.forEach(function(item){
+    item.addEventListener('click', function(){
+        console.log(item);
+    })
+})
 
-//Slider Embedded Video
+charPrev.forEach(function(item){
+    item.addEventListener('click', function(){
+        console.log(caption[1]);
+        caption.style.transform = `translateX(${caption})`
+    })
+})
+
+//==================Slider Embedded Video======================//
 
 const videoContainer = document.querySelector('#video');
 const videos = document.querySelectorAll('#video iframe');
 const prevBtn = document.querySelector('#vid-prev');
 const nextBtn = document.querySelector('#vid-next');
-
-let counter = 1;
 
 const vidSize = videos[0].clientWidth;
 
