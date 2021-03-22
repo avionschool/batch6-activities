@@ -63,8 +63,8 @@ const init = () =>{
   btnHold.style.top = '700px'
 
   modalContainer.classList.add('hidden')
-  document.querySelector(`.current-box-0`).style.display = 'block';
   document.querySelector(`.current-box-1`).style.display = 'block';
+  document.querySelector(`.current-box-2`).style.display = 'block';
 
   winningNumber.style.display = 'block';
   winImage.style.display = 'none'
@@ -74,9 +74,9 @@ const init = () =>{
 init()
 
 const switchPlayer = () => {
+  activePlayer = activePlayer === 0 ? 1 : 0;
   currentScore = 0;
   document.querySelector(`#current-${activePlayer}`).textContent = currentScore;
-  activePlayer = activePlayer === 0 ? 1 : 0;
   playerSection0.classList.toggle('active');
   playerSection1.classList.toggle('active');
 };
@@ -108,7 +108,7 @@ const rollDice = () =>{
 
 const holdDice = () => {
   if (gameIsActive) {
-    score[activePlayer] += currentScore; // update score depending on who is rolling
+    score[(activePlayer)] += currentScore; // update score depending on who is rolling
     document.querySelector(`#score-${activePlayer}`).textContent = score[activePlayer];
  
     // if winning number reached, end the game.
