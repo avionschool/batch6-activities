@@ -122,7 +122,6 @@ const holdDice = () => {
       winnerSound.play()
       winImage.style.display = 'block'
 
-     
       // if not yet reached the game winning number, switch player
     } else {
       if (currentScore >= 1) {//if current score is 0, don't play sound
@@ -150,13 +149,13 @@ const saveState = (e) =>{
   formContainer.classList.remove('form-active')
 
   if (formInputName0.value === '') { // for player 1 name
-    playerName0.innerHTML = 'Player 1'
+    playerName0.innerHTML = 'Peppa'
   }else{
   playerName0.innerHTML = formInputName0.value
   }
 
   if (formInputName1.value === '') { // for player 2 name
-    playerName1.innerHTML = 'Player 2'
+    playerName1.innerHTML = 'Pumba'
   }else{
   playerName1.innerHTML = formInputName1.value
   }
