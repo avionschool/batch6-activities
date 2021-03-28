@@ -80,6 +80,7 @@ function pieceMove(e){
         selectPiece();
         pawnRules();
         rookRules();
+        bishopRules();
         console.log('blue');
        
         
@@ -223,21 +224,50 @@ function pieceMove(e){
     function bishopRules(){
         let whiteBishop = pieces.bishop.white;
         let blackBishop = pieces.bishop.black;
-        let cellFile = e.currentTarget.id.slice(0,1);
-        let cellRank = parseInt(e.currentTarget.id.slice(1));
-
+       if(whiteBishop.includes(piece) || blackBishop.includes(piece)){
         bishopDiagonal1();
+        bishopDiagonal2();
+        bishopDiagonal3();
+        bishopDiagonal4();
+       }
+       
         //bishopDiagonal2();
         function bishopDiagonal1(){
-             for(i = 2; i < tile_names.length; i+=9){
-                // document.getElementById(`${tile_names[i]}`)
-                console.log(document.getElementById(`${tile_names[i]}`));
-                if(document.getElementById(`${tile_names[i]}`).id === 'h3'){
-                    console.log(document.getElementById(`${tile_names[i-9]}`));
+             for(i = 0; i < tile_names.length; i+=9){
+                let bishopTile = tile_names[tile_names.indexOf(e.currentTarget.id)+i];
+                document.getElementById(`${bishopTile}`).style.backgroundColor ='red';
+                if(document.getElementById(`${bishopTile}`).id.slice(0,1) === 'h' ||document.getElementById(`${bishopTile}`).id.slice(1) === '1'){
                     break;
                 }
             }
 
+        }
+        function bishopDiagonal2(){
+            for(i = 0; i < tile_names.length; i+=9){
+                let bishopTile = tile_names[tile_names.indexOf(e.currentTarget.id)-i];
+                document.getElementById(`${bishopTile}`).style.backgroundColor ='red';
+                if(document.getElementById(`${bishopTile}`).id.slice(0,1) === 'a' ||document.getElementById(`${bishopTile}`).id.slice(1) === '8'){
+                    break;
+                }
+            }
+        }
+        function bishopDiagonal3(){
+            for(i = 0; i < tile_names.length; i+=7){
+                let bishopTile = tile_names[tile_names.indexOf(e.currentTarget.id)-i];
+                document.getElementById(`${bishopTile}`).style.backgroundColor ='red';
+                if(document.getElementById(`${bishopTile}`).id.slice(0,1) === 'h' ||document.getElementById(`${bishopTile}`).id.slice(1) === '8'){
+                    break;
+                }
+            }
+        }
+        function bishopDiagonal4(){
+            for(i = 0; i < tile_names.length; i+=7){
+                let bishopTile = tile_names[tile_names.indexOf(e.currentTarget.id)+i];
+                document.getElementById(`${bishopTile}`).style.backgroundColor ='red';
+                if(document.getElementById(`${bishopTile}`).id.slice(0,1) === 'a' ||document.getElementById(`${bishopTile}`).id.slice(1) === '1'){
+                    break;
+                }
+            }
         }
 
     }  
