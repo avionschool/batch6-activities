@@ -35,9 +35,13 @@ const formDOM = {
 
 let table = document.querySelector('.table')
 let tableBody = document.querySelector('.table-body')
-
 let clients = []
-console.log(clients)
+
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'PHP',
+    minimumFractionDigits: 2
+  })
 
 const init = () =>{
     for (let i = 0; i < localStorage.length; i++) {
@@ -57,7 +61,7 @@ const init = () =>{
         td0.innerHTML = row.name;
         td1.innerHTML = row.accountNumber;
         td2.setAttribute("id", `${row.accountNumber}`);
-        td2.innerHTML = "₱ " + row.initialDeposit;
+        td2.innerHTML = formatter.format(row.initialDeposit)
     }
 }
 init()
@@ -104,10 +108,12 @@ const addClient = (e) =>{
     cName.innerHTML = newClient.name;
     cNo.innerHTML = newClient.accountNumber;
     cBal.setAttribute("id", `${accountNumber.value}`);
-    cBal.innerHTML = `₱ ${newClient.initialDeposit}`;
-
+    cBal.innerHTML = formatter.format(`${newClient.initialDeposit}`);
+    // ₱
     let client = JSON.stringify(newClient)
     localStorage.setItem(`${aName.toUpperCase()}`, client)
+
+    alert(`New Client was added\n\nNAME: ${aName}\nACCOUNT NUMBER: ${aNumber}\nINITIAL DEPOSIT: ${aDepositAmount}`)
 }
 
 const deposit = (e)=>{
@@ -131,7 +137,7 @@ const deposit = (e)=>{
             row.initialDeposit += parseInt(aDepositAmount)
             let r = JSON.stringify(row)
             localStorage.setItem(`${aName}`, r)
-            alert(`${aName} deposited amounting: ${aDepositAmount}`)
+            alert(`${aName} deposited an amount of: ${aDepositAmount}`)
             return
         }
         if (row.name !== aName && row.accountNumber === aNumber || row.name === aName && row.accountNumber !== aNumber){
@@ -157,14 +163,19 @@ const withdraw = () =>{
 
     for (const row of Object.values(clients)) {
         if (row.name === aName && row.accountNumber === aNumber) {
+            if (row.initialDeposit < aDepositAmount) {
+                alert('Insufficient')
+                return          
+            }
             row.initialDeposit -= parseInt(aDepositAmount)
             let r = JSON.stringify(row)
             localStorage.setItem(`${row.name}`, r)
-            alert(`${aName} withdraw amounting: ${aDepositAmount}`)
+            alert(`${aName} withdrew an amount of: ${aDepositAmount}`)
             return
         }   
         if (row.name !== aName && row.accountNumber === aNumber || row.name === aName && row.accountNumber !== aNumber){
-            return alert("Client account name and account number did not match.");
+            alert("Client account name and account number did not match.");
+            return
         }
     }
 }
@@ -192,10 +203,19 @@ const transfer = (e) =>{
 
     for (const row of Object.values(clients)) {
         if (row.name === FromName) {
+            if (row.initialDeposit < FromTransferAmount) {
+                alert('Insufficient')
+                return
+            }
             row.initialDeposit -= parseInt(FromTransferAmount)
+            alert(`${FromName} sent an amount of: ${FromTransferAmount} to ${ToName}`)
         }
         if (row.name === ToName) {
             row.initialDeposit += parseInt(FromTransferAmount)
+        }
+        if (row.initialDeposit < FromTransferAmount) {
+            alert('Insufficient')
+            return
         }
         if (row.name !== FromName && row.accountNumber === FromNumber || row.name === FromName && row.accountNumber !== FromNumber){
             return alert("Sender account name and account number did not match.");
