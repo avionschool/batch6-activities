@@ -14,6 +14,7 @@ Projects:
 - [Landing Page](Landing-Page/html/index.html)
 - [Tic Tac Toe](tic-tac-toe/index.html)
 - [Pig Game](Pig-Game/index.html)
+- [Bank App](Bank-App/html/index.html)
 
 Coding Challenge:
 - [Playing Cards](PlayingCards/index.html)
