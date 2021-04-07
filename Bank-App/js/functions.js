@@ -35,13 +35,9 @@ const formDOM = {
 
 let table = document.querySelector('.table')
 let tableBody = document.querySelector('.table-body')
-let clients = []
 
-const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'PHP',
-    minimumFractionDigits: 2
-  })
+let clients = []
+console.log(clients)
 
 const init = () =>{
     for (let i = 0; i < localStorage.length; i++) {
@@ -51,7 +47,6 @@ const init = () =>{
     }
     
     for (const row of Object.values(clients)) {
-
         let tr = tableBody.insertRow();
         let td0 = tr.insertCell(0);
         let td1 = tr.insertCell(1);
@@ -61,7 +56,7 @@ const init = () =>{
         td0.innerHTML = row.name;
         td1.innerHTML = row.accountNumber;
         td2.setAttribute("id", `${row.accountNumber}`);
-        td2.innerHTML = formatter.format(row.initialDeposit)
+        td2.innerHTML = "₱ " + row.initialDeposit;
     }
 }
 init()
@@ -75,25 +70,14 @@ const addClient = (e) =>{
     let aDepositAmount = formDOM.addClientTab.initialDeposit.value
 
     // verify if required fields are not empty
-    try {
-        if (aName === "") throw "Account Name is required!";
-        if (aNumber === "") throw "Account Number is required!";
-        if (aDepositAmount === "") throw "Amount is required!";
-    } catch (err) {
-        alert(err);
-        return;
-    }
+    if (!aName) return alert("Account Name is required!");
+    if (!aNumber) return alert("Account Number is required!");
+    if (!aDepositAmount) return alert("Amount is required!");
 
     // error handling, if name and account number already exist
     for (const client of Object.values(clients)) {
-        if (client.name === aName) {
-            alert('Client already Exist.')
-            return
-        }
-        if (client.accountNumber === aNumber) {
-            alert('Account Number already in use!')
-            return
-        }
+        if (client.name === aName) return alert('Client already Exist.')
+        if (client.accountNumber === aNumber) return alert('Account Number already in use!')
     }
 
     let row = tableBody.insertRow();
@@ -108,12 +92,10 @@ const addClient = (e) =>{
     cName.innerHTML = newClient.name;
     cNo.innerHTML = newClient.accountNumber;
     cBal.setAttribute("id", `${accountNumber.value}`);
-    cBal.innerHTML = formatter.format(`${newClient.initialDeposit}`);
-    // ₱
+    cBal.innerHTML = `₱ ${newClient.initialDeposit}`;
+
     let client = JSON.stringify(newClient)
     localStorage.setItem(`${aName.toUpperCase()}`, client)
-
-    alert(`New Client was added\n\nNAME: ${aName}\nACCOUNT NUMBER: ${aNumber}\nINITIAL DEPOSIT: ${aDepositAmount}`)
 }
 
 const deposit = (e)=>{
@@ -123,21 +105,16 @@ const deposit = (e)=>{
     let aDepositAmount = formDOM.depositTab.depositAmount.value
 
     // verify if required fields are not empty
-    try {
-        if (aName === "") throw "Account Name is required!";
-        if (aNumber === "") throw "Account Number is required!";
-        if (aDepositAmount === "") throw "Amount is required!";
-    } catch (err) {
-        alert(err);
-        return;
-    }
+    if (!aName) return alert("Account Name is required!");
+    if (!aNumber) return alert("Account Number is required!");
+    if (!aDepositAmount) return alert("Amount is required!");
 
     for (const row of Object.values(clients)) {
         if (row.name === aName && row.accountNumber === aNumber) {
             row.initialDeposit += parseInt(aDepositAmount)
             let r = JSON.stringify(row)
             localStorage.setItem(`${aName}`, r)
-            alert(`${aName} deposited an amount of: ${aDepositAmount}`)
+            alert(`${aName} deposited amounting: ${aDepositAmount}`)
             return
         }
         if (row.name !== aName && row.accountNumber === aNumber || row.name === aName && row.accountNumber !== aNumber){
@@ -152,30 +129,20 @@ const withdraw = () =>{
     let aDepositAmount = formDOM.withdrawTab.depositAmount.value
 
     // verify if required fields are not empty
-    try {
-        if (aName === "") throw "Account Name is required!";
-        if (aNumber === "") throw "Account Number is required!";
-        if (aDepositAmount === "") throw "Amount is required!";
-    } catch (err) {
-        alert(err);
-        return;
-    }
+    if (!aName) return alert("Account Name is required!");
+    if (!aNumber) return alert("Account Number is required!");
+    if (!aDepositAmount) return alert("Amount is required!");
 
     for (const row of Object.values(clients)) {
         if (row.name === aName && row.accountNumber === aNumber) {
-            if (row.initialDeposit < aDepositAmount) {
-                alert('Insufficient')
-                return          
-            }
             row.initialDeposit -= parseInt(aDepositAmount)
             let r = JSON.stringify(row)
             localStorage.setItem(`${row.name}`, r)
-            alert(`${aName} withdrew an amount of: ${aDepositAmount}`)
+            alert(`${aName} withdraw amounting: ${aDepositAmount}`)
             return
         }   
         if (row.name !== aName && row.accountNumber === aNumber || row.name === aName && row.accountNumber !== aNumber){
-            alert("Client account name and account number did not match.");
-            return
+            return alert("Client account name and account number did not match.");
         }
     }
 }
@@ -190,32 +157,18 @@ const transfer = (e) =>{
     let ToNumber = formDOM.transferTab.accountNumberTo.value
 
     // verify if required fields are not empty
-    try {
-        if (FromName === "") throw "Sender Name is required!";
-        if (FromNumber === "") throw "Sender Account Number is required!";
-        if (FromTransferAmount === "") throw "Transfer Amount is required!";
-        if (ToName === "") throw "Receiver Name is required!";
-        if (ToNumber === "") throw "Receiver Account Number is required!";
-    } catch (err) {
-        alert(err);
-        return;
-    }
+    if (!FromName) return alert("Sender Name is required!");
+    if (!FromNumber) return alert("Sender Account Number is required!");
+    if (!FromTransferAmount) return alert("Transfer Amount is required!");
+    if (!ToName) return alert("Receiver Name is required!");
+    if (!ToNumber) return alert("Receiver Account Number is required!");
 
     for (const row of Object.values(clients)) {
         if (row.name === FromName) {
-            if (row.initialDeposit < FromTransferAmount) {
-                alert('Insufficient')
-                return
-            }
             row.initialDeposit -= parseInt(FromTransferAmount)
-            alert(`${FromName} sent an amount of: ${FromTransferAmount} to ${ToName}`)
         }
         if (row.name === ToName) {
             row.initialDeposit += parseInt(FromTransferAmount)
-        }
-        if (row.initialDeposit < FromTransferAmount) {
-            alert('Insufficient')
-            return
         }
         if (row.name !== FromName && row.accountNumber === FromNumber || row.name === FromName && row.accountNumber !== FromNumber){
             return alert("Sender account name and account number did not match.");
@@ -237,14 +190,8 @@ const search = () =>{
         if (row.name === searchName) {
             alert(`Client Name: ${row.name}\nClient Account Number: ${row.accountNumber}\nClient Balance: ${row.initialDeposit}`)
         }
-        console.log(row)
     }
 }
-// for (let i = 0; i < clients.length; i++) {
-//     console.log(clients[i].name)
-//     // for (let j = 0; j < clients[i].length; j++) {
-//     // }
-// }
 
 formDOM.addClientBtn.addEventListener('click', addClient)
 formDOM.depositBtn.addEventListener('click', deposit)
