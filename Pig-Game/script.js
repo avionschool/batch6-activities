@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     wrongSound = new Audio('sounds/wrong.wav'),
     goldSound = new Audio('sounds/gold.wav'),
     winnerSound = new Audio('sounds/winnerSound.wav'),
-    ifYouKnow = new Audio('sounds/mixkit.wav'),
+    ifYouKnow = new Audio('sounds/if-you-know-it.wav'),
     winImage = document.querySelector('.win-image');
 
   //Game Variables
