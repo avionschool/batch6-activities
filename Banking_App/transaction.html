@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Withdraw</title>
+</head>
+<body>
+    <header>
+        <h1>Family Bank</h1>
+        <nav>
+            <ul class="link-container">
+                <li class="nav-link">
+                    <a href="main.html"><button type="button">New User</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="transaction.html"><button type="button">Transactions</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="transfer.html"><button type="button">Transfer</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="list-users.html"><button type="button">Client Directory</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="index.html"><button type="button">Log-out</button></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="transaction">
+        <section id="deposit">
+            <form action="" id="deposit-form">
+                <fieldset>
+                    <legend><h2>Deposit</h2></legend>
+                    <label for="depositor">Username</label>
+                    <input type="text" id="depositor" required>
+    
+                    <label for="dep-amnt">Amount</label>
+                    <input type="number" id="dep-amnt" min="1" required>
+                    <button type="submit" id="deposit-btn">Deposit</button>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <section id="withdraw">
+            <form action="" id="withdraw-form">
+                <fieldset>
+                    <legend><h2>Withdraw</h2></legend>
+                    <label for="withdrawer">Username</label>
+                    <input type="text" name="" id="withdrawer" required>
+
+                    <label for="with-amnt">Amount</label>
+                    <input type="number" id="with-amnt" min="1" required>
+                    <button type="submit" id="withdraw-btn" >Withdraw</button>
+                </fieldset>
+
+            </form>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/transaction.js"></script>
+</body>
+</html>
