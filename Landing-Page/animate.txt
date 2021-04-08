@@ -1,0 +1,7 @@
+#container.animate img {
+animation: animation .5s forwards; }
+document.addEventListener('scroll', function (e) {
+var top = window.pageYOffset + window.innerHeight, isVisible = top > document.querySelector('#container if (isVisible) {
+document.getElementById('container').classList.add('animate');
+}
+});
