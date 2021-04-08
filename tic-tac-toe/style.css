@@ -109,6 +109,12 @@ body {
   background-color: #00aeae;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 @font-face {
   font-family: myFontLight;
   src: url(./fonts/Montserrat-Light.ttf);
