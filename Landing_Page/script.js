@@ -1,8 +1,30 @@
+
+//=================== FOR HEADER ANIMATION ===================//
+
+const navBar = document.querySelector('nav');
+const upBtn = document.querySelector('.up-button');
+console.log(navBar);
+
+function scrollDown(){
+    const downScroll = window.pageYOffset;
+    if(downScroll > 5){
+        navBar.classList.add('scroll');
+        upBtn.classList.add('show-button');
+    }
+    else{
+        navBar.classList.remove('scroll');
+        upBtn.classList.remove('show-button');
+    }
+}
+
+window.addEventListener('scroll', scrollDown);
+
+
 const burgerMenu = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu li a");
 
-// console.log(menuLinks);
+
 function openMenu(){
     menu.classList.toggle("menu-screen");
 }
@@ -13,60 +35,48 @@ function transition(){
 
 burgerMenu.addEventListener("click",openMenu);
 menu.addEventListener("click",openMenu);
-//For Header Animation
-
-const navBar = document.querySelector('nav');
-const upBtn = document.querySelector('.up-button');
-console.log(navBar);
-
-function scrollDown(){
-    const downScroll = window.pageYOffset;
-    if(downScroll >5){
-        navBar.classList.add('scroll');
-        upBtn.classList.add('show-button');
-    }
-    else{
-        navBar.classList.remove('scroll');
-        upBtn.classList.remove('show-button');
-    }
-}
 
 
-window.addEventListener('scroll', scrollDown);
 
-//Character Modal
+//========================== Character Modal ====================================//
 
 //Nero
-
 const char = {
     nero:{
         img: document.querySelector('#nero img'),
         modal: document.querySelector('#nero-modal'),
         close_modal: document.querySelector('#nero-modal .close-modal'),
+        char_desc_cont: document.querySelector('#nero-modal .caption .inside-caption'),
+        char_desc: document.querySelectorAll('#nero-modal .caption .inside-caption div')
     },
     dante:{
         img: document.querySelector('#dante img'),
         modal:  document.querySelector('#dante-modal'),
         close_modal: document.querySelector('#dante-modal .close-modal'),
+        char_desc_cont: document.querySelector('#dante-modal .caption .inside-caption'),
+        char_desc: document.querySelectorAll('#dante-modal .caption .inside-caption div')
     },
     V:{
         img: document.querySelector('#V img'),
         modal: document.querySelector('#v-modal'),
         close_modal: document.querySelector('#v-modal .close-modal'),
+        char_desc_cont: document.querySelector('#v-modal .caption .inside-caption'),
+        char_desc: document.querySelectorAll('#v-modal .caption .inside-caption div')
     },
+}
+const charArrow = {
+    prev: document.querySelectorAll('#characters .prev-char'),
+    next: document.querySelectorAll('#characters .next-char')
 }
 
 const charContain = document.querySelector('#characters');
-charImg();
-function charImg(){
+charModal();
+function charModal(){
     for(key in char){
      let item = char[key].img;
      let modalItem = char[key].modal;
      let closeModal = char[key].close_modal;
-        console.log(item)
-        console.log(modalItem)
-        console.log(closeModal);
-        item.addEventListener('click', function() {
+         item.addEventListener('click', function() {
             modalItem.style.opacity = '1'; 
             modalItem.style.pointerEvents = 'all';
         })
@@ -75,73 +85,95 @@ function charImg(){
             modalItem.style.pointerEvents = 'none';
         })
     }
+
+
+   
+    let prev = charArrow.prev;
+    let next = charArrow.next;
+    let counter = 1;
+   
+    next.forEach((item)=> item.addEventListener('click', nextDesc));
+    prev.forEach((item)=> item.addEventListener('click', prevDesc))
+    for(key in char){
+        let cap_container = char[key].char_desc_cont;
+        let cap = char[key].char_desc;
+        const capSize = cap[0].clientWidth;
+        cap_container.style.transform = `translateX(${-capSize * counter}px)`
+    }
+
+    
+    console.log(document.querySelector('#characters #v-next').id[0]);
+    let cap;
+    let cap_container;
+    function nextDesc(e){
+        let btn = e.currentTarget;
+        cap =document.querySelectorAll(`#${btn.id[0]}-modal .caption .inside-caption div`);
+        cap_container = document.querySelector(`#${btn.id[0]}-modal .caption .inside-caption`);
+        const capSize = cap[0].clientWidth;
+        counter++;
+        cap_container.style.transform = `translateX(${-capSize * counter}px)`
+    
+    }
+    function prevDesc(e){
+        let btn = e.currentTarget;
+        cap =document.querySelectorAll(`#${btn.id[0]}-modal .caption .inside-caption div`);
+        cap_container = document.querySelector(`#${btn.id[0]}-modal .caption .inside-caption`);
+        const capSize = cap[0].clientWidth;
+        counter--;
+        cap_container.style.transform = `translateX(${-capSize * counter}px)`
+    
+    }
+   
 }
-// neroModal.addEventListener('click', function(){
-// this.style.opacity = '0';
-// this.style.pointerEvents = 'none';
-// });
-
-//Dante
 
 
-
-// danteModal.addEventListener('click', function(){
-// this.style.opacity = '0';
-// this.style.pointerEvents = 'none';
-// });
-
-//V
+    
 
 
-// vModal.addEventListener('click', function(){
-// this.style.opacity = '0';
-// this.style.pointerEvents = 'none';
-// });
-
-
-//Slider Embedded Video
+//========================= TRAILER SLIDER ==============================================//
 
 const videoContainer = document.querySelector('#video');
 const videos = document.querySelectorAll('#video iframe');
 const prevBtn = document.querySelector('#vid-prev');
 const nextBtn = document.querySelector('#vid-next');
-
-let counter = 1;
-
-const vidSize = videos[0].clientWidth;
-
-videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-
-nextBtn.addEventListener('click', function(){
-    if(videos[counter].id === 'last-vid'){
-        this.style.visibility = 'hidden';
-        prevBtn.style.visibility = 'visible';
-        this.style.transition = 'visibility .06s linear'
-    }
-    else{
-        prevBtn.style.visibility = 'visible';
-        this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.6s ease-in-out';
-        counter++;
-        //console.log(counter);
-        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-    }
-});
-
-prevBtn.addEventListener('click', function(){
-    if(videos[counter].id === 'first-vid'){
-        this.style.visibility = 'hidden';
-        this.style.transition = 'visibility .06s linear'
-        
-    }
-    else{
-        nextBtn.style.visibility = 'visible';
-        this.style.transition = 'color .1s linear';
-        videoContainer.style.transition = 'transform 0.6s ease-in-out';
-        counter--;
-        console.log(counter);
-        videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
-    }
+vidSlider();
+function vidSlider(){
+    let counter = 1;
+    const vidSize = videos[0].clientWidth;
+    videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
     
-});
+    nextBtn.addEventListener('click', function(){
+        if(videos[counter].id === 'last-vid'){
+            this.style.visibility = 'hidden';
+            prevBtn.style.visibility = 'visible';
+            this.style.transition = 'visibility .06s linear'
+        }
+        else{
+            prevBtn.style.visibility = 'visible';
+            this.style.transition = 'color .1s linear';
+            videoContainer.style.transition = 'transform 0.6s ease-in-out';
+            counter++;
+            //console.log(counter);
+            videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
+        }
+    });
+    
+    prevBtn.addEventListener('click', function(){
+        if(videos[counter].id === 'first-vid'){
+            this.style.visibility = 'hidden';
+            this.style.transition = 'visibility .06s linear'
+            
+        }
+        else{
+            nextBtn.style.visibility = 'visible';
+            this.style.transition = 'color .1s linear';
+            videoContainer.style.transition = 'transform 0.6s ease-in-out';
+            counter--;
+            console.log(counter);
+            videoContainer.style.transform = 'translateX(' + (-vidSize * counter) + 'px)';
+        }
+        
+    });
+}
+
 
