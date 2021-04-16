@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>COVID - 19 TRACKER</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>COVID-19 WORLD-O-METER</h1>
+        </header>
+
+        <section id="world-cases"></section>
+
+        <select name="" id="countries">
+            <option value="">Choose Country</option>
+        </select>
+
+        <section id="map-holder">
+            <div id="map"></div>
+        </section>
+
+        <section id="top-positive">
+            <h1>TOP 6 COUNTRIES WITH MOST POSTIVE CASES (UPDATED AS OF <span></span>)</h1>
+        </section>
+
+        <section id="list-countries">
+            <div id="country-container"></div>
+            <button type="button">Click to view list of countries</button>
+            <div id="paginator"></div>
+        </section>
+    </main>
+    
+    <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwMPH-QZpuStS269B16V2uZrI58y1QnaY&map_ids=811ab3f2e9a97e5d&libraries=visualization">
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="COVID-19" src="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"></iframe></div> -->
+
+<!--FOR GOOGLE MAP CALLBACK-->
+<!--&callback=initMap-->
