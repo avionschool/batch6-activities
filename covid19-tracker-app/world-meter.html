@@ -6,32 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     
-    <title>COVID - 19 TRACKER</title>
+    <title>COVID-19 TRACKER</title>
 </head>
 <body>
     <main>
         <header>
-            <h1>COVID-19 WORLD-O-METER</h1>
+            <h1>COVID-19 TRACKER</h1>
+            <ul>
+                <li>
+                    <a href="cases-perday.html"><button>Daily Case</button></a>
+                </li>
+            </ul>
         </header>
 
         <section id="world-cases"></section>
 
-        <select name="" id="countries">
+        <!-- <select name="" id="countries">
             <option value="">Choose Country</option>
-        </select>
+        </select> -->
 
         <section id="map-holder">
             <div id="map"></div>
         </section>
 
         <section id="top-positive">
-            <h1>TOP 6 COUNTRIES WITH MOST POSTIVE CASES (UPDATED AS OF <span></span>)</h1>
+            <h1>COUNTRIES WITH POSTIVE CASES (UPDATED AS OF <span></span>)</h1>
         </section>
 
         <section id="list-countries">
             <div id="country-container"></div>
-            <button type="button">Click to view list of countries</button>
-            <div id="paginator"></div>
+            <button type="button">Click to view more list of countries</button>
+            <div id="page-btns"></div>
         </section>
     </main>
     

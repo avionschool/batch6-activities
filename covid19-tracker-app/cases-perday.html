@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+    <title>Covid-19 Tracker</title>
+</head>
+<body>
+    <main id="tracker-page">
+        <header>
+            <h1>Covid-19 Tracker</h1>
+        </header>
+        <section>
+            <form action="" id="search">
+                <label for="search-query">Country</label>
+                <input type="search" id="search-query">
+                
+                <label for="date-from">From Date</label>
+                <input type="text" placeholder="yyyy-mm-dd"  required id="date-from">
+
+                <label for="date-to">To Date:</label>
+                <input type="text"  placeholder="yyyy-mm-dd"  required id="date-to">
+                <button type="submit" id="submit-btn">Search</button>
+            </form>
+        </section>
+        <section id="table-container"></section>
+
+        <section class="chart">
+            <div class="chart-container">
+                <canvas id="confirmed-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="deaths-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="recovered-chart"></canvas>
+            </div>
+        </section>
+    </main>
+    <script src="js/cases-perday.js"></script>
+</body>
+</html>

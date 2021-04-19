@@ -66,3 +66,7 @@ fetch('https://covid19-api-philippines.herokuapp.com/api/top-regions')
  //https://covid-api.mmediagroup.fr/v1
 
  //https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
+
+   // let countriesOne = await fetch('https://api.covid19api.com/live/country/philippines');
+  // let json1 = await countriesOne.json();
+  // console.log(json1)
