@@ -9,14 +9,18 @@
     <title>COVID-19 TRACKER</title>
 </head>
 <body>
-    <main>
+    <main id="index">
         <header>
+            <img src="assets/covid-pic.png" alt="">
             <h1>COVID-19 TRACKER</h1>
-            <ul>
-                <li>
-                    <a href="cases-perday.html"><button>Daily Case</button></a>
-                </li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><button>Home</button></a>
+                        <a href="cases-perday.html"><button>Daily Case</button></a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <section id="world-cases"></section>
@@ -37,6 +41,11 @@
             <div id="country-container"></div>
             <button type="button">Click to view more list of countries</button>
             <div id="page-btns"></div>
+        </section>
+        <section class="loader">
+            <div class="spinner">
+                <div></div>
+            </div>
         </section>
     </main>
     

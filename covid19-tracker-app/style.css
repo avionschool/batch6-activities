@@ -1,24 +1,113 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 /* Optional: Makes the sample page fill the window. */
-    
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&display=swap');
+
 html,body {
     height: 100%;
     margin: 0;
     padding:0;
 }
+/*================== HEADER SECTION  ===========================*/
+main{
+    position: relative;
+    background-color: rgb(24, 46, 80);
+}
+section{
+    position: relative;
+    top: 200px;
+}
+header{
+    position: fixed;
+    width:100%;
+    height: 120px;
+    box-shadow: 1px 5px 5px rgb(0, 247, 255);
+    background-color: rgb(24, 46, 80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    transition: linear 2s;
+    z-index: 3;
+}
+header img{
+    position: absolute;
+    height: 75%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: .5;
+}
+header h1{
+    justify-self: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 45px;
+    font-weight: 100px;
+    color: rgb(250, 109, 109);
+    z-index: 1;
+    position: absolute;
+    
+}
+header nav{
+    display: flex;
+    justify-content:  flex-end;
+    align-items: flex-end;
+    padding-right:30px ;
+
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul button{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 50px;
+    color: rgb(250, 109, 109);
+
+}
+header nav ul button:hover{
+    background-color: rgb(255, 43, 43);
+    color: white;
+}
 
 /*=================== FOR WORLD CASES ===========================*/
 #world-cases{
-    display: flex;
-    justify-content: space-around;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 25vw);
+    grid-auto-rows:250px ;
+    grid-gap: 5px;
+    padding: 20px;
+    
 }
 #world-cases .world-stat{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
-    border: 1px solid black;
+    transition: linear 2s;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 100px;
+}
+#world-cases .world-stat:nth-child(1){
+    text-shadow: 1px 1px 5px orangered;
+    color: orangered;
+}
+#world-cases .world-stat:nth-child(2){
+    text-shadow: 1px 1px 5px rgb(251, 31, 31);
+    color: rgb(255, 30, 30);
+}
+#world-cases .world-stat:nth-child(3){
+    text-shadow: 1px 1px 5px rgb(31, 251, 42);
+    color: rgb(31, 251, 42);
 }
 
 /*======================= MAP =====================================*/
@@ -27,29 +116,36 @@ html,body {
     justify-content: center;
 }
 #map{
-    height: 50vh;
+    height: 75vh;
     width: 75vw;
+    box-shadow: 2px 5px 10px black;
 }
 
 /*============================ TOP 5 COOUNTRIES WITH CONFIRMED CASES ====================================*/
 
-#top-positive{
+#top-positive, #list-countries #country-container{
     display:grid;
     justify-content: center;
-
     grid-template-columns: repeat(3, 25vw);
     grid-auto-rows:250px ;
     grid-gap: 5px;
     padding: 20px;
 }
-#top-positive h1{
+#top-positive h1, #list-countries h1{
     grid-column: 1/4;
     align-self: center;
     justify-self: center;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 40px;
+    font-weight: 100px;
+    color: rgb(245, 80, 51);
+
 }
-#top-positive .top-country-with-pos{
-    box-shadow: 2px 5px 10px black;
-    padding: 5px;
+#top-positive .top-country-with-pos, #list-countries #country-container .top-country-with-pos{
+    box-shadow: 1px 1px 5px black;
+    padding: 10px;
     border-radius: 10px;
     font-size: 18px;
     line-height: 1.75;
@@ -57,18 +153,24 @@ html,body {
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     align-items: center;
-    
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 50px;    
+    transition: linear 2s;
 }
-#top-positive .top-country-with-pos h1{
+#top-positive .top-country-with-pos h1, #country-container h1{
     grid-column: 1/3;
     grid-row: 1/2;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 100px;
+    font-size: 35px;
 }
 #top-positive .top-country-with-pos table{
     grid-column: 1/3;
     grid-row: 2/3;
+    color: rgb(0, 247, 255);
 }
 
 #top-positive .top-country-with-pos:nth-child(6){
@@ -78,17 +180,9 @@ html,body {
 #list-countries{
     display: flex;
     flex-direction: column;
-}
-#list-countries #country-container{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(3,25vw);
-    grid-auto-flow: 250px;
-    padding: 20px;
-    grid-gap: 5px;
+    background-color: rgb(24, 46, 80);
 }
 #list-countries button{
-    
     width: 350px;
     height: 120px;
     justify-self: center;
@@ -98,34 +192,10 @@ html,body {
     border: none;
     cursor: pointer;
 }
-
-#list-countries h1{
-    grid-column: 1/4;
-    align-self: center;
-    justify-self: center;
-}
-#list-countries .top-country-with-pos{
-    box-shadow: 2px 5px 10px black;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 18px;
-    line-height: 1.75;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    align-items: center;
-    
-}
-#list-countries .top-country-with-pos h1{
-    grid-column: 1/3;
-    grid-row: 1/2;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
 #list-countries .top-country-with-pos table{
     grid-column: 1/3;
     grid-row: 2/3;
+    color: rgb(0, 247, 255);
 }
 
 #list-countries #page-btns{
@@ -150,33 +220,132 @@ html,body {
 
 
 /*========================== COVID 19 TRACKER PAGE   =========================================*/
+#tracker-page{
+    background-color: white;
+}
+#tracker-page #form-container{
+    top: 0;
+    height: 100vh;
+    background-color: rgb(24, 46, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tracker-page form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 450px;
+    font-family: 'Kodchasan', sans-serif;
+}
+#tracker-page form input{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+#tracker-page form label{
+    font-size: 35px;
+    color: rgb(245, 80, 51);
+}
+#tracker-page form button{
+    font-size: 35px;
+    border: 1px solid rgb(255, 43, 43);
+    background-color: rgb(255, 43, 43);
+    color: white;
+    width: 50%;
+    border:none;
+    border-radius: 30px;
+}
+#tracker-page form button:hover{
+    color: rgb(255, 43, 43);
+    border: 1px solid rgb(255, 43, 43);
+    background-color: transparent;
+}
+
+/*====================== CHART SECTION ==========================*/
 #tracker-page #table-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
+    background-color: white;
 }
 #tracker-page #table-container table{
     width: 70%;
     text-align: left;
 }
 #tracker-page #table-container table tr td{
-    padding: 10px;
-    
+    padding: 5px;
+    font-family: 'Kodchasan', sans-serif;
     border-bottom:1px solid black ;
 }
 #tracker-page #table-container table tr:nth-child(1) td{
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 100;
 }
 #tracker-page .chart{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 #tracker-page .chart-container{
-    justify-self: center;
-    align-self: center;
-    width: 80vw;
-    height: 45vh;
+    margin: 10px;
+    width: 70%;
+    background-color: white;
+}
+
+
+/*========================== LOADER =========================================*/
+
+.loader{
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.774);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(24, 46, 80);
+}
+.spinner{
+    width: 300px;
+    height: 300px;
+    background-image: url('assets/covid-pic.png');
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+.spinner div{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-top-color:white;
+    border-radius: 50%;
+    animation: loadAnimation 1.5s linear infinite;
+}
+
+@keyframes loadAnimation {
+    0%{
+        transform: rotate(0turn);
+    }
+    50%{
+        transform: rotate(.5turn);
+       
+    }
+    100%{
+        transform: rotate(1turn);
+        border: 5px solid transparent;
+    }
 }

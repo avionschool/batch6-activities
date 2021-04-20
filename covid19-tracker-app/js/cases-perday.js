@@ -79,10 +79,8 @@ function getSlug(arr, value){
         }
         else{
             alert('Country not found. Check the spelling of correct. Remember to CAPITALIZE the first beginning of the country name (e.g Japan, South Africa, United States of America')
-            slug = 'philippines';
         }
-       
-        resolve (slug);
+       resolve(slug)
     })
 }
 const tableContainer = document.querySelector('#tracker-page #table-container');
@@ -102,44 +100,42 @@ function inserTable(confirmed, deaths, recovered, arr, country){
         let headCell = [];
         for(a=0; a < arr.length; a++){
             if(arr[a].Country === country){
-                createTable(arr[a].ISO2);
-            }
-        }
-        
-        function createTable(arrCode){
-            if(headCell.length < 1){
-                for(j=0; j < 6; j++){
-                    headCell[j] = headRow.insertCell(-1);
-                    headCell[j].className = 'head-cell';
-                }
-                headCell[0].innerHTML = '<th>Flag</th>';
-                headCell[1].innerHTML = '<th>Country</th>';
-                headCell[2].innerHTML = '<th>Confirmed</th>';
-                headCell[3].innerHTML = '<th>Deaths</th>';
-                headCell[4].innerHTML = '<th>Recovered</th>';
-                headCell[5].innerHTML = '<th>Date</th>';
-            }
-            
-            for(i=0; i < confirmed.length; i++){
-                let row = table.insertRow(1);
-                let cell = [];
-                let img = document.createElement('img');
-                img.src = `https://www.countryflags.io/${arrCode}/flat/64.png`;
-                for(z = 0; z < 6; z++){
-                    cell[z] = row.insertCell(-1);
-                }
-                cell[0].append(img);
-                cell[1].append(country)
-                cell[2].append(confirmed[i]);
-                cell[3].append(deaths[i]);
-                cell[4].append(recovered[i]);
-                cell[5].append(date[i]);               
+                createTable(arr[a].ISO2, table, headCell, headRow, confirmed, deaths, recovered, country);
             }
         }
         resolve(tableContainer);
     })
 }
-
+function createTable(arrCode, table, headCell,headRow, confirmed, deaths, recovered, country){
+    if(headCell.length < 1){
+        for(j=0; j < 6; j++){
+            headCell[j] = headRow.insertCell(-1);
+            headCell[j].className = 'head-cell';
+        }
+        headCell[0].innerHTML = '<th>Flag</th>';
+        headCell[1].innerHTML = '<th>Country</th>';
+        headCell[2].innerHTML = '<th>Confirmed</th>';
+        headCell[3].innerHTML = '<th>Deaths</th>';
+        headCell[4].innerHTML = '<th>Recovered</th>';
+        headCell[5].innerHTML = '<th>Date</th>';
+    }
+    
+    for(i=0; i < confirmed.length; i++){
+        let row = table.insertRow(1);
+        let cell = [];
+        let img = document.createElement('img');
+        img.src = `https://www.countryflags.io/${arrCode}/flat/64.png`;
+        for(z = 0; z < 6; z++){
+            cell[z] = row.insertCell(-1);
+        }
+        cell[0].append(img);
+        cell[1].append(country)
+        cell[2].append(confirmed[i]);
+        cell[3].append(deaths[i]);
+        cell[4].append(recovered[i]);
+        cell[5].append(date[i]);               
+    }
+}
 //======================= GRAPH DATA ============================================//
 
 function createChart(arrDate, objData, status, bgColor){
