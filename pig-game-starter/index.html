@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css?" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link rel="icon" href="pig-img.png">
+        <title>Pig Game</title>
+    </head>
+
+    <body>
+        <div class="form-wrapper">
+            <form action="" class="form">
+                <ul>
+                    <li>
+                        <label for="name-player1">Player One's Name</label>
+                        <input type="text" id="name-player1" name="player-one" placeholder="Player One's Name..." autocomplete="off" minlength="2" autofocus required>
+                    </li>
+                   
+                        <label for="name-player2">Player Two's Name</label>
+                        <input type="text" id="name-player2" name="player-two" placeholder="Player One's Name..." autocomplete="off"  minlength="2" required>
+                    </li>
+                    <li>
+                        <label for="target-score">Target Score</label>
+                        <input type="number" id="target-score" name="target-score" placeholder="e.g. 100..." required min="5">
+                    </li>
+                    <li>
+                        <input type="submit" value="Play" name="submit" id="submit-button">
+                    </li>
+                </ul>
+                
+
+            </form>
+        </div>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active-wrapper">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">0</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">0</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">0</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+            
+            
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New Game</button>
+            <button class="btn-play"><i class="ion-ios-plus-outline"></i>Play again</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <h2 class="target-score">Race to <span id="target"></span></h2>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            
+            <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="https://i.gifer.com/5IPv.gif" alt="" class="hold-imgP1">
+            <img src="https://i.gifer.com/5IPv.gif" alt="" class="hold-imgP2">
+        </div>
+        
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/covid-pic.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>COVID-19 TRACKER</title>
+</head>
+<body>
+    <main id="index">
+        <header>
+            <img src="assets/covid-pic.png" alt="">
+            <h1>COVID-19 TRACKER</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><button>Home</button></a>
+                        <a href="cases-perday.html"><button>Daily Case</button></a>
+                        <a href="news.html"><button>Headlines</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="world-cases"></section>
+
+        <!-- <select name="" id="countries">
+            <option value="">Choose Country</option>
+        </select> -->
+
+        <section id="map-holder">
+            <div id="map"></div>
+        </section>
+        <div class="heatweights">
+            <figure>
+                <img src="assets/heat_2.PNG" alt="heatweight">
+                <figcaption>Below 1,000 Confirmed Cases</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/heat_10.PNG" alt="heatweight">
+                <figcaption>Above 1,000 and below 10,000 Confirmed Cases</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/heat_30.PNG" alt="heatweight">
+                <figcaption>Above 10,000 and below 100,000 Confirmed Cases</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/heat_70.PNG" alt="heatweight">
+                <figcaption>Above 100,000 and below 1,000,000 Confirmed Cases</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/heat_100.PNG" alt="heatweight">
+                <figcaption>Above 1,000,000 Confirmed Cases</figcaption>
+            </figure>
+        </div>
+        <section id="top-positive">
+            <h1>COUNTRIES WITH POSTIVE CASES (UPDATED AS OF <span></span>)</h1>
+        </section>
+
+        <section id="list-countries">
+            <div id="country-container"></div>
+            <button type="button">Click to view more list of countries</button>
+            <div id="page-btns"></div>
+        </section>
+        
+        <section class="loader">
+            <div class="spinner">
+                <div></div>
+            </div>
+        </section>
+    </main>
+    
+    <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwMPH-QZpuStS269B16V2uZrI58y1QnaY&map_ids=811ab3f2e9a97e5d&libraries=visualization">
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="COVID-19" src="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"></iframe></div> -->
+
+<!--FOR GOOGLE MAP CALLBACK-->
+<!--&callback=initMap-->
