@@ -3,9 +3,9 @@ const formatter = new Intl.NumberFormat('en');
 
 window.addEventListener('load', function(){
   loader();
-  iterateActiveCases();
-  iterateCountries();
-  createMap();
+  setTimeout(iterateActiveCases, 1500)
+  setTimeout(iterateCountries, 1500)
+  setTimeout(createMap, 1500)
 })
 
 function loader(){
@@ -13,7 +13,7 @@ function loader(){
   setTimeout(()=>{
     loader.style.opacity = '0';
     loader.style.pointerEvents = 'none';
-    loader.style.transition = 'opacity linear 1s'
+    loader.style.transition = 'opacity linear 1s';
   }, 3000)
 }
 
@@ -24,6 +24,7 @@ async function iterateActiveCases(){ // GETS THE DATA FROM API
   let push = await pushArray(topCases,json); // PUSHES THE DATA (specifically "Countries" properties) FROM THE API TO topCases Array
   let displayWord = await displaytoWorld(json); // DISPLAY THE TOTAL CONFIRMED, DEATHS AND RECOVERY GLOBALLY (From "Global" property)
   let topFive = await displayTopCountries(push); // DISPLAY THE TOP COUNTRIES WITH HIGHEST CASES
+ 
 }
 function pushArray(arr, data){
     return new Promise(function (resolve, reject){
@@ -44,7 +45,7 @@ function pushArray(arr, data){
 
 //========================= DISPLAY GLOBAL CASE ==================================//
 function displaytoWorld(obj){
-  setTimeout(function(){
+  
     return new Promise(function(resolve){
       const worldCase = document.querySelector('#world-cases');
       let heading = [];
@@ -67,13 +68,12 @@ function displaytoWorld(obj){
       subHeading[2].innerHTML = formatter.format(global.TotalRecovered);
       resolve (worldCase)
     })
-  }, 1000)
+  
 }
 
 //========================= FOR TOP 5 WITH ACTIVE CASES ==========================//
 
 function displayTopCountries(arr){
-  setTimeout(function(){
     return new Promise(function(resolve){
       const topCountry = document.querySelector('#top-positive');
       let date = document.querySelector('#top-positive h1 span');
@@ -82,7 +82,7 @@ function displayTopCountries(arr){
       for(i=0;i < 6; i++){
         let div = document.createElement('div');
         let img = document.createElement('img');
-        img.src = `https://www.countryflags.io/${arr[i].CountryCode}/flat/64.png`;
+        img.src = `https://flagcdn.com/84x63/${arr[i].CountryCode.toLowerCase()}.png`; //https://www.countryflags.io/${arr[i].CountryCode}/flat/64.png or https://flagcdn.com/16x12/za.png
         let h1 = document.createElement('h1');
         div.className = 'top-country-with-pos';
         let countryList = document.createElement('table');
@@ -113,7 +113,6 @@ function displayTopCountries(arr){
       }
       resolve(topCountry);
     })
-  }, 1000)
 }
 //============================== DISPLAY ALL COUNTRIES  =========================================================//
 const displayCountries = document.querySelector('#list-countries button');
@@ -140,7 +139,6 @@ displayCountries.addEventListener('click', function(){
     while(nationChild.childNodes){
     nationChild.removeChild(nationChild.childNodes[0]);
     }
-    
   }
 })
 async function displayAll(){
@@ -162,22 +160,23 @@ function getCountry(arr, container, divNums, page){
       if(paginatedItems[i].Country != null){
         let div = document.createElement('div');
         let img = document.createElement('img');
-        img.src = `https://www.countryflags.io/${paginatedItems[i].CountryCode}/flat/64.png`;
+        img.src = `https://flagcdn.com/84x63/${paginatedItems[i].CountryCode.toLowerCase()}.png`; //https://flagcdn.com/16x12/za.png or https://www.countryflags.io/${paginatedItems[i].CountryCode}/flat/64.png
         let h1 = document.createElement('h1');
         div.className = 'top-country-with-pos';
         let countryList = document.createElement('table');
-        let row1 = countryList.insertRow(-1);
-        let row2 = countryList.insertRow(-1);
-        let row3 = countryList.insertRow(-1);
-
+        let row=[];
+        for(let j =0; j < 3; j++){
+          row[j] = countryList.insertRow(-1)
+        }
+        
         //=========== INSIDE EACH DIV OF COUNTRY==========================================//
         h1.append(paginatedItems[i].Country)
-        row1.insertCell(0).innerHTML = '<strong>Confirmed Cases:</strong>';
-        row1.insertCell(1).append(formatter.format(paginatedItems[i].TotalConfirmed));
-        row2.insertCell(0).innerHTML = '<strong>Deaths:</strong>';
-        row2.insertCell(1).append(formatter.format(paginatedItems[i].TotalDeaths))
-        row3.insertCell(0).innerHTML = '<strong>Recovered:</strong>';
-        row3.insertCell(1).append(formatter.format(paginatedItems[i].TotalRecovered));
+        row[0].insertCell(0).innerHTML = '<strong>Confirmed Cases:</strong>';
+        row[0].insertCell(1).append(formatter.format(paginatedItems[i].TotalConfirmed));
+        row[1].insertCell(0).innerHTML = '<strong>Deaths:</strong>';
+        row[1].insertCell(1).append(formatter.format(paginatedItems[i].TotalDeaths))
+        row[2].insertCell(0).innerHTML = '<strong>Recovered:</strong>';
+        row[2].insertCell(1).append(formatter.format(paginatedItems[i].TotalRecovered));
         container.appendChild(div);
         div.appendChild(countryList);
         div.insertBefore(h1,countryList);
@@ -224,7 +223,6 @@ async function iterateCountries(){
 }
 let heatMapData = [];
 function iterateCountryList(item, arr){
-  setTimeout(function(){
     return new Promise(function(){
       for(let key in item){
         let country = item[key];
@@ -233,19 +231,19 @@ function iterateCountryList(item, arr){
             if(arr[i].Country === key || arr[i].CountryCode === country.All.abbreviation){
               let heatWeight;
               if(arr[i].TotalConfirmed < 1000){
-                heatWeight = 5;
+              heatWeight = 2;
               }
-              else if(arr[i].TotalConfirmed > 1000 && arr[i].TotalConfirmed < 5000){
-                heatWeight = 10;
-              }
-              else if(arr[i].TotalConfirmed > 5000 && arr[i].TotalConfirmed < 10,000){
-                heatWeight = 30;
+              else if(arr[i].TotalConfirmed > 1000 && arr[i].TotalConfirmed < 10000){
+              heatWeight = 10;
               }
               else if(arr[i].TotalConfirmed > 10000 && arr[i].TotalConfirmed < 100000){
-                heatWeight = 40;
+              heatWeight = 30;
+              }
+              else if(arr[i].TotalConfirmed > 100000 && arr[i].TotalConfirmed < 1000000){
+              heatWeight = 70;
               }
               else if(arr[i].TotalConfirmed > 1000000){
-                heatWeight = 100;
+              heatWeight = 100;
               }
               heatMapData.push({location: new google.maps.LatLng(parseInt(country[value].lat),parseInt(country[value].long) ), weight: heatWeight})
             }
@@ -255,7 +253,6 @@ function iterateCountryList(item, arr){
       }
      
     })
-  }, 3000)
 }
 
 function createMap(){
