@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/covid-pic.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Covid-19 Tracker-News</title>
+</head>
+<body>
+    <main id="news">
+        <header>
+            <img src="assets/covid-pic.png" alt="">
+            <h1>Covid-19 Tracker</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="world-meter.html"><button>Home</button></a>
+                        <a href="cases-perday.html"><button>Daily Case</button></a>
+                        <a href="#"><button>Headlines</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>        
+        <section id="news-display">
+            <h1>Headlines About the COVID-19 (Corona Virus Disease)</h1>
+        </section>
+        <section id="display-countries">
+            <h1>Choose Country to Display Local News About Covid</h1>
+            <select name="" id="countries">
+                <option value="">Choose Country</option>
+                <option value="au">Australia</option>
+                <option value="br">Brazil</option>
+                <option value="ca">Canada</option>
+                <option value="ch">Switzerland</option>
+                <option value="cn">China</option>
+                <option value="de">Germany</option>
+                <option value="eg">Egypt</option>
+                <option value="es">Spain</option>
+                <option value="fr">France</option>
+                <option value="gb">United Kingdom</option>
+                <option value="gr">Greece</option>
+                <option value="hk">Hong Kong</option>
+                <option value="ie">Ireland</option>
+                <option value="il">Israel</option>
+                <option value="in">India</option>
+                <option value="it">Italy</option>
+                <option value="jp">Japan</option>
+                <option value="ph">Philippines</option>
+                <option value="ru">Russian Federation</option>
+                <option value="sg">Singapore</option>
+                <option value="tw">Taiwan</option>
+                <option value="ua">Ukraine</option>
+                <option value="us">United States</option>
+            </select>
+        </section>
+        <section id="display-locally"></section>
+        <section class="loader">
+            <div class="spinner">
+                <div></div>
+            </div>
+        </section>
+    </main>
+    <script src="js/news.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Press+Start+2P&family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <section class="main">
+        <header>
+          <h1>GET READY TO BE A SOFTWARE ENGINEER!!</h1>
+        </header>
+        <div class="regis-form">
+          <!--TITLE FORM-->
+          <section class="top">
+            <h2 id="title"><span>Avion</span> School <br> Student Registration Form</h2>
+            <p id="description">Thank you for applying to our platorm! <br> We just need you to fill-up the information needed and you're good to go!</p>
+          </section>
+          <!--FORM-->
+          <form action="action-page/thank-you.html" method="get" id="survey-form">
+            <ul>
+              <li id="name">
+                <label for="name-label">Name</label>
+                <input type="text" class="input" name="name" id="name-label" placeholder="Name here..." required>
+              </li>
+              <li id="email">
+                <label for="email-label">Email</label>
+                <input type="email" class="input"  name="email" id="email-label" placeholder="Email here..." required>
+              </li>
+              <li>
+                <label for="contact">Contact No.</label>
+                <input type="tel" class="input" name="tel-num" id="contact"  minlength="11" maxlength="11" placeholder="Mobile No." required>
+              </li>
+              <li id="number">
+                <label for="number-label">Age</label>
+                <input type="number" class="input" name="number" id="number-label" placeholder="Age..." required min="1" max = "100">
+              </li>
+              <li>
+                <label for="birthday">Birthdate</label>
+                <input type="date" name="birthdate" id="birthday" class="input" required>
+              </li>
+              <!--DROPDOWN-->
+              <li>
+                <label for="educ">Highest Educational Attainment</label>
+                <select name="language" id="educ" required>
+                  <option value="">Select Options</option>
+                  <option value="primary">Primary Education</option>
+                  <option value="secondary">Secondary Education</option>
+                  <option value="vocational">Vocational Degree</option>
+                  <option value="bachelor" >Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="doctorate">Doctor's Degree</option>
+                </select>
+              </li>
+              <!--RADIO BUTTON-->
+              <li class="radio-button">
+                <h5>Please tell us your Gender</h5>
+                <input type= "radio" name="gender" id = "gender-male" value="male" required class="radio">
+                <label for ="gender-male">Male</label>
+      
+                <input type="radio" name = "gender" id = "gender-female" value="female" required class="radio"> 
+                <label for="gender-female">Female</label>
+      
+              </li>
+            </ul>
+              <!--CHECKBOX-->
+                <div class="checkbox">
+                  <h5>What programming languages are you familiar with?</h5> 
+                      <input type="checkbox" name = "p-lang" value="python" id ="python"> 
+                      <label for="python">Python</label>
+                    <br>
+                      <input type="checkbox" name="p-lang" value="java" id = "java">
+                      <label for="java">Java</label>
+                    <br>
+                      <input type="checkbox" name ="p-lang" value="ruby" id = "ruby">
+                      <label for="ruby">Ruby/Ruby on Rails</label>
+                   <br>
+                    <input type="checkbox" name="p-lang" value="html" id="html">
+                    <label for="html">HTML</label>
+                    <br>
+                      <input type="checkbox" name = "p-lang" value ="C" id="c-lang">
+                      <label for="c-lang">C</label>
+                    <br>
+                      <input type="checkbox" name="p-lang" value="c++" id="c-plus2">
+                      <label for="c-plus2">C++</label>
+                   <br>
+                      <input type="checkbox" name="p-lang" value="c#" id="c-sharp">
+                      <label for="c-sharp">C#</label>
+                    <br>
+                      <input type="checkbox" name="p-lang" value="javascript" id="javascript">
+                      <label for="javascript">JavaScript</label>
+                   <br>
+                      <input type="checkbox" name="p-lang" value="php" id="php">
+                      <label for="php">PHP</label>
+                   <br>
+                      <input type="checkbox" name="p-lang" value="sql" id="sql">
+                      <label for="sql">SQL</label>
+                  
+                </div>
+            <div class="comment">
+              <label for="comment">Comments or suggestions:</label><br>
+              <textarea name="comments" id= "comment" ></textarea>
+            </div>
+            
+            <input type="submit" name = "button" value="Submit" class="button">
+            <input type="reset" value="Reset" class="button">
+
+          </form>
+        </div> 
+      </section>
+    </main>    
+  </body>
+</html>

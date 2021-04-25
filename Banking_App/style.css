@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: yantramanav-medium;
+}
+
+@font-face{
+    src: url(assets/Alfa_Slab_One/AlfaSlabOne-Regular.ttf);
+    font-family: alfa-slab;
+}
+@font-face {
+    font-family: alfa-slab-one-regular ;
+    src: url(assets/Alfa_Slab_One\,Manrope/Alfa_Slab_One/AlfaSlabOne-Regular.ttf);
+}
+@font-face {
+    font-family: yantramanav-medium;
+    src: url(assets/Yantramanav/Yantramanav-Medium.ttf);
+}
+/*=================== HEADER ========================*/
+
+h1{
+    font-family: alfa-slab-one-regular ;
+    font-size: 30px;
+}
+header h1{
+    color: white;
+    padding: 5px;
+    font-family: alfa-slab;
+    font-size: 40px;
+}
+header{
+    background-color: #0C2D48;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    box-shadow: 0px 2px 5px black;
+}
+header .link-container{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+header .nav-link{
+    list-style: none;
+    margin: 15px;
+}
+
+header .nav-link a button{
+    /* text-decoration: none; */
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 20px;
+}
+header .nav-link a button:hover{
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    transition: background-color .6s;
+}
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black ;
+}
+
+/*============== HERO SECTION ======================*/
+#hero{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    place-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: #b1d4e05d;
+}
+/* #hero::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    background-image: url(assets/bg-hero3.jpg);
+    opacity: 1;
+} */
+#login-page{
+    position: relative;
+    overflow: hidden;
+}
+#login-page #bg-vid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+#log-in{
+    
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding: 15px;
+    position: absolute;
+    right: 300px;
+    background-color: white;
+    z-index: 5;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.781);
+    border-radius: 10px;
+}
+#log-in input{
+    height: 30px;
+    margin-top:5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+#log-in label{
+    font-size: 25px;
+}
+#log-in button{
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 47, 148);
+    color: white;
+    margin-top: 10px;
+}
+#log-in button:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(0, 47, 148);
+    transition: background-color .6s;
+}
+
+/*=========================== REGISTRATION SECTION ======================*/
+#register-page{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
+    background-color: #b1d4e05d;
+    z-index: 2;
+}
+#register-page::before{
+    position: absolute;
+    content: '';
+    background-image: url(assets/bg-hero3.jpg);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .5;
+}
+#register-page h1{
+    font-size:40px;
+}
+
+.register{
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 1px 10px black;
+    position: relative;
+    width: 500px;
+}
+.register fieldset{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 10px;
+}
+.register legend{
+    padding: 10px;
+    font-size: 30px;
+}
+
+.register input, .register label{
+    font-size: 20px;
+    padding: 5px;
+    width: 400px;
+}
+.register input{
+    text-transform: uppercase;
+}
+.register #submit{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(0, 47, 148);
+    color: white;
+    left: 10px;
+    margin: 5px;
+}
+.register #submit:hover{
+    background-color: white;
+    color: rgb(0, 47, 148);
+    border: 2px solid rgb(0, 47, 148);
+    transition: background-color .6s;
+}
+
+/*============== TRANSACTION ======================*/
+
+#transaction{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+    place-items: center;
+    height: 100vh;
+    background-color: #b1d4e05d;
+}
+
+#transaction::before{
+    position: absolute;
+    content: '';
+    background-image: url(assets/bg-hero3.jpg);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .2;
+}
+
+#deposit,#withdraw{
+    margin: 30px;
+}
+
+#deposit form fieldset, #withdraw form fieldset{
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.74); */
+    padding: 10px;
+    border-radius: 15px ;
+    position: relative;
+}
+#deposit form, #withdraw form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.74);
+    padding: 30px;
+    border-radius: 15px ;
+    position: relative;
+}
+
+#deposit form input, #withdraw form fieldset input{
+    font-size: 20px;
+    padding: 5px;
+    width: 300px;
+    margin: 10px;
+    text-transform: uppercase;
+}
+#deposit form legend, #withdraw form legend{
+    font-size: 25px;
+}
+#deposit form label, #withdraw form fieldset label{
+    font-size: 20px;
+}
+#deposit form button, #withdraw form button{
+    width: 50%;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(0, 47, 148);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#deposit form button:hover,  #withdraw form button:hover{
+    background-color: white;
+    color: rgb(0, 47, 148);
+    border: 2px solid rgb(0, 47, 148);
+    transition: background-color .6s;
+}
+
+
+/*=================== TRANSFER ==============================*/
+
+#transfer{
+    height: 100vh;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    background-color: #b1d4e05d;
+}
+#transfer::before{
+    position: absolute;
+    content: '';
+    background-image: url(assets/bg-hero3.jpg);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .2;
+ 
+}
+#transfer #send form{
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.74);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#transfer #send fieldset{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+}
+#transfer #send fieldset:nth-child(1){
+    margin-bottom: 20px;
+}
+#transfer #send fieldset:nth-child(2){
+    margin-top: 20px;
+    
+}
+#transfer #send legend{
+    background-color:  rgb(0, 47, 148);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+#transfer #send label{
+    font-size: 20px;
+}
+#transfer #send input{
+    font-size: 20px;
+    padding: 5px;
+    width: 300px;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+#transfer #label-amount{
+    position: relative;
+    margin-top: 20px;
+}
+#transfer #send-amount{
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+}
+#transfer form button{
+    width: 50%;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    background-color: rgb(0, 47, 148);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#transfer form button:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(0, 47, 148);
+    transition: background-color .6s;
+}
+
+/*==================== LIST OF USERS ======================*/
+#list-users{
+    height: 100vh;
+    position: relative;
+    background-color: #b1d4e05d;
+}
+#list-users::before{
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/bg-hero3.jpg');
+    opacity: .2;
+}
+
+#list-users table{
+    position: absolute;
+    border-bottom: 5px solid #0C2D48;
+    border-top: 5px solid #0C2D48;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+#list-users tbody tr{
+    background-color: #B1D4E0;
+    color: black;
+}
+
+#list-users table th, #list-users .modal table th{
+    width: 300px;
+    padding: 5px;
+    border-bottom: 2px double black;
+}
+#list-users table td{
+    width: 350px;
+    padding: 5px;
+    border: none;
+}
+#list-users table tr:nth-child(1){
+    text-align: center;
+    background-color:#145DA0 ;
+    color: white;
+}
+
+#list-users tbody td:nth-child(2){
+    text-align: center;
+}
+#list-users tbody td:nth-child(3){
+    text-align: center;
+}
+
+#list-users button{
+    color: white;
+    background-color: rgb(0, 47, 148);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+#list-users button:hover{
+    color: rgb(0, 47, 148);
+    background-color: white;
+    transition: background-color .6s;
+}
+
+#list-users .modal{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color:#000000ec;
+    visibility: hidden;
+    z-index: 5;
+}
+#list-users .modal h1{
+    font-size: 45px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 140px;
+    color: white;
+    background-color: #0C2D48;
+}
+
+#list-users .modal table td{
+    padding: 10px;
+}
+fieldset{
+    background-color: white;
+}
