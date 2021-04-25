@@ -1,55 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 *{
   padding: 0;
   margin: 0;
-}
-body{
-  margin: 0;
-  padding: 0;
-  background-image: url(https://cdn.pixabay.com/photo/2019/04/06/05/17/wallpaper-4106667_960_720.jpg);
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
- 
+  scroll-behavior: smooth;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 main{
-position: relative;
-box-sizing: border-box;
-padding-top: 100px;
-margin: 0;
-height: 100vh;
-background-color: rgba(0, 0, 0, 0.884);
-display: flex;
-
+  background-color: rgb(5, 5, 5);
 }
-
-nav{
-  padding: 15px;
-  position: fixed;
+header{
+  background-color: rgba(0, 0, 0, 0.897);
   top: 0;
-  z-index:1;
-  height: 100px;
-  box-sizing:border-box;
- 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px;
+  box-sizing:border-box;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.897);
-  
+  height: 100px;
+  position: fixed;
+  z-index:1;
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  width: 400px
 }
 
 .navigation-bar #logo{
   height: 70px;
-  
   position: relative;
 }
 
 .navigation-bar ul li{
   list-style: none;
   font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .navigation-bar a{
@@ -59,46 +45,76 @@ nav{
   border-radius: 5px;
 }
 .navigation:hover{
-  background-color: rgba(185, 184, 184, 0.63);
+  text-decoration: underline red;
   transition: .45s;
 }
+/*=============================== HERO SECTION ========================================*/
 
-/*List of Projects Section*/
-.myPortfolios{
-  box-sizing: border-box;
-  width: 1000px;
-  background-color: rgba(12, 11, 11, 0.425);
-
-  align-self: center;
-  margin: 10px;
-  padding:10px;
+.hero{
+  height: 100vh;
+  background-color: rgb(5, 5, 5);
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  padding: 50px;
+}
+.hero .short-desc{
+  color: white;
+}
+.hero .short-desc h1{
+  font-size: 35px;
+}
+.hero .short-desc h1 span{
+  font-size: 45px;
+}
+.hero .profile-pic{
+  height: 800px;
+  width: 800px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 1px 1px 20px black;
+
+}
+.hero .profile-pic img{
+  height: 120%;
+
+}
+
+/*========================= AVION PROJECTS SECTION ==========================================*/
+.project-title{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
+.projects{
+ height: 100vh;
+ display: grid;
+ grid-template-columns: repeat(4, 15vw);
+ justify-content: center;
+ justify-items: center;
+ align-items: center;
+ grid-gap: 10px;
+
 }
 
 .folders{
-  margin: 5px;
-  text-align: center;
-  width: 100px;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 5px;
+  width: 100%;
+  overflow-y: hidden;
+  position: relative;
 }
-
 .folders:hover{
-  background-color: rgba(185, 184, 184, 0.63);
-  transition: .45s;
+  opacity: .5;
 }
-
-.imageFolder{
-  
-  height: 100px;
+.folders img{
+  width: 100%;
+  height: 200px;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
-
-.myPortfolios a{
-  text-decoration: none;
+.folders figcaption{
   color: white;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
 }
