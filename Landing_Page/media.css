@@ -742,7 +742,8 @@ nav{
     grid-template-columns: auto 90% auto;
     place-items: center;
     width: 50%;
-    height: 410px;
+    height: 500px;
+
 
 }
 .character-container .modal .inside-caption-container{
@@ -756,7 +757,7 @@ nav{
     grid-template-columns:repeat(4, 100%);
     box-sizing: border-box;
     width: 100%;
-    height: 400px;
+    height: 450px;
     place-items:center;
     justify-items: center;
 }
@@ -766,11 +767,23 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+}
+/*================================= DANTE =======================================*/
+.modal .inside-caption .dante-melee-weapons figure{
+    display: flex;
+    align-items:center;
+    position: relative;
 }
 
+.modal .inside-caption .dante-melee-weapons .rebellion-sword img{
+    height: 350px;
+    width: auto;
+}
+
+/*==========================================================================*/
 .character-container .button{
     width: 30px;
+    font-size: 50px;
 }
 .prev-char{
     grid-column: 1/2;
