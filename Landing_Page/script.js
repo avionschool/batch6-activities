@@ -71,7 +71,14 @@ const charArrow = {
 
 const charContain = document.querySelector('#characters');
 charModal();
+
 function charModal(){
+    let prev = charArrow.prev;
+    let next = charArrow.next;
+    let counter = 1;
+    let cap;
+    let cap_container;
+    
     for(key in char){
      let item = char[key].img;
      let modalItem = char[key].modal;
@@ -83,17 +90,10 @@ function charModal(){
         closeModal.addEventListener('click', function() {
             modalItem.style.opacity = '0'; 
             modalItem.style.pointerEvents = 'none';
+            counter = 1;
         })
     }
 
-
-   
-    let prev = charArrow.prev;
-    let next = charArrow.next;
-    let counter = 1;
-   
-    next.forEach((item)=> item.addEventListener('click', nextDesc));
-    prev.forEach((item)=> item.addEventListener('click', prevDesc))
     for(key in char){
         let cap_container = char[key].char_desc_cont;
         let cap = char[key].char_desc;
@@ -101,29 +101,27 @@ function charModal(){
         cap_container.style.transform = `translateX(${-capSize * counter}px)`
     }
 
-    
-    console.log(document.querySelector('#characters #v-next').id[0]);
-    let cap;
-    let cap_container;
-    function nextDesc(e){
+    next.forEach((item)=> item.addEventListener('click', function (e){
         let btn = e.currentTarget;
-        cap =document.querySelectorAll(`#${btn.id[0]}-modal .caption .inside-caption div`);
-        cap_container = document.querySelector(`#${btn.id[0]}-modal .caption .inside-caption`);
-        const capSize = cap[0].clientWidth;
+        let btn_id =btn.id.split('-');
+        cap = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption div`);
+        cap_container = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption`);
+        const capSize = cap.clientWidth;
         counter++;
         cap_container.style.transform = `translateX(${-capSize * counter}px)`
-    
-    }
-    function prevDesc(e){
+        cap_container.style.transition = 'transform linear .25s'
+    }));
+
+    prev.forEach((item)=> item.addEventListener('click', function prevDesc(e){
         let btn = e.currentTarget;
-        cap =document.querySelectorAll(`#${btn.id[0]}-modal .caption .inside-caption div`);
-        cap_container = document.querySelector(`#${btn.id[0]}-modal .caption .inside-caption`);
-        const capSize = cap[0].clientWidth;
+        let btn_id =btn.id.split('-');
+        cap = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption div`);
+        cap_container = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption`);
+        const capSize = cap.clientWidth;
         counter--;
         cap_container.style.transform = `translateX(${-capSize * counter}px)`
-    
-    }
-   
+        cap_container.style.transition = 'transform linear .25s'
+    }))
 }
 
 
