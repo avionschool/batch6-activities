@@ -764,9 +764,6 @@ nav{
 .modal .inside-caption div{
     width: 100%;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 /*================================= DANTE =======================================*/
 .modal .inside-caption .dante-melee-weapons figure{
@@ -793,8 +790,6 @@ nav{
     grid-column: 3/4;
     grid-row: 1/2;
 }
-
-
 /*EMBEDDED VIDEO-------------*/
 
 .embed-video{
