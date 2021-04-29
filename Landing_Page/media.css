@@ -461,8 +461,8 @@ figcaption a{
 
 }
 
-
-@media (min-width: 1025px) and (min-height: 728px){
+/* and (min-height: 728px){ */
+@media (min-width: 1025px){
     /*NAVIGATION*/
 nav{
     height: 10vh;
@@ -506,7 +506,7 @@ nav{
 
     .bg-video .big-vid{
         left: 0;
-        width: 2020px;
+        width: 2120px;
         display: unset;
     }
     
@@ -693,6 +693,7 @@ nav{
     position: fixed;
     top: 50px;
     right: 100px;
+    cursor: pointer;
 }
 .close-modal li{
     width: 40px;
@@ -719,6 +720,7 @@ nav{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.87);
     opacity: 0;
+    transition: .55s ease;
     pointer-events:none;
 }
 
@@ -739,17 +741,30 @@ nav{
     grid-template-columns: auto 90% auto;
     place-items: center;
     width: 50%;
-    border:1px solid white;
+    height: 410px;
 
 }
-
-.character-container .modal .inside-caption{
+.character-container .modal .inside-caption-container{
     grid-column: 2/3;
-    display: grid;
+    box-sizing: border-box;
     width: 100%;
-    border:1px solid red;
-    grid-template-columns: 100% 100%;
     overflow-x: hidden;
+}
+.character-container .modal .inside-caption{
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    place-items:center;
+}
+/*================= FOR V =======================*/
+.character-container .modal .inside-caption-v{
+    grid-template-columns:repeat(4, 100%);
+}
+.modal .inside-caption div{
+    padding: 20px;
+    width: 100%;
+    display: flex;
 }
 
 .character-container .button{
