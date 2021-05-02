@@ -271,7 +271,7 @@ figcaption a{
 }
 
 /*iPAD PRO (1024 x 1366)-------------------------*/
-@media (min-width: 1024px) and (max-height: 1366px){
+@media (min-width: 1024px){
 
 /*NAVIGATION*/
 .burger li{
@@ -300,6 +300,7 @@ nav .transfer{
 /*BACKGROUND VIDEO*/
 .bg-video .big-vid{
     width: 2550px;
+    height: auto;
 }
 
 
