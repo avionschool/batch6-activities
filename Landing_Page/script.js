@@ -40,7 +40,6 @@ menu.addEventListener("click",openMenu);
 
 //========================== Character Modal ====================================//
 
-//Nero
 const char = {
     nero:{
         img: document.querySelector('#nero img'),
@@ -104,29 +103,47 @@ function charModal(){
     next.forEach((item)=> item.addEventListener('click', function (e){
         let btn = e.currentTarget;
         let btn_id =btn.id.split('-');
-        cap = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption div`);
+        cap = document.querySelectorAll(`#${btn_id[0]}-modal .caption .inside-caption div`);
         cap_container = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption`);
-        const capSize = cap.clientWidth;
-        counter++;
-        cap_container.style.transform = `translateX(${-capSize * counter}px)`
-        cap_container.style.transition = 'transform linear .25s'
+        const capSize = cap[0].clientWidth;
+        console.log(cap[counter].classList)
+        if(cap[counter].classList[1] === 'second-last'){
+            counter++;
+            prev.forEach(item => item.style.visibility = 'visible')
+            cap_container.style.transform = `translateX(${-capSize * counter}px)`
+            cap_container.style.transition = 'transform linear .25s'
+            this.style.visibility = 'hidden';
+        }
+        else{
+            counter++;
+            prev.forEach(item => item.style.visibility = 'visible');
+            this.style.visibility = 'visible';
+            cap_container.style.transform = `translateX(${-capSize * counter}px)`
+            cap_container.style.transition = 'transform linear .25s'
+        }
     }));
 
     prev.forEach((item)=> item.addEventListener('click', function prevDesc(e){
         let btn = e.currentTarget;
         let btn_id =btn.id.split('-');
-        cap = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption div`);
+        cap = document.querySelectorAll(`#${btn_id[0]}-modal .caption .inside-caption div`);
         cap_container = document.querySelector(`#${btn_id[0]}-modal .caption .inside-caption`);
-        const capSize = cap.clientWidth;
-        counter--;
-        cap_container.style.transform = `translateX(${-capSize * counter}px)`
-        cap_container.style.transition = 'transform linear .25s'
+        const capSize = cap[0].clientWidth;
+        if(cap[counter].classList[1] === 'second-first'){
+            counter--;
+            this.style.visibility = 'hidden';
+            next.forEach(item => item.style.visibility = 'visible');
+            cap_container.style.transform = `translateX(${-capSize * counter}px)`
+            cap_container.style.transition = 'transform linear .25s'
+        }
+        else{
+            counter--;
+            next.forEach(item => item.style.visibility = 'visible');
+            cap_container.style.transform = `translateX(${-capSize * counter}px)`
+            cap_container.style.transition = 'transform linear .25s'
+        }
     }))
 }
-
-
-    
-
 
 //========================= TRAILER SLIDER ==============================================//
 
