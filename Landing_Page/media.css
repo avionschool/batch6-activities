@@ -573,7 +573,7 @@ nav{
     font-size: 25px;
 }
 
-/*-----------FEATURE-----------*/
+/*================== FEATURE =========================*/
 
 #features{
     height: 100vh;
@@ -581,12 +581,16 @@ nav{
 
 .transparent{
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #features .container-list{
     display: grid;
-    grid-template-columns: 600px 600px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 480px 480px;
+    grid-template-rows: auto auto;
+    grid-gap: 15px;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -611,7 +615,7 @@ nav{
     
     border-radius: 5px;
     padding: 20px;
-    width: 400px;
+    width: 100%;
     height: 35vh;
     margin: 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -634,7 +638,7 @@ nav{
     position: absolute;
 }
 
-/*CHARACTERS*/
+/*================================== CHARACTERS ===================================*/
 
 #characters{
     height: 100vh;
@@ -736,7 +740,7 @@ nav{
 .character-container .modal .caption{
     grid-row: 2/3;
     grid-column: 2/3;
-    font-size: 30px;
+    font-size: 25px;
 
     display: grid;
     grid-template-columns: auto 90% auto;
