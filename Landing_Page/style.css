@@ -398,7 +398,6 @@ right: 45px;
     top: 50px;
     right: 10px;
     cursor: pointer;
-    z-index: 2;
 }
 
 .close-modal li{
@@ -429,13 +428,13 @@ right: 45px;
     background-color: rgba(0, 0, 0, 0.87);
     opacity: 0;
     transition: .55s ease;
+    z-index: 5;
     pointer-events:none;
 }
 
 .character-container .modal img{
     display: none;
 }
-
 .character-container .modal .caption{
     font-size: 20px;
     display: grid;
@@ -449,7 +448,8 @@ right: 45px;
     grid-column: 2/3;
     box-sizing: border-box;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y:visible ;
 }
 .character-container .modal .inside-caption{
     display: grid;
@@ -464,9 +464,24 @@ right: 45px;
 .modal .inside-caption div{
     width: 100%;
     padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.modal .inside-caption div h2{
+    color: red;
+    text-shadow: 1px 1px 10px red;
+}
+.modal .inside-caption div h1{
+    font-family: 'New Rocker', cursive;
+    text-align: left;
+    color: rgb(198, 240, 242);
+    text-shadow: 1px 1px 10px rgb(0, 140, 175);
 }
 .modal .inside-caption div figure{
     font-size: 15px;
+}
+.modal .inside-caption div figure strong{
+    color: red;
+    text-shadow: 1px 1px 10px red;
 }
 .modal .inside-caption div figure img{
     display: inline;
@@ -784,7 +799,7 @@ footer{
     align-self: center;
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items:center;
     justify-content: space-around;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
