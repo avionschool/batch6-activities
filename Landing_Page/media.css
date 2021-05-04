@@ -121,7 +121,7 @@
 }
 
 /*iPAD (768 x 1024)*/
-@media (min-width:768px) and (max-height: 1024px){
+@media (min-width:768px){
 
     /*NAVIGATION*/
     .burger li{
@@ -215,8 +215,7 @@
         right: 20px;
     }
 
-    /*CHARACTERS*/
-
+/*================== CHARACTERS ==========================*/
 .character-container h3{
     font-size: 30px;
 }
@@ -225,7 +224,13 @@
     font-size: 25px;
     padding: 20px;
 }
-
+/*================ CHARACTER MODAL ========================*/
+.modal .caption .inside-caption, .modal .caption .inside-caption figure{
+    font-size: 25px;
+}
+.modal .caption .inside-caption figure img{
+    height: 200px;
+}
 /*VIDEO CONTAINER*/
 #video-container{
     border-width:3px;
@@ -262,7 +267,6 @@ figcaption a{
 /*REVIEWS*/
 
 #review .inner{
-    
     margin: 20px;
     padding-left: 50px;
     padding-right: 50px;
@@ -415,12 +419,10 @@ right: 45px;
 
 #platform figcaption{
     width:400px;
-    padding: 25px;
-            
+    padding: 10px;   
 }
 
 figcaption a{
-
     text-decoration: none;
     color: white;
     font-size: 30px;
@@ -460,7 +462,6 @@ figcaption a{
 
 }
 
-/* and (min-height: 728px){ */
 @media (min-width: 1025px){
     /*NAVIGATION*/
 nav{
@@ -694,10 +695,8 @@ nav{
 }
 /*==============  CHARACTER MODAL  ====================*/
 .close-modal{
-    position: fixed;
     top: 50px;
     right: 100px;
-    cursor: pointer;
 }
 .close-modal li{
     width: 80px;
@@ -715,17 +714,7 @@ nav{
     transform:translateY(-45%) rotate(-45deg);
 }
 .character-container .modal{
-    position: fixed;
-    display: flex;
     justify-content: space-around;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.87);
-    opacity: 0;
-    transition: .55s ease;
-    pointer-events:none;
 }
 
 .character-container .modal img{
@@ -742,33 +731,16 @@ nav{
     grid-column: 2/3;
     font-size: 25px;
 
-    display: grid;
     grid-template-columns: auto 90% auto;
     place-items: center;
     width: 50%;
     height: 500px;
-
-
 }
-.character-container .modal .inside-caption-container{
-    grid-column: 2/3;
-    box-sizing: border-box;
-    width: 100%;
-    overflow: hidden;
+.modal .inside-caption div figure{
+    font-size: 28px;
 }
-.character-container .modal .inside-caption{
-    display: grid;
-    grid-template-columns:repeat(4, 100%);
-    grid-template-rows: 450px;
-    box-sizing: border-box;
-    width: 100%;
-    height:100%;
-    place-items:center;
-    justify-items: center;
-}
-.modal .inside-caption div{
-    width: 100%;
-    padding: 10px;
+.modal .inside-caption div figure img{
+    height: 230px;
 }
 /*================================= DANTE & NERO=======================================*/
 .modal .inside-caption .dante-melee-weapons figure, .modal .inside-caption .nero-melee-weapons figure{
@@ -788,6 +760,10 @@ nav{
 }
 #v-modal .inside-caption-v .v-familiar figure img{
     height: 300px;
+}
+#v-modal .inside-caption-v .v-familiar figure [alt|= 'griffon']{
+    display: block;
+    height: 210px;
 }
 /*==========================================================================*/
 .character-container .button{
@@ -830,10 +806,10 @@ nav{
 #platform{
     height: 100vh;
 }
-
 #platform .container-platform{
     position: relative;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:   auto;
     align-items: center;
@@ -856,18 +832,15 @@ nav{
 }
 
 #platform img{
-    height: 500px;
+    /* height: 500px; */
+    width: 100%;
+    height: auto;
 }
 
-#xbox1-dmc5{
-    padding: 5px;
-    
-    
+#xbox1-dmc5, #ps4-dmc5{
+    padding: 10%;
 }
-#xbox1-dmc5 img{
-    height: 455px;
-   
-}
+
 #xbox1-dmc5 #xbox-price{
     position: relative;
     top: 5px;
