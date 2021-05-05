@@ -96,9 +96,8 @@ input{
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
 }
 #log-in{
     
@@ -154,6 +153,8 @@ input{
     position: absolute;
     content: '';
     background-image: url(assets/bg-hero3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: 1;
     top: 0;
     left: 0;
@@ -210,7 +211,7 @@ input{
     transition: background-color .6s;
 }
 
-/*============== TRANSACTION ======================*/
+/*====================== TRANSACTION ======================*/
 
 #transaction{
     display: flex;
@@ -220,12 +221,15 @@ input{
     place-items: center;
     height: 100vh;
     background-color: #b1d4e05d;
+    position: relative;
 }
 
 #transaction::before{
     position: absolute;
     content: '';
     background-image: url(assets/bg-hero3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: 1;
     top: 0;
     left: 0;
@@ -234,25 +238,52 @@ input{
     opacity: .2;
 }
 
-#deposit,#withdraw{
+.side-bar{
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    box-shadow: 2px 0px 5px black ;
+    background-color: #0C2D48;
+    display: flex;
+    place-items: center;
+}
+
+.side-bar ul{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    list-style: none;
+}
+.side-bar ul li button{
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+}
+#deposit,#withdraw, #send{
     margin: 30px;
+    position: absolute;
+    left: 150px;
+    visibility: hidden;
 }
 
 #deposit form fieldset, #withdraw form fieldset{
     display: flex;
     flex-direction: column;
-    /* box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.74); */
     padding: 10px;
     border-radius: 15px ;
     position: relative;
 }
+
 #deposit form, #withdraw form{
     display: flex;
     flex-direction: column;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.74);
     padding: 30px;
     border-radius: 15px ;
-    position: relative;
+    width: 500px;
 }
 
 #deposit form input, #withdraw form fieldset input{
@@ -278,6 +309,7 @@ input{
     border: none;
     color: white;
     border-radius: 5px;
+    margin: 10px;
 }
 
 #deposit form button:hover,  #withdraw form button:hover{
@@ -286,30 +318,9 @@ input{
     border: 2px solid rgb(0, 47, 148);
     transition: background-color .6s;
 }
-
-
 /*=================== TRANSFER ==============================*/
 
-#transfer{
-    height: 100vh;
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    background-color: #b1d4e05d;
-}
-#transfer::before{
-    position: absolute;
-    content: '';
-    background-image: url(assets/bg-hero3.jpg);
-    opacity: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: .2;
- 
-}
-#transfer #send form{
+#send form{
     border-radius: 5px;
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.74);
     padding: 20px;
@@ -317,29 +328,29 @@ input{
     flex-direction: column;
 }
 
-#transfer #send fieldset{
+#send fieldset{
     display: flex;
     flex-direction: column;
     padding: 10px;
     position: relative;
 }
-#transfer #send fieldset:nth-child(1){
+#send fieldset:nth-child(1){
     margin-bottom: 20px;
 }
-#transfer #send fieldset:nth-child(2){
+#send fieldset:nth-child(2){
     margin-top: 20px;
     
 }
-#transfer #send legend{
+#send legend{
     background-color:  rgb(0, 47, 148);
     padding: 5px;
     border-radius: 5px;
     color: white;
 }
-#transfer #send label{
+#send label{
     font-size: 20px;
 }
-#transfer #send input{
+#send input{
     font-size: 20px;
     padding: 5px;
     width: 300px;
@@ -347,16 +358,16 @@ input{
     text-transform: uppercase;
 }
 
-#transfer #label-amount{
+#send #label-amount{
     position: relative;
     margin-top: 20px;
 }
-#transfer #send-amount{
+#send #send-amount{
     position: relative;
     margin-top: 20px;
     z-index: 2;
 }
-#transfer form button{
+#send form button{
     width: 50%;
     height: 30px;
     position: relative;
@@ -369,20 +380,37 @@ input{
     margin-top: 10px;
 }
 
-#transfer form button:hover{
+#send form button:hover{
     background-color: white;
     color: black;
     border: 2px solid rgb(0, 47, 148);
     transition: background-color .6s;
 }
 
+#transaction .list-users{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#transaction .list-users table{
+    width: 80%;
+}
+#transaction .list-users .modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
 /*==================== LIST OF USERS ======================*/
-#list-users{
+.list-users{
     height: 100vh;
     position: relative;
-    background-color: #b1d4e05d;
+    background-color: #204f5f5d;
 }
-#list-users::before{
+.list-users::before{
     content: '';
     position: absolute;
     top: 0%;
@@ -390,10 +418,12 @@ input{
     right: 0;
     bottom: 0;
     background-image: url('assets/bg-hero3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: .2;
 }
 
-#list-users table{
+.list-users table{
     position: absolute;
     border-bottom: 5px solid #0C2D48;
     border-top: 5px solid #0C2D48;
@@ -402,35 +432,35 @@ input{
     transform: translateX(-50%);
     
 }
-#list-users tbody tr{
+.list-users tbody tr{
     background-color: #B1D4E0;
     color: black;
 }
 
-#list-users table th, #list-users .modal table th{
+.list-users table th, #list-users .modal table th{
     width: 300px;
     padding: 5px;
     border-bottom: 2px double black;
 }
-#list-users table td{
+.list-users table td{
     width: 350px;
     padding: 5px;
     border: none;
 }
-#list-users table tr:nth-child(1){
+.list-users table tr:nth-child(1){
     text-align: center;
     background-color:#145DA0 ;
     color: white;
 }
 
-#list-users tbody td:nth-child(2){
+.list-users tbody td:nth-child(2){
     text-align: center;
 }
-#list-users tbody td:nth-child(3){
+.list-users tbody td:nth-child(3){
     text-align: center;
 }
 
-#list-users button{
+.list-users button{
     color: white;
     background-color: rgb(0, 47, 148);
     border: none;
@@ -438,13 +468,13 @@ input{
     padding: 10px;
     font-size: 15px;
 }
-#list-users button:hover{
+.list-users button:hover{
     color: rgb(0, 47, 148);
     background-color: white;
     transition: background-color .6s;
 }
 
-#list-users .modal{
+.list-users .modal{
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -452,7 +482,7 @@ input{
     visibility: hidden;
     z-index: 5;
 }
-#list-users .modal h1{
+.list-users .modal h1{
     font-size: 45px;
     display: flex;
     place-items: center;
