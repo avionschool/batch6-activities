@@ -65,7 +65,7 @@ function showHistoryDeposit(e){
                 let cell1 = row.insertCell(0);
                 let cell2 = row.insertCell(1);
 
-                cell1.append(`${depoHist[i]}`);
+                cell1.append(`${depoHist[i].slice(0,10)}`);
                 cell2.append(`${formatter.format(depoAmount[i])}`)
             }
         }
@@ -87,7 +87,7 @@ function showHistoryWithdraw(e){
                 let cell1 = row.insertCell(0);
                 let cell2 = row.insertCell(1);
 
-                cell1.append(`${withdrawHist[i]}`);
+                cell1.append(`${withdrawHist[i].slice(0,10)}`);
                 cell2.append(`${formatter.format(withdrawAmount[i])}`)
             }
         }
@@ -115,8 +115,8 @@ function showHistoryTransfer(e){
                 let cell2 = row.insertCell(1);
                 let cell3 = row.insertCell(2);
 
-                cell1.append(`${histSent[j]}`);
-                cell2.append(`${receiverHist[j]}`);
+                cell1.append(`${histSent[j].slice(0,10)}`);
+                cell2.append(`${receiverHist[j].slice(0,10)}`);
                 cell3.append(`${formatter.format(amountSent[j])}`)
 
             }
@@ -144,8 +144,8 @@ function showHistoryReceived(e){
                 let cell2 = row.insertCell(1);
                 let cell3 = row.insertCell(2);
 
-                cell1.append(`${histReceived[j]}`);
-                cell2.append(`${senderHist[j]}`);
+                cell1.append(`${histReceived[j].slice(0,10)}`);
+                cell2.append(`${senderHist[j].slice(0,10)}`);
                 cell3.append(formatter.format(amountReceived[j]));
 
             }
