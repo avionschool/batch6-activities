@@ -161,30 +161,3 @@ function validateSend(userOne, userTwo, amount){
     }
 }
 
-//=================== NAV BUTTON =========================================//
-const navMenu = {
-    depositBtn: document.querySelector('.side-bar .menu-link #deposit-link'),
-    withdrawBtn: document.querySelector('.side-bar .menu-link #withdraw-link'),
-    transferBtn: document.querySelector('.side-bar .menu-link #transfer-link'),
-
-    hideBtns: function(){
-        document.getElementById('deposit').style.visibility = 'hidden';
-        document.getElementById('withdraw').style.visibility = 'hidden';
-        document.getElementById('send').style.visibility = 'hidden';
-    },
-    navigate: function(){
-        this.depositBtn.addEventListener('click', function(){
-            navMenu.hideBtns();
-            document.getElementById('deposit').style.visibility = 'visible';   
-        })
-        this.withdrawBtn.addEventListener('click', function(){
-            navMenu.hideBtns();
-            document.getElementById('withdraw').style.visibility = 'visible';
-        })
-        this.transferBtn.addEventListener('click', function(){
-            navMenu.hideBtns();
-            document.getElementById('send').style.visibility = 'visible';
-        })
-    }
-}
-navMenu.navigate()
