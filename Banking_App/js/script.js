@@ -15,8 +15,8 @@ const formatter = new Intl.NumberFormat('en',{
 })
 
 extractLocalStorage();
-function user(username,user_num, user_balance){
-    this.name = username.toUpperCase();
+function user(firstname, lastname,user_num, user_balance){
+    this.name =`${firstname.toUpperCase()}, ${lastname.toUpperCase()}`;
     this.accntNum = user_num;
     this.balance = parseFloat(user_balance);
     this.histDeposit = [];
@@ -32,16 +32,23 @@ function user(username,user_num, user_balance){
     this.histReceived = [];
     this.histSent = [];
 }
-
-function create_user(username,user_balance){
-    let clientNum = 'Client#' + bankApp.currentUsers.length;
-    let newUser = new user(username,clientNum, user_balance);
-    if(!bankApp.currentUsers.some(item=> item.name === username.toUpperCase())){
-        let index = bankApp.currentUsers.length;
-        let Str = JSON.stringify(newUser);
-        localStorage.setItem(`${index}`, Str);
+function generate_accntNum(){
+    let clientNum = `${numeral(Math.random() * 100).format('000')}-${numeral(Math.random() * 100).format('000')}-${numeral(Math.random() * 100).format('000')}`;
+    if(!bankApp.currentUsers.some(item=> item.accntNum === clientNum)){
+        return clientNum
     }
-    else if(bankApp.currentUsers.some(item=> item.name === username.toUpperCase())){
+    else{
+        generate_accntNum()
+    }
+}
+
+function create_user(firstname, lastname,user_balance){
+    let newUser = new user(firstname, lastname,generate_accntNum(), user_balance);
+    if(!bankApp.currentUsers.some(item=> item.name === newUser.name)){
+        let Str = JSON.stringify(newUser);
+        localStorage.setItem(`${newUser.name}`, Str);
+    }
+    else if(bankApp.currentUsers.some(item=> item.name === newUser.name)){
         console.log('User alreadty Exist!');
         alert('User alreadty Exist!');
     }
@@ -50,11 +57,12 @@ function create_user(username,user_balance){
 
 //================= FOR STORED USERS ===========================//
 function extractLocalStorage(){
-    for(i=0; i < localStorage.length; i++){
-        let record = localStorage.getItem(`${i}`);
-        let Object = JSON.parse(record);
-        bankApp.currentUsers.push(Object);
-    }
+   for(i=0; i < localStorage.length; i++){
+       console.log(localStorage.key(i));
+       let record = localStorage.getItem(localStorage.key(i));
+       let object = JSON.parse(record);
+       bankApp.currentUsers.push(object)
+   }
 }
 //=================== DEPOSIT ========================================//
 //=================== TRY USING "[index]"" of bankApp.currentUser[index].balance ===============//
@@ -65,7 +73,8 @@ function deposit(username, amount){
             bankApp.currentUsers[i].histDeposit.push(new Date);
             bankApp.currentUsers[i].depositAmnt.push(amount);
             let newVal = JSON.stringify(bankApp.currentUsers[i])
-            localStorage.setItem(`${i}`, newVal);
+            localStorage.setItem(bankApp.currentUsers[i].name, newVal);
+            document.querySelector('#deposit-form').reset()
             alert(`${formatter.format(amount)} is added to ${bankApp.currentUsers[i].name}'s account`);
         }
     }
@@ -95,8 +104,9 @@ function withdraw(username, amount){
                 bankApp.currentUsers[i].histWithdraw.push(new Date);
                 bankApp.currentUsers[i].withdrawAmnt.push(amount);
                 let newVal = JSON.stringify(bankApp.currentUsers[i]);
-                localStorage.setItem(`${i}`, newVal);
-                alert(`Withdrew amount ${formatter.format(amount)}`);
+                localStorage.setItem(bankApp.currentUsers[i].name, newVal);
+                document.querySelector('#withdraw-form').reset()
+                alert(`Withdrew amount ${formatter.format(amount)} from ${bankApp.currentUsers[i].name}'s account`);
             }
         }
     }
@@ -124,8 +134,9 @@ function sendUserTwo(userTwo, userOne, amount){
             bankApp.currentUsers[j].histReceived.push(new Date);
             let newValOne = JSON.stringify(userOne);
             let newValTwo = JSON.stringify(bankApp.currentUsers[j]);
-            localStorage.setItem(`${bankApp.currentUsers.indexOf(userOne)}`, newValOne);
-            localStorage.setItem(`${j}`, newValTwo);
+            let userOneIndex = bankApp.currentUsers.indexOf(userOne);
+            localStorage.setItem(bankApp.currentUsers[userOneIndex].name, newValOne);
+            localStorage.setItem(bankApp.currentUsers[j].name, newValTwo);
             return alert( `Amount Php ${amount} has been successfuly sent to ${bankApp.currentUsers[j].name}!`)
         }
         else if(userOne.balance < parseFloat(amount)){
