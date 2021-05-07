@@ -70,16 +70,23 @@ nav ul{
 .hero .profile-pic{
   height: 800px;
   width: 800px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 1px 1px 20px black;
-
+  z-index: 1;
+  position: relative;
+}
+.hero .profile-pic::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.705);
 }
 .hero .profile-pic img{
   height: 120%;
-
 }
 
 /*========================= AVION PROJECTS SECTION ==========================================*/
