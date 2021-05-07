@@ -41,18 +41,19 @@ a{
   position: relative;
   box-sizing: border-box;
 }
+
 .top::before{
-    content:" ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: url(https://media.beam.usnews.com/d1/d8/8501ba714a21aed9a7327e02ade1/180515-10thingselonmusk-editorial.jpg) no-repeat fixed 100%;
-    background-size: 1300px;
-    opacity: .18;
-    background-position: bottom right;
-  }
+  content:" ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(https://media.beam.usnews.com/d1/d8/8501ba714a21aed9a7327e02ade1/180515-10thingselonmusk-editorial.jpg) no-repeat fixed 100%;
+  background-size: 1300px;
+  opacity: .18;
+  background-position: bottom right;
+}
 
 
 nav{
@@ -89,7 +90,7 @@ nav{
   text-align: center;
   box-sizing: border-box;
   padding: 10px 30px;
-  width: 500px;
+  width: 600px;
   }
 #title{
   font-size: 60px;
