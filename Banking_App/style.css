@@ -251,8 +251,8 @@ input{
     }
     to{
         padding: 20px;
-        box-shadow: 2px 0px 5px black ;
-        background-color: #ffffff1c;
+        box-shadow: 1px 0px 2px black ;
+        background-color: #ffffff9c;
     }
 }
 .side-bar:hover{
@@ -432,18 +432,6 @@ input{
     height: 100vh;
     position: relative;
     background-color: #204f5f5d;
-}
-.list-users::before{
-    content: '';
-    position: absolute;
-    top: 0%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('assets/bg-hero3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .2;
 }
 
 .list-users table{
