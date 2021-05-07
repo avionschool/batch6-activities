@@ -10,8 +10,7 @@ depositMoney.addEventListener('click', addMoney);
 function addMoney(e){
     if(depositor.name.value.length > 1 && depositor.balance.value > 0){
         e.preventDefault();
-        if(bankApp.currentUsers.some(item => item.name ===depositor.name.value.toUpperCase())){
-            // deposit(depositor.name.value, depositor.balance.value);
+        if(bankApp.currentUsers.some(item => item.name === depositor.name.value.toUpperCase())){
             valideDeposit(depositor.name.value, depositor.balance.value)
             location.reload();
         }
@@ -35,7 +34,6 @@ function removeMoney(e){
     if(withdrawer.name.value.length > 1 && withdrawer.balance.value > 0){
         e.preventDefault();
         if(bankApp.currentUsers.some(item => item.name === withdrawer.name.value.toUpperCase())){
-            // withdraw(withdrawer.name.value, withdrawer.balance.value);
             validateWithdraw(withdrawer.name.value, withdrawer.balance.value);
             location.reload();
         }
