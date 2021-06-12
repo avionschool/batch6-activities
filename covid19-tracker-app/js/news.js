@@ -1,7 +1,6 @@
 const news_section = document.querySelector('#news-display');
 
 window.addEventListener('load', function(){
-    loader();
     displayNews();
 })
 
@@ -98,14 +97,7 @@ function iterateNewsLocally(arr){
         }
     })
 }
-function loader(){
-    const loader = document.querySelector('.loader');
-    setTimeout(()=>{
-      loader.style.opacity = '0';
-      loader.style.pointerEvents = 'none';
-      loader.style.transition = 'opacity linear 1s';
-    }, 1500)
-}
+
 function scrollWindow(heroSection){
     
     setTimeout(function(){
