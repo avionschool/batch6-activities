@@ -6,11 +6,8 @@ const submitDateTo = document.querySelector('#tracker-page #date-to');
 const submitQuery = document.querySelector('#tracker-page #submit-btn');
 const heroSection = document.querySelector('#form-container');
 
-const tableContainer = document.querySelector('#tracker-page #table-container');
+const tableContainer = document.querySelector('#table-section #table-container');
 let table = document.createElement('table');
-table.id = 'case-history';
-tableContainer.append(table);
-
 const chartSection = document.querySelector('.chart');
 const chartCanvas = Array.from(document.querySelectorAll('.chart .chart-container canvas'));
 //=================================================================================================================//
@@ -18,12 +15,14 @@ const chartCanvas = Array.from(document.querySelectorAll('.chart .chart-containe
 submitQuery.addEventListener('click', function(e){
     if(searchQuery.value.length > 1 && submitDateFrom.value.length > 7 && submitDateTo.value.length > 7 ){
         e.preventDefault();
-        table.setAttribute('cellspacing', '0');
         for(i=0;i < chartCanvas.length; i++){
            chartCanvas[i].innerHTML=''
         }
         
         scrollWindow(heroSection);
+        table.id = "case-history"
+        table.setAttribute("cell-spacing", 0);
+        tableContainer.append(table);
         displayCases(searchQuery.value,submitDateFrom.value, submitDateTo.value);
         document.getElementById('refresh-button').style.opacity = '1';
         document.getElementById('refresh-button').style.transition = 'opacity linear .5s'
@@ -31,7 +30,7 @@ submitQuery.addEventListener('click', function(e){
 })
 
 function scrollWindow(heroSection){
-    tableContainer.style.display = 'flex';
+    document.querySelector('#table-section').style.display = 'flex';
     chartSection.style.display = 'flex';
     setTimeout(function(){
         window.scrollTo({
@@ -49,7 +48,9 @@ const cases = {
     recovered: []
 }
 const tableData = [];
-
+let currentPage = 0;
+let maxRows = 10; // NUMBER OF COUNTRY DISPLAY PER PAGE
+const pageButtons = document.createElement('div');
 async function displayCases(country,from, to){
     try{
         let data = await fetch('https://api.covid19api.com/countries');
@@ -66,10 +67,10 @@ async function displayCases(country,from, to){
     
         let recoveredData = await fetch(`https://api.covid19api.com/total/country/${Slug}/status/recovered?from=${from}T00:00:00Z&to=${to}T00:00:00Z`);
         let recoveredjson = await recoveredData.json();
-        await pushJSON(confirmedjson, deathsjson, recoveredjson, arrayCountries, country)
+        let arrJson = await pushJSON(confirmedjson, deathsjson, recoveredjson, arrayCountries, country)
        
         // let table = await inserTable(cases.confirmed, cases.deaths, cases.recovered, arrayCountries, country)
-        await inserTable(tableData);
+        let table = await inserTable(tableData);
     }
     catch{
         alert('Encountered a problem while calling the API. Try to Refresh the page and Run it again')
@@ -103,7 +104,7 @@ function pushJSON(confirmed, deaths, recovered, arrayCountries, country){
                 }
             }
         }
-        
+        // tableData.sort((a,b)=> b.confirmed - a.confirmed);
         resolve(tableData)
     })
 }
@@ -129,7 +130,7 @@ const formatter = new Intl.NumberFormat('en');
 function inserTable(arr){
     return new Promise(function(){
       
-        let headRow = table.insertRow(-1);
+        let headRow = table.insertRow(0);
         let headCell = [];
         createTable(arr, headCell, headRow);
         initChart();
@@ -137,8 +138,7 @@ function inserTable(arr){
     })
 }
 function createTable(arr, headCell, headRow){
-    
-
+   
     if(headCell.length < 1){
         for(j=0; j < 6; j++){
             headCell[j] = headRow.insertCell(-1);
@@ -153,7 +153,7 @@ function createTable(arr, headCell, headRow){
     }
     
     for(i=0; i < arr.length; i++){
-        let row = table.insertRow(-1);
+        let row = table.insertRow(1);
         let cell = [];
         let img = document.createElement('img');
         img.src = `https://flagcdn.com/84x63/${arr[i].ISO2.toLowerCase()}.png`;  //https://flagcdn.com/16x12/${arrCode}.png
@@ -208,19 +208,9 @@ function createChart(arrDate, objData, status, bgColor){
         }
     });
 }
-//================================== LOADER =====================================================// 
 
-function loader(){
-    const loader = document.querySelector('.loader');
-    setTimeout(()=>{
-      loader.style.opacity = '0';
-      loader.style.pointerEvents = 'none';
-      loader.style.transition = 'opacity linear 1s';
-    }, 1500)
-}
 //===================================== REFRESH BUTTON  ============================================//
 
 const refreshBtn = document.querySelector('#refresh-button');
 refreshBtn.addEventListener('click', ()=> location.reload());
-
 
