@@ -8,19 +8,16 @@ const heroSection = document.querySelector('#form-container');
 
 const tableContainer = document.querySelector('#tracker-page #table-container');
 let table = document.createElement('table');
+table.id = 'case-history';
+tableContainer.append(table);
 
 const chartSection = document.querySelector('.chart');
 const chartCanvas = Array.from(document.querySelectorAll('.chart .chart-container canvas'));
 //=================================================================================================================//
-window.addEventListener('load', function () {
-    loader();
-})
+
 submitQuery.addEventListener('click', function(e){
     if(searchQuery.value.length > 1 && submitDateFrom.value.length > 7 && submitDateTo.value.length > 7 ){
         e.preventDefault();
-        tableContainer.innerHTML = '';
-        tableContainer.appendChild(table);
-        table.id = 'case-history'
         table.setAttribute('cellspacing', '0');
         for(i=0;i < chartCanvas.length; i++){
            chartCanvas[i].innerHTML=''
@@ -52,9 +49,7 @@ const cases = {
     recovered: []
 }
 const tableData = [];
-let currentPage = 0;
-let maxRows = 10; // NUMBER OF COUNTRY DISPLAY PER PAGE
-const pageButtons = document.createElement('div');
+
 async function displayCases(country,from, to){
     try{
         let data = await fetch('https://api.covid19api.com/countries');
@@ -71,10 +66,10 @@ async function displayCases(country,from, to){
     
         let recoveredData = await fetch(`https://api.covid19api.com/total/country/${Slug}/status/recovered?from=${from}T00:00:00Z&to=${to}T00:00:00Z`);
         let recoveredjson = await recoveredData.json();
-        let arrJson = await pushJSON(confirmedjson, deathsjson, recoveredjson, arrayCountries, country)
+        await pushJSON(confirmedjson, deathsjson, recoveredjson, arrayCountries, country)
        
         // let table = await inserTable(cases.confirmed, cases.deaths, cases.recovered, arrayCountries, country)
-        let table = await inserTable(tableData);
+        await inserTable(tableData);
     }
     catch{
         alert('Encountered a problem while calling the API. Try to Refresh the page and Run it again')
@@ -108,7 +103,7 @@ function pushJSON(confirmed, deaths, recovered, arrayCountries, country){
                 }
             }
         }
-        // tableData.sort((a,b)=> b.confirmed - a.confirmed);
+        
         resolve(tableData)
     })
 }
@@ -134,7 +129,7 @@ const formatter = new Intl.NumberFormat('en');
 function inserTable(arr){
     return new Promise(function(){
       
-        let headRow = table.insertRow(0);
+        let headRow = table.insertRow(-1);
         let headCell = [];
         createTable(arr, headCell, headRow);
         initChart();
@@ -142,9 +137,7 @@ function inserTable(arr){
     })
 }
 function createTable(arr, headCell, headRow){
-    // let start = maxRows * currentPage;
-    // let end = start + maxRows;
-    // let paginatedItems = arr.slice(start, end);
+    
 
     if(headCell.length < 1){
         for(j=0; j < 6; j++){
@@ -160,7 +153,7 @@ function createTable(arr, headCell, headRow){
     }
     
     for(i=0; i < arr.length; i++){
-        let row = table.insertRow(1);
+        let row = table.insertRow(-1);
         let cell = [];
         let img = document.createElement('img');
         img.src = `https://flagcdn.com/84x63/${arr[i].ISO2.toLowerCase()}.png`;  //https://flagcdn.com/16x12/${arrCode}.png
@@ -230,50 +223,4 @@ function loader(){
 const refreshBtn = document.querySelector('#refresh-button');
 refreshBtn.addEventListener('click', ()=> location.reload());
 
-// function createTable(arrCode, table, headCell,headRow, confirmed, deaths, recovered, country){
-//     if(headCell.length < 1){
-//         for(j=0; j < 6; j++){
-//             headCell[j] = headRow.insertCell(-1);
-//             headCell[j].className = 'head-cell';
-//         }
-//         headCell[0].innerHTML = '<th>Flag</th>';
-//         headCell[1].innerHTML = '<th>Country</th>';
-//         headCell[2].innerHTML = '<th>Confirmed</th>';
-//         headCell[3].innerHTML = '<th>Deaths</th>';
-//         headCell[4].innerHTML = '<th>Recovered</th>';
-//         headCell[5].innerHTML = '<th>Date</th>';
-//     }
-    
 
-//     for(i=0; i < confirmed.length; i++){
-//         let row = table.insertRow(1);
-//         let cell = [];
-//         let img = document.createElement('img');
-//         img.src = `https://flagcdn.com/84x63/${arrCode.toLowerCase()}.png`;  //https://flagcdn.com/16x12/${arrCode}.png
-//         for(z = 0; z < 6; z++){
-//             cell[z] = row.insertCell(-1);
-//         }
-//         cell[0].append(img);
-//         cell[1].append(country)
-//         cell[2].append(formatter.format(confirmed[i]));
-//         cell[3].append(formatter.format(deaths[i]));
-//         cell[4].append(formatter.format(recovered[i]));
-//         cell[5].append(date[i]);               
-//     }
-// }
-// function inserTable(confirmed, deaths, recovered, arr, country){
-//     return new Promise(function(resolve){
-//         table.innerHTML = '';
-//         let headRow = table.insertRow(0);
-//         let headCell = [];
-//         createChart(date, cases.confirmed, 'confirmed','rgba(255, 166, 0, 0.339)');
-//         createChart(date, cases.deaths, 'deaths', 'rgba(255, 0, 0, 0.339)');
-//         createChart(date, cases.recovered, 'recovered', 'rgba(0, 255, 0, 0.339)');
-//         for(a=0; a < arr.length; a++){
-//             if(arr[a].Country === country){
-//                 createTable(arr[a].ISO2, table, headCell, headRow, confirmed, deaths, recovered, country);
-//             }
-//         }
-//         resolve(tableContainer);
-//     })
-// }

@@ -319,6 +319,7 @@ header nav ul button:hover{
 }
 /*=========================== TABLE SECTION ============================================*/
 #tracker-page #table-container{
+    position: relative;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -336,7 +337,6 @@ header nav ul button:hover{
 #tracker-page #table-container table{
     text-align: left;
     width: 80%;
-    height: 100%;
 }
 #tracker-page #table-container table tr td{
     padding: 10px;
