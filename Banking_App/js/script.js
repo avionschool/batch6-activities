@@ -13,6 +13,7 @@ const formatter = new Intl.NumberFormat('en',{
     style: 'currency',
     currency: 'php',
 })
+const clientNum_formatter = new Intl.NumberFormat({minimumIntegerDigits: 3})
 
 extractLocalStorage();
 function user(firstname, lastname,user_num, user_balance){
@@ -33,7 +34,7 @@ function user(firstname, lastname,user_num, user_balance){
     this.histSent = [];
 }
 function generate_accntNum(){
-    let clientNum = `${numeral(Math.random() * 100).format('000')}-${numeral(Math.random() * 100).format('000')}-${numeral(Math.random() * 100).format('000')}`;
+    let clientNum = `${clientNum_formatter.format(Math.floor(Math.random() * 1000))}-${clientNum_formatter.format(Math.floor(Math.random() * 1000))}-${clientNum_formatter.format(Math.floor(Math.random() * 1000))}`;
     if(!bankApp.currentUsers.some(item=> item.accntNum === clientNum)){
         return clientNum
     }

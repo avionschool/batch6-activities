@@ -18,11 +18,15 @@ function listUsers(){
         cellOne.append(`${bankApp.currentUsers[i].name}`);
         cellTwo.append(`${bankApp.currentUsers[i].accntNum}`);
         cellThree.append(`${formatter.format(bankApp.currentUsers[i].balance)}`);
-        cellFour.innerHTML = `<button class = "withdraw-button" id = "withdraw-${bankApp.currentUsers[i].name}" type = "button">Withraw Hist</button>`;
-        cellFive.innerHTML = `<button class = "deposit-button" id = "deposit-${bankApp.currentUsers[i].name}" type = "button">Deposit Hist</button>`;
-        cellSix.innerHTML =`<button class = "transfer-button" id = "transfer-${bankApp.currentUsers[i].name}" type = "button">Transfer Hist</button>`;
-        cellSeven.innerHTML =`<button class = "received-button" id = "received-${bankApp.currentUsers[i].name}" type = "button">Received Hist</button>`;
+        cellFour.innerHTML = `<button class = "withdraw-button" id = "withdraw-${bankApp.currentUsers[i].name}" type = "button">Withraw</button>`;
+        cellFive.innerHTML = `<button class = "deposit-button" id = "deposit-${bankApp.currentUsers[i].name}" type = "button">Deposit</button>`;
+        cellSix.innerHTML =`<button class = "transfer-button" id = "transfer-${bankApp.currentUsers[i].name}" type = "button">Transfer</button>`;
+        cellSeven.innerHTML =`<button class = "received-button" id = "received-${bankApp.currentUsers[i].name}" type = "button">Received</button>`;
 
+    }
+    if(bankApp.currentUsers.length > 12){
+        document.querySelector('#transaction .list-users').style.overflowY = 'scroll';
+        document.querySelector('#transaction .list-users table').style.height = '60%';
     }
 }
 
