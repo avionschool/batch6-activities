@@ -11,7 +11,6 @@
     <title>Covid-19 Tracker</title>
 </head>
 <body>
-    <main id="tracker-page">
         <header>
             <img src="assets/covid-pic.png" alt="">
             <h1>Covid-19 Tracker</h1>
@@ -26,6 +25,7 @@
                 </ul>
             </nav>
         </header>
+        <main id="tracker-page">
         <section id="form-container">
             <form action="" id="search">
                 <label for="search-query">Country</label>
@@ -39,8 +39,15 @@
                 <button type="submit" id="submit-btn">Search</button>
             </form>
         </section>
-        <section id="table-container"></section>
+        
+        <section id="table-section">
+            <h1>Tabulation</h1>
+            <div id = table-container>
+
+            </div>
+        </section>
         <section class="chart">
+            <h1>Data Chart</h1>
             <div class="chart-container">
                 <canvas id="confirmed-chart"></canvas>
             </div>
@@ -53,11 +60,6 @@
         </section>
        
         <button id="refresh-button">Clear <i class="fas fa-redo"></i></button>
-        <section class="loader">
-            <div class="spinner">
-                <div></div>
-            </div>
-        </section>
     </main>
     <script src="js/cases-perday.js"></script>
 </body>
