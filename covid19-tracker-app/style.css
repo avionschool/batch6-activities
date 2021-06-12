@@ -11,7 +11,7 @@ html,body {
 /*================== HEADER SECTION  ===========================*/
 main{
     position: relative;
-    background-color: rgb(24, 46, 80);
+    background-color: rgb(0, 32, 80);
 }
 section{
     position: relative;
@@ -20,9 +20,8 @@ section{
 header{
     position: fixed;
     width:100%;
-    height: 120px;
-    box-shadow: 1px 5px 5px rgb(0, 247, 255);
-    background-color: rgb(14, 14, 14);
+    box-shadow: 0px 2px 1px rgb(0, 155, 160);
+    background-color: rgb(1, 20, 48);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +32,7 @@ header{
 }
 header img{
     position: absolute;
-    height: 75%;
+    height: 50%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 0;
@@ -82,7 +81,7 @@ header nav ul button:hover{
     grid-template-columns: repeat(3, 25vw);
     grid-auto-rows:250px ;
     grid-gap: 5px;
-    padding: 20px;
+    padding: 10px;
     
 }
 #world-cases .world-stat{
@@ -208,7 +207,7 @@ header nav ul button:hover{
 #list-countries{
     display: flex;
     flex-direction: column;
-    background-color: rgb(24, 46, 80);
+    background-color: inherit;
 }
 #list-countries button{
     width: 350px;
@@ -264,34 +263,41 @@ header nav ul button:hover{
 #tracker-page{
     display: flex;
     flex-direction: column;
-    background-color: rgb(38, 46, 58);
+    background-color:rgb(205, 226, 228) ;
 }
 #tracker-page section{
-    background-color: rgb(208, 214, 223);
     top: 0;
-    
 }
 #tracker-page #form-container{
-    top: 0;
     height: 100vh;
-    background-color: rgb(24, 46, 80);
     background-image: url('https://www.paho.org/sites/default/files/styles/flexslider_full/public/hero/2020-03/covid-19-1190x574-2-full.jpg?h=fdc0eb87&itok=CerQCpzv');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position: relative;
+    z-index: 1;
+}
+#tracker-page #form-container::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 8, 8, 0.603);
+    pointer-events: none;
+    z-index: -1;
 }
 #tracker-page form{
     color: white;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 500px;
     width: 450px;
-    font-family: 'Kodchasan', sans-serif;
+    font-family: 'Kodchasan', sans-serif';
 }
 #tracker-page form input{
     font-size: 35px;
@@ -318,32 +324,47 @@ header nav ul button:hover{
     background-color: transparent;
 }
 /*=========================== TABLE SECTION ============================================*/
-#tracker-page #table-container{
-    position: relative;
+#tracker-page #table-section{
     align-self: center;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 50px;
     display: none;
-    width: 75vw;
-    height: 60vh;
-    overflow-y: auto;
-    margin-top:100px ;
-    margin-bottom:100px ;
-    box-shadow: 1px 1px 15px black;
-}
-#tracker-page #table-container table{
-    text-align: left;
+    height: 45rem;
     width: 80%;
+    margin-bottom: 100px;
+    font-family: 'Kodchasan', sans-serif;
 }
-#tracker-page #table-container table tr td{
+#table-section h1{
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
+    font-size: 3rem;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#table-section #table-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color:rgb(205, 226, 228) ;
+    overflow-y: auto;
+    margin: 0;
+}
+#tracker-page #table-section table{
+    text-align: left;
+    width: 100%;
+    border-spacing: 0;
+}
+#tracker-page #table-section table tr td{
     padding: 10px;
     font-family: 'Kodchasan', sans-serif;
-    border-bottom:1px solid black ;
+    border-bottom:1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
 }
-#tracker-page #table-container table tr:nth-child(1) td{
+#tracker-page #table-section table tr:nth-child(1) td{
     font-size: 20px;
     font-weight: 100;
 }
@@ -358,6 +379,17 @@ header nav ul button:hover{
     padding: 50px;
     display: none;
     width: 75vw;
+    background-color:rgb(205, 226, 228) ;
+}
+.chart h1{
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
+    font-size: 3rem;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Kodchasan', sans-serif;
 }
 #tracker-page .chart-container{
     margin: 25px;
@@ -365,41 +397,33 @@ header nav ul button:hover{
 }
 /*==================== NEWS SECTION ===================================*/
 #news{
-    /* background-color: rgb(208, 214, 223);  */
-    /* background-color: rgb(24, 46, 80); */
-    background-color: rgb(38, 46, 58);
+    transform: translateY(-100px);
 }
-#news #news-display, #display-locally{
-    position: relative;
-    box-sizing: border-box;
-    padding: 50px;
-    /* background-color: rgb(208, 214, 223);  */
 
-    width: 100vw;
+#news #news-display, #display-locally{
+    box-sizing: border-box;
+    padding: 30px;
     display: grid;
     grid-template-columns: repeat(5,350px);
-    grid-template-rows: auto repeat(2, 30vh);
+    grid-template-rows: auto repeat(2, 35vh);
     grid-gap: 15px;
     justify-content: center;
     justify-items: center;
 }
+
 #news #display-countries{
     display: flex;
     align-items: center;
     justify-content: space-around;
- 
+    
 }
+
 #news #news-display h1, #display-locally h1{
     grid-column: 1/6;
     grid-row: 1/2;
     font-family: 'Kodchasan', sans-serif;
     font-size: 40px;
-    color: rgb(255, 43, 43);
-    text-shadow: 1px 1px 10px rgb(255, 43, 43);
-}
-#display-locally h1{
-    color: rgb(0, 247, 255);
-    text-shadow: 1px 1px 10px rgb(0, 247, 255);
+    color: rgb(245, 80, 51);
 }
 #news #news-display div, #display-locally div{
     display: flex;
@@ -408,29 +432,30 @@ header nav ul button:hover{
     height: 100%;
     overflow: hidden;
     border-radius:10px;
-    box-shadow: 2px 5px 20px black;
+    box-shadow: 1px 2px 5px black;
     
 }
-/* #news #news-display div:nth-child(10), #display-locally div:nth-child(10){
-    grid-column: 2/3;
-} */
+
 #news #news-display div .content-container, #display-locally div .content-container{
     border-radius:0px ;
     position: relative;
-    top:10%;
+    top:60%;
     z-index: 1;
-    background-color: white;
+    background-color:rgb(205, 226, 228) ;
     padding: 10px;
     font-family: 'Kodchasan', sans-serif;
     
 }
 #news #news-display div .content-container h1, #display-locally .content-container h1{
     font-size: 25px;
-    color: blue;
+    color: rgb(0, 102, 143);
     text-shadow: none;
 }
-#news #news-display div .content-container:hover, #display-locally .content-container:hover{
-    top:50%;
+.content-container a{
+    text-decoration: underline rgb(0, 102, 143);;
+}
+#news #news-display div:hover .content-container, #display-locally div:hover .content-container{
+    top: 10%;
     transition: linear .15s;
 }
 
@@ -442,12 +467,8 @@ header nav ul button:hover{
     z-index: 1;
 }
 
-#news #display-locally, #display-countries{
+#news #display-locally, #news-display, #display-countries{
     background-color: inherit;
-    padding: 50px;
-    box-sizing: border-box;
-    width: 100vw;
-    overflow-x: hidden;
 }
 #news #display-locally{
     display: none;
@@ -457,8 +478,7 @@ header nav ul button:hover{
     text-align: center;
     font-family: 'Kodchasan', sans-serif;
     font-size: 40px;
-    color: rgb(255, 43, 43);
-    text-shadow: 1px 1px 10px rgb(255, 43, 43);
+    color: rgb(245, 80, 51);
 }
 #news #display-countries select{
     padding: 10px;
