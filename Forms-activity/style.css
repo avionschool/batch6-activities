@@ -1,0 +1,238 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url(https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_960_720.jpg) no-repeat fixed 100%;
+    background-size: cover;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color:rgba(0, 0, 0, 0.76);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+header{
+    color: #fd4d4d;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 50px;
+    width: 500px;
+    margin-right: 60px ;
+    line-height: 120px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.top{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+.top h2{
+    margin: 5px;
+    font-size:30px ;
+}
+
+.top span{
+    color: #fd4d4d ;
+    font-family: 'Sigmar One', cursive;
+    font-size: 40px;
+}
+
+.regis-form{
+    color: white;
+    box-sizing: border-box;
+    height: 100%;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.603);
+    padding: 10px;
+   
+}
+
+/*Text types and Dropdowns */
+ul{
+    list-style: none;
+}
+
+#survey-form{
+box-sizing: border-box;
+margin:0;
+width: 100%;
+height: 100%;
+padding: 5px;
+overflow:auto;
+
+}
+
+#survey-form li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+label{
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 40px;
+}
+
+.input {
+    box-sizing: border-box;
+    height: 30px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    width: 100%;
+    border: none;
+    padding: 20px;
+    color: black;
+}
+
+#birthday{
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: whitesmoke;
+}
+
+
+#educ{
+    background-color: whitesmoke;
+    color: black;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 2px;
+    height: 40px;
+}
+
+/*radio buttons*/
+
+.radio-button h5{
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.radio{
+    margin: 10px;
+}
+
+.radio-button label:hover{
+    color: #fd4d4d; 
+}
+
+/*checkbox*/
+.checkbox h5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.checkbox label{
+    font-size: 25px;
+}
+
+.checkbox label:hover{
+    color:  #fd4d4d ;
+}
+
+#python:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#java:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#ruby:hover{
+    height: 20px ;
+    width: 20px;
+}
+#html:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#c-lang:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#c-plus2:hover{
+    height: 20px;
+    width:20px;
+}
+
+#c-sharp:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#javascript:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#php:hover{
+    height: 20px ;
+    width: 20px; 
+}
+
+#sql:hover{
+    height: 20px ;
+    width: 20px;
+}
+
+#comment{
+    height: 200px;
+    width: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+
+}
+
+
+/*Submit buttons*/
+
+.button{
+    background-color: #fd4d4d;
+    font-family: cursive;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.button:hover{
+    background-color: white;
+    color: #fd4d4d;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color:black;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #fd4d4d) ;
+    border-radius: 5px;
+}
+

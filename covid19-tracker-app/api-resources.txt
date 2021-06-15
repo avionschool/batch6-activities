@@ -1,0 +1,72 @@
+// ============================= FOR LOCAL DATA (REGIONS) ====================================//
+fetch(`https://covid19-api-philippines.herokuapp.com/api/summary?region=${'ncr'}`)
+    .then((res) => res.json())
+    .then((result) => {
+    console.log(result);
+   
+  });
+
+fetch('https://covid19-api-philippines.herokuapp.com/api/top-regions')
+  .then((res) => res.json())
+  .then((result) => {
+    // img.src = URL.createObjectURL(result);
+    console.log(result);
+   
+  });
+
+  fetch(`https://covid19-api-philippines.herokuapp.com/api/timeline?region=${'ncr'}`)
+  .then((res) => res.json())
+  .then((result) => {
+    // img.src = URL.createObjectURL(result);
+    console.log(result);
+  });
+
+  fetch(`https://covid19-api-philippines.herokuapp.com/api/facilities/summary?region=${'ncr'}`)
+  .then((res) => res.json())
+  .then((result) => {
+    // img.src = URL.createObjectURL(result);
+    console.log(result);
+  });
+  fetch(`https://api.quarantine.country/api/v1/summary/latest`)
+  .then((res) => res.json())
+  .then((result) => {
+    // img.src = URL.createObjectURL(result);
+    console.log(result);
+  });
+
+
+
+  //======================== MOST ACCURATE DATA =========================================//
+  fetch(`https://covid-api.mmediagroup.fr/v1/cases?country=${optionSelector.value}`)
+  .then((res) => res.json())
+  .then((result) => {
+    // img.src = URL.createObjectURL(result);
+    console.log(result.All);
+    console.log('result')
+  });
+
+   fetch(`https://covid-api.mmediagroup.fr/v1/cases?country=${'US'}`)
+   .then((res) => res.json())
+   .then((result) => {
+     // img.src = URL.createObjectURL(result);
+     console.log(result);
+   });
+
+  //============================================================================================//
+
+ 
+
+
+ // `https://covid19-api-philippines.herokuapp.com/api/timeline?region=${region iv-a:calabarzon}`;
+
+ //https://covid19-api-philippines.herokuapp.com/api/facilities/summary?region=<string>&hospital_name=<string>
+
+ //https://api.quarantine.country/api/v1/summary/latest
+
+ //https://covid-api.mmediagroup.fr/v1
+
+ //https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
+
+   // let countriesOne = await fetch('https://api.covid19api.com/live/country/philippines');
+  // let json1 = await countriesOne.json();
+  // console.log(json1)

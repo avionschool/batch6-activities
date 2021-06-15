@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <title>Withdraw</title>
+</head>
+<body>
+    <header>
+        <h1>Family Bank</h1>
+        <nav>
+            <ul class="link-container">
+                <li class="nav-link">
+                    <a href="main.html"><button type="button">New User</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="transaction.html"><button type="button">Transactions</button></a>
+                </li>
+                <li class="nav-link">
+                    <a href="index.html"><button type="button">Log-out</button></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="transaction">
+        <nav class="side-bar">
+            <ul class="transaction-menu">
+                <li class="menu-link">
+                    <button id="deposit-link">Deposit</button>
+                </li>
+                <li class="menu-link">
+                    <button id="withdraw-link">Withdraw</button>
+                </li>
+                <li class="menu-link">
+                    <button id="transfer-link">Transfer</button>
+                </li>
+            </ul>
+        </nav>
+        <section id="deposit">
+            <form action="" id="deposit-form">
+                <fieldset>
+                    <legend><h2>Deposit</h2></legend>
+                    <label for="depositor">Account Name</label>
+                    <input type="text" id="depositor" required>
+    
+                    <label for="dep-amnt">Amount</label>
+                    <input type="number" id="dep-amnt" min="1" required>
+                    <button type="submit" id="deposit-btn">Deposit</button>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <section id="withdraw">
+            <form action="" id="withdraw-form">
+                <fieldset>
+                    <legend><h2>Withdraw</h2></legend>
+                    <label for="withdrawer">Account Name</label>
+                    <input type="text" name="" id="withdrawer" required>
+
+                    <label for="with-amnt">Amount</label>
+                    <input type="number" id="with-amnt" min="1" required>
+                    <button type="submit" id="withdraw-btn" >Withdraw</button>
+                </fieldset>
+            </form>
+        </section>
+        <section  id="send">
+            <form action="">
+                <fieldset>
+                    <legend>Sender</legend>
+                    <label for="sender-name">Account Name</label>
+                    <input type="text" id="sender-name">
+                </fieldset>
+                <fieldset>
+                    <legend>Receiver</legend>
+                    <label for="receiver-name">Account Name</label>
+                    <input type="text" id="receiver-name">
+                </fieldset>
+                <label for="send-amount" id= "label-amount">Amount</label>
+                <input type="number" id="send-amount" min="1" required>
+                <button type="submit" id="send-button">Send</button>
+            </form>
+        </section>
+        <section class="list-users" id="list-users">
+            <table cellspacing = '0'>
+                <tr>
+                    <th>Account Name</th><th>Client Number</th><th>Balance</th><th colspan = "4">Transaction History</th>
+                </tr>
+            </table>
+            <section class="modal">
+                <h1></h1>
+                <table cellspacing ="0">
+                    <tr><th>Date</th><th id="amount">Amount</th></tr>
+                </table>
+            </section>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/transaction.js"></script>
+    <script src="js/transfer.js"></script>
+    <script src="js/client-dir.js"></script>
+</body>
+</html>
