@@ -7,10 +7,11 @@
 }
 
 main{
-  background-color: rgb(5, 5, 5);
+  background-color: #000018;
+  color: #ff7300;
 }
 header{
-  background-color: rgba(0, 0, 0, 0.897);
+  background-color: #000018;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -52,20 +53,28 @@ nav ul{
 
 .hero{
   height: 100vh;
-  background-color: rgb(5, 5, 5);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 50px;
 }
-.hero .short-desc{
-  color: white;
-}
+
 .hero .short-desc h1{
-  font-size: 35px;
+  font-size: 40px;
 }
 .hero .short-desc h1 span{
-  font-size: 45px;
+  font-size: 70px;
+  color: rgb(65, 255, 255);
+}
+
+.hero .short-desc h1 .hello{
+  font-size: 5em;
+  line-height: 2;
+  color: rgb(65, 255, 255);
+}
+
+.hero .short-desc h2{
+  font-size: 40px;
 }
 .hero .profile-pic{
   height: 800px;
@@ -91,10 +100,14 @@ nav ul{
 
 /*========================= AVION PROJECTS SECTION ==========================================*/
 .project-title{
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 80%;
+  border-top: 1px solid rgb(65, 255, 255);
   text-align: center;
-  color: white;
-  font-size: 45px;
+  color: rgb(65, 255, 255);
+  font-size: 6rem;
 }
 .projects{
  height: 100vh;
@@ -121,7 +134,28 @@ nav ul{
   box-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 .folders figcaption{
-  color: white;
   text-align: center;
+  color: #ff7300;
   font-size: 20px;
+}
+.folders a{
+  text-decoration: none;
+}
+
+/*============== Contacts  ========*/
+.footer .email{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.link-container{
+  text-align: center;
+  padding: 2rem;
+}
+
+.links{
+  text-decoration: none;
+  color: rgb(65, 255, 255);
+  font-size: 2rem;
+  letter-spacing: 1rem;
 }
