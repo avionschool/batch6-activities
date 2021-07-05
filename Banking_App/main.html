@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <title>Family Bank</title>
+</head>
+<body>
+<header>
+    <h1>Family Bank</h1>
+    <nav>
+        <ul class="link-container">
+            <li class="nav-link">
+                <a href="main.html"><button type="button">New User</button></a>
+            </li>
+            <li class="nav-link">
+                <a href="transaction.html"><button type="button">Transactions</button></a>
+            </li>
+            <li class="nav-link">
+                <a href="index.html"><button type="button">Log-out</button></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="register-page">
+    <h1>Create New User...</h1>
+    <section>
+        <form action="" class="register">
+            <fieldset>
+                <legend>Account Details</legend>
+                <label for="new-last-name">Last Name</label>
+                <input type="text" id="new-last-name" placeholder="Last Name here..." pattern="^[A-Za-z \s*]+$" required minlength="2">
+
+                <label for="new-first-name">First Name</label>
+                <input type="text" id="new-first-name" placeholder="First Name here..." required minlength= "2">
+            </fieldset>
+            <fieldset>
+                <legend>Initial Deposit</legend>
+                <label for="init-depo">Amount</label>
+                <input type="number" id="init-depo" minlength="2" placeholder="0">
+
+            </fieldset>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </section>
+</main>
+    <script src="js/script.js"></script>
+    <script src="js/createUser.js"></script>
+</body>
+</html>

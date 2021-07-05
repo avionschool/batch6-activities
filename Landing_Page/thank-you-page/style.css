@@ -1,0 +1,61 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/nero-back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    box-shadow: inset 1px 1px 100px black;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.753);
+    padding: 10px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+header img{
+    width: 85%;
+}
+
+header h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 10px rgb(0, 238, 255);
+
+}
+
+/*MEDIA QUERY*/
+
+@media (min-width:1024px) and (max-height: 1366px){
+    header h1{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 60px;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 0px 10px rgb(0, 238, 255);
+    }
+}

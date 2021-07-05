@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+main{
+  background-color: #000018;
+  color: #ff7300;
+}
+header{
+  background-color: #000018;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  box-sizing:border-box;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index:1;
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  width: 400px
+}
+
+.navigation-bar #logo{
+  height: 70px;
+  position: relative;
+}
+
+.navigation-bar ul li{
+  list-style: none;
+  font-size: 30px;
+}
+
+.navigation-bar a{
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.navigation:hover{
+  text-decoration: underline red;
+  transition: .45s;
+}
+/*=============================== HERO SECTION ========================================*/
+
+.hero{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.hero .short-desc h1{
+  font-size: 40px;
+}
+.hero .short-desc h1 span{
+  font-size: 70px;
+  color: rgb(65, 255, 255);
+}
+
+.hero .short-desc h1 .hello{
+  font-size: 5em;
+  line-height: 2;
+  color: rgb(65, 255, 255);
+}
+
+.hero .short-desc h2{
+  font-size: 40px;
+}
+.hero .profile-pic{
+  height: 800px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+.hero .profile-pic::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.705);
+}
+.hero .profile-pic img{
+  height: 120%;
+}
+
+/*========================= AVION PROJECTS SECTION ==========================================*/
+.project-title{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 80%;
+  border-top: 1px solid rgb(65, 255, 255);
+  text-align: center;
+  color: rgb(65, 255, 255);
+  font-size: 6rem;
+}
+.projects{
+ /* height: 100vh; */
+ padding: 2rem;
+ display: grid;
+ grid-template-columns: repeat(4, 15vw);
+ justify-content: center;
+ justify-items: center;
+ align-items: center;
+ grid-gap: 1rem;
+
+}
+
+.folders{
+  width: 100%;
+  overflow-y: hidden;
+  position: relative;
+}
+.folders:hover{
+  opacity: .5;
+}
+.folders img{
+  width: 100%;
+  height: 200px;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+.folders figcaption{
+  text-align: center;
+  color: #ff7300;
+  font-size: 20px;
+}
+.folders a{
+  text-decoration: none;
+}
+
+/*============== Contacts  ========*/
+.footer .email{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.link-container{
+  text-align: center;
+  padding: 2rem;
+}
+
+.links{
+  text-decoration: none;
+  color: rgb(65, 255, 255);
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}

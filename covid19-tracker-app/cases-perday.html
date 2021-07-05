@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/da7ccd1607.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/covid-pic.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+    <title>Covid-19 Tracker</title>
+</head>
+<body>
+        <header>
+            <img src="assets/covid-pic.png" alt="">
+            <h1>Covid-19 Tracker</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="world-meter.html"><button>Home</button></a>
+                        <a href="#"><button>Daily Case</button></a>
+                        <a href="news.html"><button>Headlines</button></a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="tracker-page">
+        <section id="form-container">
+            <form action="" id="search">
+                <label for="search-query">Country</label>
+                <input type="search" placeholder='"South Africa"' required id="search-query">
+
+                <label for="date-from">From Date</label>
+                <input type="text" placeholder="yyyy-mm-dd"  required id="date-from">
+
+                <label for="date-to">To Date:</label>
+                <input type="text"  placeholder="yyyy-mm-dd"  required id="date-to">
+                <button type="submit" id="submit-btn">Search</button>
+            </form>
+        </section>
+        
+        <section id="table-section">
+            <h1>Tabulation</h1>
+            <div id = table-container>
+
+            </div>
+        </section>
+        <section class="chart">
+            <h1>Data Chart</h1>
+            <div class="chart-container">
+                <canvas id="confirmed-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="deaths-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="recovered-chart"></canvas>
+            </div>
+        </section>
+       
+        <button id="refresh-button">Clear <i class="fas fa-redo"></i></button>
+    </main>
+    <script src="js/cases-perday.js"></script>
+</body>
+</html>

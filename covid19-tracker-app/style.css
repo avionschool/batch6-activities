@@ -1,0 +1,555 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+/* Optional: Makes the sample page fill the window. */
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&display=swap');
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding:0;
+}
+/*================== HEADER SECTION  ===========================*/
+main{
+    position: relative;
+    background-color: rgb(0, 32, 80);
+}
+section{
+    position: relative;
+    top: 200px;
+}
+header{
+    position: fixed;
+    width:100%;
+    box-shadow: 0px 2px 1px rgb(0, 155, 160);
+    background-color: rgb(1, 20, 48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    transition: linear 2s;
+    z-index: 3;
+}
+header img{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: .5;
+}
+header h1{
+    justify-self: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 45px;
+    font-weight: 100px;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    position: absolute;
+    
+}
+header nav{
+    display: flex;
+    justify-content:  flex-end;
+    align-items: flex-end;
+    padding-right:30px ;
+
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul button{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 50px;
+    color: rgb(255, 255, 255);
+
+}
+header nav ul button:hover{
+    background-color: rgb(255, 43, 43);
+    color: white;
+}
+
+/*=================== FOR WORLD CASES ===========================*/
+#world-cases{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 25vw);
+    grid-auto-rows:250px ;
+    grid-gap: 5px;
+    padding: 10px;
+    
+}
+#world-cases .world-stat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: linear 2s;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 100px;
+}
+#world-cases .world-stat:nth-child(1){
+    text-shadow: 1px 1px 5px orangered;
+    color: orangered;
+}
+#world-cases .world-stat:nth-child(2){
+    text-shadow: 1px 1px 5px rgb(251, 31, 31);
+    color: rgb(255, 30, 30);
+}
+#world-cases .world-stat:nth-child(3){
+    text-shadow: 1px 1px 5px rgb(31, 251, 42);
+    color: rgb(31, 251, 42);
+}
+
+/*======================= MAP =====================================*/
+#map-holder{
+    display: flex;
+    justify-content: center;
+}
+#map{
+    height: 75vh;
+    width: 75vw;
+    box-shadow: 2px 5px 10px black;
+}
+.heatweights{
+    position: absolute;
+    top: 1250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heatweights figure{
+    display: flex;
+    width: 300px;
+    margin: 0;
+}
+.heatweights figure img{
+    height: 20px;
+    height: auto;
+}
+.heatweights figure figcaption{
+    font-family: 'Kodchasan', sans-serif;
+    color: rgb(255, 30, 30);
+}
+
+/*============================ COUNTRIES WITH CONFIRMED CASES ====================================*/
+
+#top-positive, #list-countries #country-container{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 30vw);
+    grid-auto-rows:300px ;
+    grid-gap: 5px;
+    padding: 20px;
+}
+#top-positive h1, #list-countries h1{
+    grid-column: 1/4;
+    align-self: center;
+    justify-self: center;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 40px;
+    font-weight: 100px;
+    color: rgb(245, 80, 51);
+
+}
+
+#top-positive .top-country-with-pos, #list-countries #country-container .top-country-with-pos{
+    box-shadow: 1px 1px 5px black;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.75;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 50px;    
+    transition: linear 2s;
+}
+#top-positive .top-country-with-pos h1, #country-container h1{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 100px;
+    font-size: 35px;
+}
+#top-positive .top-country-with-pos h1 img, #country-container h1 img{
+    margin: 10px;
+}
+#top-positive .top-country-with-pos table{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    color: rgb(0, 247, 255);
+    font-size: 20px;
+}
+
+#top-positive .top-country-with-pos:nth-child(6){
+    grid-column: 2/3;
+}
+
+/*=========================== LIST COUNTRIES BUTTONS  ==========================================*/
+#list-countries{
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+}
+#list-countries button{
+    width: 350px;
+    height: 120px;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    color: rgb(250, 109, 109);
+    cursor: pointer;
+}
+#list-countries button:hover{
+    color: rgb(0, 247, 255);
+}
+#list-countries .top-country-with-pos table{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    color: rgb(0, 247, 255);
+}
+
+#list-countries #page-btns{
+    grid-column: 1/3;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    justify-self: center;
+    align-self: center;
+    width: 60vw;
+    padding: 10px;
+    margin: 10px;
+}
+#list-countries #page-btns button{
+    align-self: center;
+    border: 1px solid rgb(0, 247, 255);
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    font-size: 15px;
+    color: white;
+}
+
+#list-countries #page-btns button:hover{
+    border: 1px solid rgb(250, 109, 109);
+    color: rgb(250, 109, 109);
+}
+#list-countries #page-btns .active{
+    background-color: white;
+    color: rgb(250, 109, 109);
+}
+
+/*========================== COVID 19 TRACKER PAGE   =========================================*/
+#tracker-page{
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(205, 226, 228) ;
+}
+#tracker-page section{
+    top: 0;
+}
+#tracker-page #form-container{
+    height: 100vh;
+    background-image: url('https://www.paho.org/sites/default/files/styles/flexslider_full/public/hero/2020-03/covid-19-1190x574-2-full.jpg?h=fdc0eb87&itok=CerQCpzv');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+#tracker-page #form-container::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 8, 8, 0.603);
+    pointer-events: none;
+    z-index: -1;
+}
+#tracker-page form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 450px;
+    font-family: 'Kodchasan', sans-serif';
+}
+#tracker-page form input{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+#tracker-page form label{
+    font-size: 35px;
+    /* color: rgb(245, 80, 51); */
+    color: white;
+}
+#tracker-page form button, #refresh-button{
+    font-size: 35px;
+    border: 1px solid rgb(255, 43, 43);
+    background-color: rgb(255, 43, 43);
+    color: white;
+    width: 50%;
+    border:none;
+    border-radius: 30px;
+}
+#tracker-page form button:hover, #refresh-button:hover{
+    color: rgb(255, 43, 43);
+    border: 1px solid rgb(255, 43, 43);
+    background-color: transparent;
+}
+/*=========================== TABLE SECTION ============================================*/
+#tracker-page #table-section{
+    align-self: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    height: 45rem;
+    width: 80%;
+    margin-bottom: 100px;
+    font-family: 'Kodchasan', sans-serif;
+}
+#table-section h1{
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
+    font-size: 3rem;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#table-section #table-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color:rgb(205, 226, 228) ;
+    overflow-y: auto;
+    margin: 0;
+}
+#tracker-page #table-section table{
+    text-align: left;
+    width: 100%;
+    border-spacing: 0;
+}
+#tracker-page #table-section table tr td{
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    border-bottom:1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
+}
+#tracker-page #table-section table tr:nth-child(1) td{
+    font-size: 20px;
+    font-weight: 100;
+}
+/*====================== CHART SECTION ==========================*/
+
+#tracker-page .chart{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    display: none;
+    width: 75vw;
+    background-color:rgb(205, 226, 228) ;
+}
+.chart h1{
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 102, 143);
+    color: rgb(0, 102, 143);
+    font-size: 3rem;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Kodchasan', sans-serif;
+}
+#tracker-page .chart-container{
+    margin: 25px;
+    width: 80%;
+}
+/*==================== NEWS SECTION ===================================*/
+#news{
+    transform: translateY(-100px);
+}
+
+#news #news-display, #display-locally{
+    box-sizing: border-box;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(5,350px);
+    grid-template-rows: auto repeat(2, 35vh);
+    grid-gap: 15px;
+    justify-content: center;
+    justify-items: center;
+}
+
+#news #display-countries{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+#news #news-display h1, #display-locally h1{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 40px;
+    color: rgb(245, 80, 51);
+}
+#news #news-display div, #display-locally div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius:10px;
+    box-shadow: 1px 2px 5px black;
+    
+}
+
+#news #news-display div .content-container, #display-locally div .content-container{
+    border-radius:0px ;
+    position: relative;
+    top:60%;
+    z-index: 1;
+    background-color:rgb(205, 226, 228) ;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    
+}
+#news #news-display div .content-container h1, #display-locally .content-container h1{
+    font-size: 25px;
+    color: rgb(0, 102, 143);
+    text-shadow: none;
+}
+.content-container a{
+    text-decoration: underline rgb(0, 102, 143);;
+}
+#news #news-display div:hover .content-container, #display-locally div:hover .content-container{
+    top: 10%;
+    transition: linear .15s;
+}
+
+#news #news-display div img, #display-locally div img{
+    position: absolute;
+    top: 0;
+    align-self: center;
+    width: 105%;
+    z-index: 1;
+}
+
+#news #display-locally, #news-display, #display-countries{
+    background-color: inherit;
+}
+#news #display-locally{
+    display: none;
+}
+
+#news #display-countries h1{
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 40px;
+    color: rgb(245, 80, 51);
+}
+#news #display-countries select{
+    padding: 10px;
+    width: 300px;
+    font-size: 30px;
+}
+/*============================= REFRESH BUTTON ===============================*/
+
+#refresh-button{
+    align-self: center;
+    position: fixed;
+    z-index: 2;
+    bottom: 10px;
+    width: 220px;
+    padding: 5px;
+    display: inline;
+    opacity: 0;
+}
+#refresh-button .fa-redo{
+    font-size: 25px;
+}
+/*========================== LOADER =========================================*/
+
+.loader{
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(24, 46, 80);
+}
+#tracker-page .loader{
+    background-color: rgb(24, 46, 80);
+}
+.spinner{
+    width: 300px;
+    height: 300px;
+    background-image: url('assets/covid-pic.png');
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+.spinner div{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-top-color:white;
+    border-radius: 50%;
+    animation: loadAnimation 1.5s linear infinite;
+}
+
+@keyframes loadAnimation {
+    0%{
+        transform: rotate(0turn);
+    }
+    50%{
+        transform: rotate(.5turn);
+       
+    }
+    100%{
+        transform: rotate(1turn);
+        border: 5px solid transparent;
+    }
+}
+
+
