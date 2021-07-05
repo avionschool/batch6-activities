@@ -110,13 +110,14 @@ nav ul{
   font-size: 6rem;
 }
 .projects{
- height: 100vh;
+ /* height: 100vh; */
+ padding: 2rem;
  display: grid;
  grid-template-columns: repeat(4, 15vw);
  justify-content: center;
  justify-items: center;
  align-items: center;
- grid-gap: 10px;
+ grid-gap: 1rem;
 
 }
 
